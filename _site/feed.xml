@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>이로디의 개발냥발</title>
   <subtitle>나의 개발일지</subtitle>
-  <updated>2023-11-10T14:01:42+09:00</updated>
+  <updated>2023-11-10T14:29:47+09:00</updated>
   <author>
     <name>lostdesire</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,288 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Day4</title>
+    <link href="http://localhost:4000/posts/Day4/" rel="alternate" type="text/html" title="Day4" />
+    <published>2023-11-09T20:00:00+09:00</published>
+  
+    <updated>2023-11-09T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day4/</id>
+    <content src="http://localhost:4000/posts/Day4/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week1" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      경사하강법
+
+  미분 / gradient vector
+  gradient descent / stochastic gradient descent(minibatch)
+    딥러닝
+  
+  softmax(classification)
+  activation function
+  multi-layer perceptron
+  backprogpagation(chian rule)
+
+
+확률론
+
+  discrete(이산형) / continuous(연속형)
+  조건부확률
+  몬테카를로 샘플링(확률 분포를 모를 때)
+
+
+통계학
+
+  MLE / Log-likelihood
+    
+      쿨백-라이블러 발산(KL Divergence)
+    
+  
+  베이즈 정리
+  precision / recall
+
+
+CNN
+
+  conv...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Day3</title>
+    <link href="http://localhost:4000/posts/Day3/" rel="alternate" type="text/html" title="Day3" />
+    <published>2023-11-08T20:00:00+09:00</published>
+  
+    <updated>2023-11-08T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day3/</id>
+    <content src="http://localhost:4000/posts/Day3/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week1" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Python Data Handling
+
+  csv / html / xml / json
+
+
+넘파이
+
+판다스
+
+  series / dataframe
+  lambda / map / apply
+  pandas built-in functions
+  groupby / crosstab / merge / concat
+  persistence
+
+
+벡터
+
+  basic operation
+  Norm
+  inner product
+
+
+행렬
+
+  basic operation
+  inner product
+  inv / pinv
+    
+      연립방정식 / linear regression
+    
+  
+
+
+과제 2 &amp;amp; 3
+
+피어세션
+
+  데이터 전처리 (Filtering &amp;amp; Sorting) 리뷰
+  새로 오신...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Day2</title>
+    <link href="http://localhost:4000/posts/Day2/" rel="alternate" type="text/html" title="Day2" />
+    <published>2023-11-07T20:00:00+09:00</published>
+  
+    <updated>2023-11-07T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day2/</id>
+    <content src="http://localhost:4000/posts/Day2/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week1" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      파이썬 데이터 구조
+
+파이썬 코드
+
+  python style code
+    
+      ex) split &amp;amp; join, list comprehension…
+    
+  
+
+
+파이썬 객체지향 프로그래밍
+
+  Class
+    
+      Inheritance / Polymorphism / Visibility
+    
+  
+  decorator
+
+
+모듈 / 프로젝트
+
+  import / namespace
+  Virtual Environment
+
+
+파일 / 예외 처리 / 로그
+
+  configparser / argparser
+
+
+과제 1
+
+피어세션
+
+  데이터 전처리 (Getting &amp;amp; Knowing Data) 리뷰
+  팀 그라운드 룰 설정
+
+
+데이터 전처리
+
+  Filtering &amp;amp...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Day1</title>
+    <link href="http://localhost:4000/posts/Day1/" rel="alternate" type="text/html" title="Day1" />
+    <published>2023-11-06T20:00:00+09:00</published>
+  
+    <updated>2023-11-06T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day1/</id>
+    <content src="http://localhost:4000/posts/Day1/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week1" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      파이썬 개발환경 설정
+
+  vscode / anaconda / terminal 등
+
+
+파이썬 기초 문법
+
+  variable / function / conditional &amp;amp; loop / string
+
+
+피어세션
+
+  자기소개
+  Datamanim 사이트 이용 -&amp;gt; 전처리 관련 학습 계획
+
+
+데이터 전처리
+
+  [[Getting &amp;amp; Knowing]] Data
+
+
+깃블로그 생성
+
+  theme / google search console / google ad sense
+
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -53,144 +335,6 @@
 Generate the favicon
 
 Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool Real Favicon Generator and click the button Select your Favicon image ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Getting Started</title>
-    <link href="http://localhost:4000/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
-    <published>2019-08-09T21:55:00+09:00</published>
-  
-    <updated>2019-08-09T21:55:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/getting-started/</id>
-    <content src="http://localhost:4000/posts/getting-started/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Prerequisites
-
-Follow the instructions in the Jekyll Docs to complete the installation of the basic environment. Git also needs to be installed.
-
-Installation
-
-Creating a New Site
-
-There are two ways to create a new repository for this theme:
-
-
-  Using the Chirpy Starter - Easy to upgrade, isolates irrelevant project files so you can focus on writing.
-  GitHub Fork - Convenient for custom devel...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Writing a New Post</title>
-    <link href="http://localhost:4000/posts/write-a-new-post/" rel="alternate" type="text/html" title="Writing a New Post" />
-    <published>2019-08-08T15:10:00+09:00</published>
-  
-    <updated>2019-08-08T15:10:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/write-a-new-post/</id>
-    <content src="http://localhost:4000/posts/write-a-new-post/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      This tutorial will guide you how to write a post in the Chirpy template, and it’s worth reading even if you’ve used Jekyll before, as many features require specific variables to be set.
-
-Naming and Path
-
-Create a new file named YYYY-MM-DD-TITLE.EXTENSION and put it in the _posts of the root directory. Please note that the EXTENSION must be one of md and markdown. If you want to save time of cre...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Text and Typography</title>
-    <link href="http://localhost:4000/posts/text-and-typography/" rel="alternate" type="text/html" title="Text and Typography" />
-    <published>2019-08-08T12:33:00+09:00</published>
-  
-    <updated>2019-08-08T12:33:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/text-and-typography/</id>
-    <content src="http://localhost:4000/posts/text-and-typography/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Demo" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.
-
-Headings
-
-H1 - heading
-
-H2 - heading
-
-H3 - heading
-
-H4 - heading
-
-Paragraph
-
-Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas interdum malesuada egestas. Duis consectetur porta risus, sit amet vulputate urna facilis...
     </summary>
   
 
