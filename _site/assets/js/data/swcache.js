@@ -29,11 +29,15 @@ const resource = [
     '/assets/img/favicons/favicon-16x16.png',
     '/assets/img/favicons/favicon-32x32.png',
     '/assets/img/favicons/favicon.ico',
-    '/assets/img/favicons/mstile-150x150.png'
+    '/assets/img/favicons/mstile-150x150.png',
+    '/assets/img/favicons/safari-pinned-tab.svg'
 ];
 
 /* The request url with below domain will be cached */
 const allowedDomains = [
+  
+    'www.googletagmanager.com',
+    'www.google-analytics.com',
   
 
   'localhost:4000',
