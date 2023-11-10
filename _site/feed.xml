@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>이로디의 개발냥발</title>
   <subtitle>나의 개발일지</subtitle>
-  <updated>2023-11-10T14:29:47+09:00</updated>
+  <updated>2023-11-10T15:58:36+09:00</updated>
   <author>
     <name>lostdesire</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,62 @@
 
   
   <entry>
+    <title>Day5</title>
+    <link href="http://localhost:4000/posts/Day5/" rel="alternate" type="text/html" title="Day5" />
+    <published>2023-11-10T15:00:00+09:00</published>
+  
+    <updated>2023-11-10T15:25:19+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day5/</id>
+    <content src="http://localhost:4000/posts/Day5/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week1" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      심화 과제 1
+
+  경사하강법에 대해 좀 더 깊게 알아가는 시간
+
+
+깃블로그 업데이트
+
+  아직 미숙한 관계로 더 공부 후에 업데이트 해야겠다…
+
+
+주간 학습 회고
+
+  첫주차는 알았던 내용의 복습 &amp;amp; 놓치고 있던 몇몇 부분을 찾는 시간이었다
+  주말에는 휴식을 가지면서 부족한 부분과 github.io에 대해 좀 더 공부해 봐야겠다
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Day4</title>
     <link href="http://localhost:4000/posts/Day4/" rel="alternate" type="text/html" title="Day4" />
     <published>2023-11-09T20:00:00+09:00</published>
   
-    <updated>2023-11-09T20:00:00+09:00</updated>
+    <updated>2023-11-10T14:57:17+09:00</updated>
   
     <id>http://localhost:4000/posts/Day4/</id>
     <content src="http://localhost:4000/posts/Day4/" />
@@ -92,7 +143,7 @@ CNN
     <link href="http://localhost:4000/posts/Day3/" rel="alternate" type="text/html" title="Day3" />
     <published>2023-11-08T20:00:00+09:00</published>
   
-    <updated>2023-11-08T20:00:00+09:00</updated>
+    <updated>2023-11-10T15:25:19+09:00</updated>
   
     <id>http://localhost:4000/posts/Day3/</id>
     <content src="http://localhost:4000/posts/Day3/" />
@@ -150,12 +201,12 @@ CNN
   
 
 
-과제 2 &amp;amp; 3
+기본 과제 2 &amp;amp; 3
 
 피어세션
 
   데이터 전처리 (Filtering &amp;amp; Sorting) 리뷰
-  새로 오신...
+  새로...
     </summary>
   
 
@@ -167,7 +218,7 @@ CNN
     <link href="http://localhost:4000/posts/Day2/" rel="alternate" type="text/html" title="Day2" />
     <published>2023-11-07T20:00:00+09:00</published>
   
-    <updated>2023-11-07T20:00:00+09:00</updated>
+    <updated>2023-11-10T15:25:19+09:00</updated>
   
     <id>http://localhost:4000/posts/Day2/</id>
     <content src="http://localhost:4000/posts/Day2/" />
@@ -223,7 +274,7 @@ CNN
   configparser / argparser
 
 
-과제 1
+기본 과제 1
 
 피어세션
 
@@ -233,7 +284,7 @@ CNN
 
 데이터 전처리
 
-  Filtering &amp;amp...
+  Filtering &amp;...
     </summary>
   
 
@@ -295,46 +346,6 @@ CNN
   theme / google search console / google ad sense
 
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Customize the Favicon</title>
-    <link href="http://localhost:4000/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
-    <published>2019-08-11T01:34:00+09:00</published>
-  
-    <updated>2019-08-11T01:34:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/customize-the-favicon/</id>
-    <content src="http://localhost:4000/posts/customize-the-favicon/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons.
-
-Generate the favicon
-
-Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool Real Favicon Generator and click the button Select your Favicon image ...
     </summary>
   
 

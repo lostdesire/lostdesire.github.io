@@ -12,7 +12,7 @@ layout: page
 
 {% assign sort_categories = site.categories | sort %}
 
-{% for category in sort_categories %}
+{% for category in sort_categories reversed %}
   {% assign category_name = category | first %}
   {% assign posts_of_category = category | last %}
   {% assign first_post = posts_of_category | first %}
@@ -20,7 +20,7 @@ layout: page
   {% if category_name == first_post.categories[0] %}
     {% assign sub_categories = '' | split: '' %}
 
-    {% for post in posts_of_category %}
+    {% for post in posts_of_category reversed %}
       {% assign second_category = post.categories[1] %}
       {% if second_category %}
         {% unless sub_categories contains second_category %}
