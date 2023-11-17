@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>이로디의 개발냥발</title>
   <subtitle>나의 개발일지</subtitle>
-  <updated>2023-11-13T13:45:49+09:00</updated>
+  <updated>2023-11-17T14:41:20+09:00</updated>
   <author>
     <name>lostdesire</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,252 @@
 
   
   <entry>
+    <title>Day9</title>
+    <link href="http://localhost:4000/posts/Day9/" rel="alternate" type="text/html" title="Day9" />
+    <published>2023-11-16T20:00:00+09:00</published>
+  
+    <updated>2023-11-17T13:56:48+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day9/</id>
+    <content src="http://localhost:4000/posts/Day9/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week2" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Multi GPU
+
+  Single Node Single GPU
+  Single Node Multi GPU
+  Multi Node Multi GPU
+  Model Parallel
+  Data Parallel
+    
+      Data Parallel
+      DistributedData Parallel
+    
+  
+
+
+Hyperparameter Tuning
+
+  Hyperparameter Tuning(마지막에 쥐어짤 때)
+    
+      Grid Layout
+      Random Layout
+      Bayesian Layout(최근)
+    
+  
+  Ray
+    
+      Multi Node Multi GPU 지원
+    
+  
+
+
+PyTorch Troubleshooting
+
+  O...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Day8</title>
+    <link href="http://localhost:4000/posts/Day8/" rel="alternate" type="text/html" title="Day8" />
+    <published>2023-11-15T20:00:00+09:00</published>
+  
+    <updated>2023-11-17T13:56:48+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day8/</id>
+    <content src="http://localhost:4000/posts/Day8/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week2" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      PyTorch 모델 불러오기
+
+  save
+  checkpoint
+  transfer learning
+
+
+Monitoring tools
+
+  Tensorboard
+  Wandb
+
+
+기본 과제 2
+
+멘토링
+
+  논문 읽는 법에 대하여
+
+
+피어세션
+
+  기본 과제 1 리뷰
+
+
+두런두런 1회차
+
+  변성윤 마스터님 
+  나는 나 자신을 얼마나 알고 있는가?
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Day7</title>
+    <link href="http://localhost:4000/posts/Day7/" rel="alternate" type="text/html" title="Day7" />
+    <published>2023-11-14T20:00:00+09:00</published>
+  
+    <updated>2023-11-17T13:56:48+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day7/</id>
+    <content src="http://localhost:4000/posts/Day7/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week2" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Pytorch AutoGrad &amp;amp; Optimizer
+
+  nn.Module
+  nn.Parameter
+  forward
+  backward
+
+
+PyTorch Dataset &amp;amp; DataLoader
+
+  transforms / Dataset / DataLoader 모듈
+
+
+피어세션
+
+  기본 과제 1 (~nn.Module 알쓸신접 전까지) 리뷰
+
+
+기본 과제 1 마무리
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Day6</title>
+    <link href="http://localhost:4000/posts/Day6/" rel="alternate" type="text/html" title="Day6" />
+    <published>2023-11-13T20:00:00+09:00</published>
+  
+    <updated>2023-11-17T13:56:48+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day6/</id>
+    <content src="http://localhost:4000/posts/Day6/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week2" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      PyTorch
+
+  basic
+  구조 이해
+
+
+피어세션
+
+  심화과제 1 &amp;amp; 2 &amp;amp; 3
+  기본 과제 1 (nn.Module 알쓸신잡 전까지)
+
+
+기본 과제 1
+
+  상당히 오래걸렸지만 새로 알아가는 것이 많았다.
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Day5</title>
     <link href="http://localhost:4000/posts/Day5/" rel="alternate" type="text/html" title="Day5" />
     <published>2023-11-10T15:00:00+09:00</published>
   
-    <updated>2023-11-10T15:25:19+09:00</updated>
+    <updated>2023-11-17T13:56:48+09:00</updated>
   
     <id>http://localhost:4000/posts/Day5/</id>
     <content src="http://localhost:4000/posts/Day5/" />
@@ -62,288 +303,6 @@
 
   첫주차는 알았던 내용의 복습 &amp;amp; 놓치고 있던 몇몇 부분을 찾는 시간이었다
   주말에는 휴식을 가지면서 부족한 부분과 github.io에 대해 좀 더 공부해 봐야겠다
-
-
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day4</title>
-    <link href="http://localhost:4000/posts/Day4/" rel="alternate" type="text/html" title="Day4" />
-    <published>2023-11-09T20:00:00+09:00</published>
-  
-    <updated>2023-11-10T14:57:17+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day4/</id>
-    <content src="http://localhost:4000/posts/Day4/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week1" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      경사하강법
-
-  미분 / gradient vector
-  gradient descent / stochastic gradient descent(minibatch)
-    딥러닝
-  
-  softmax(classification)
-  activation function
-  multi-layer perceptron
-  backprogpagation(chian rule)
-
-
-확률론
-
-  discrete(이산형) / continuous(연속형)
-  조건부확률
-  몬테카를로 샘플링(확률 분포를 모를 때)
-
-
-통계학
-
-  MLE / Log-likelihood
-    
-      쿨백-라이블러 발산(KL Divergence)
-    
-  
-  베이즈 정리
-  precision / recall
-
-
-CNN
-
-  conv...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day3</title>
-    <link href="http://localhost:4000/posts/Day3/" rel="alternate" type="text/html" title="Day3" />
-    <published>2023-11-08T20:00:00+09:00</published>
-  
-    <updated>2023-11-10T15:25:19+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day3/</id>
-    <content src="http://localhost:4000/posts/Day3/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week1" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Python Data Handling
-
-  csv / html / xml / json
-
-
-넘파이
-
-판다스
-
-  series / dataframe
-  lambda / map / apply
-  pandas built-in functions
-  groupby / crosstab / merge / concat
-  persistence
-
-
-벡터
-
-  basic operation
-  Norm
-  inner product
-
-
-행렬
-
-  basic operation
-  inner product
-  inv / pinv
-    
-      연립방정식 / linear regression
-    
-  
-
-
-기본 과제 2 &amp;amp; 3
-
-피어세션
-
-  데이터 전처리 (Filtering &amp;amp; Sorting) 리뷰
-  새로...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day2</title>
-    <link href="http://localhost:4000/posts/Day2/" rel="alternate" type="text/html" title="Day2" />
-    <published>2023-11-07T20:00:00+09:00</published>
-  
-    <updated>2023-11-10T15:25:19+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day2/</id>
-    <content src="http://localhost:4000/posts/Day2/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week1" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      파이썬 데이터 구조
-
-파이썬 코드
-
-  python style code
-    
-      ex) split &amp;amp; join, list comprehension…
-    
-  
-
-
-파이썬 객체지향 프로그래밍
-
-  Class
-    
-      Inheritance / Polymorphism / Visibility
-    
-  
-  decorator
-
-
-모듈 / 프로젝트
-
-  import / namespace
-  Virtual Environment
-
-
-파일 / 예외 처리 / 로그
-
-  configparser / argparser
-
-
-기본 과제 1
-
-피어세션
-
-  데이터 전처리 (Getting &amp;amp; Knowing Data) 리뷰
-  팀 그라운드 룰 설정
-
-
-데이터 전처리
-
-  Filtering &amp;...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day1</title>
-    <link href="http://localhost:4000/posts/Day1/" rel="alternate" type="text/html" title="Day1" />
-    <published>2023-11-06T20:00:00+09:00</published>
-  
-    <updated>2023-11-06T20:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day1/</id>
-    <content src="http://localhost:4000/posts/Day1/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week1" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      파이썬 개발환경 설정
-
-  vscode / anaconda / terminal 등
-
-
-파이썬 기초 문법
-
-  variable / function / conditional &amp;amp; loop / string
-
-
-피어세션
-
-  자기소개
-  Datamanim 사이트 이용 -&amp;gt; 전처리 관련 학습 계획
-
-
-데이터 전처리
-
-  [[Getting &amp;amp; Knowing]] Data
-
-
-깃블로그 생성
-
-  theme / google search console / google ad sense
 
 
     </summary>
