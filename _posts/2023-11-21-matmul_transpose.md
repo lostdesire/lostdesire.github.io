@@ -8,7 +8,7 @@ toc_sticky: true
 ---
 
 ## transformer score 파트에서 생긴 의문들
-![image](./image/transpose_1.png)
+![image](https://github.com/lostdesire/lostdesire.github.io/blob/main/_posts/image/transpose_1.png?raw=true)
 
-![image](./image/transpose_2.png)
+![image](https://github.com/lostdesire/lostdesire.github.io/blob/main/_posts/image/transpose_2.png?raw=true)
 

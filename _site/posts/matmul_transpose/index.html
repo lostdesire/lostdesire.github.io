@@ -41,24 +41,24 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Day8" />
+<meta property="og:title" content="행렬 곱에서의 transpose" />
 <meta property="og:locale" content="ko_KR" />
-<meta name="description" content="PyTorch 모델 불러오기 save checkpoint transfer learning" />
-<meta property="og:description" content="PyTorch 모델 불러오기 save checkpoint transfer learning" />
-<link rel="canonical" href="http://localhost:4000/posts/Day8/" />
-<meta property="og:url" content="http://localhost:4000/posts/Day8/" />
+<meta name="description" content="transformer score 파트에서 생긴 의문들" />
+<meta property="og:description" content="transformer score 파트에서 생긴 의문들" />
+<link rel="canonical" href="http://localhost:4000/posts/matmul_transpose/" />
+<meta property="og:url" content="http://localhost:4000/posts/matmul_transpose/" />
 <meta property="og:site_name" content="이로디의 개발냥발" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-11-15T20:00:00+09:00" />
+<meta property="article:published_time" content="2023-11-21T20:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Day8" />
+<meta property="twitter:title" content="행렬 곱에서의 transpose" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-17T14:42:25+09:00","datePublished":"2023-11-15T20:00:00+09:00","description":"PyTorch 모델 불러오기 save checkpoint transfer learning","headline":"Day8","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day8/"},"url":"http://localhost:4000/posts/Day8/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-21T20:00:00+09:00","datePublished":"2023-11-21T20:00:00+09:00","description":"transformer score 파트에서 생긴 의문들","headline":"행렬 곱에서의 transpose","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/matmul_transpose/"},"url":"http://localhost:4000/posts/matmul_transpose/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Day8 | 이로디의 개발냥발
+  <title>행렬 곱에서의 transpose | 이로디의 개발냥발
   </title>
 
   <!--
@@ -482,7 +482,7 @@
         
           
             
-              <span>Day8</span>
+              <span>행렬 곱에서의 transpose</span>
             
 
           
@@ -550,6 +550,148 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -572,61 +714,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -667,7 +754,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Day8</h1>
+    <h1 data-toc-skip>행렬 곱에서의 transpose</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -683,41 +770,18 @@
 
 <time
   
-  data-ts="1700046000"
+  data-ts="1700564400"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2023/11/15
+  2023/11/21
 </time>
 
       </span>
 
       <!-- lastmod date -->
-      
-        <span>
-          업데이트
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1700199745"
-  data-df="YYYY/MM/DD"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  2023/11/17
-</time>
-
-        </span>
       
 
       
@@ -757,7 +821,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="72 단어"
+  title="11 단어"
 >
   <em>1 분</em>읽는 시간</span>
 
@@ -768,36 +832,11 @@
   </header>
 
   <div class="content">
-    <h2 id="pytorch-모델-불러오기"><span class="me-2">PyTorch 모델 불러오기</span><a href="#pytorch-모델-불러오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>save</li>
-  <li>checkpoint</li>
-  <li>transfer learning</li>
-</ul>
+    <h2 id="transformer-score-파트에서-생긴-의문들"><span class="me-2">transformer score 파트에서 생긴 의문들</span><a href="#transformer-score-파트에서-생긴-의문들" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p><a href="https://github.com/lostdesire/lostdesire.github.io/blob/main/_posts/image/transpose_1.png?raw=true" class="popup img-link  shimmer"><img src="https://github.com/lostdesire/lostdesire.github.io/blob/main/_posts/image/transpose_1.png?raw=true" alt="image" loading="lazy"></a></p>
 
-<h2 id="monitoring-tools"><span class="me-2">Monitoring tools</span><a href="#monitoring-tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>Tensorboard</li>
-  <li>Wandb</li>
-</ul>
+<p><a href="https://github.com/lostdesire/lostdesire.github.io/blob/main/_posts/image/transpose_2.png?raw=true" class="popup img-link  shimmer"><img src="https://github.com/lostdesire/lostdesire.github.io/blob/main/_posts/image/transpose_2.png?raw=true" alt="image" loading="lazy"></a></p>
 
-<h2 id="기본-과제-2"><span class="me-2">기본 과제 2</span><a href="#기본-과제-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h2 id="멘토링"><span class="me-2">멘토링</span><a href="#멘토링" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>논문 읽는 법에 대하여</li>
-</ul>
-
-<h2 id="피어세션"><span class="me-2">피어세션</span><a href="#피어세션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>기본 과제 1 리뷰</li>
-</ul>
-
-<h2 id="두런두런-1회차"><span class="me-2">두런두런 1회차</span><a href="#두런두런-1회차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>변성윤 마스터님 <어쩌다 데이터="" 사이언티스트=""></어쩌다></li>
-  <li>나는 나 자신을 얼마나 알고 있는가?</li>
-</ul>
 
   </div>
 
@@ -808,7 +847,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/boostcamp/">BoostCamp</a>,
-          <a href="/categories/week2/">Week2</a>
+          <a href="/categories/%EA%B6%81%EA%B8%88%EC%A6%9D/">궁금증</a>
       </div>
     
 
@@ -818,9 +857,9 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/pytorch/"
+            href="/tags/dl/"
             class="post-tag no-text-decoration"
-          >pytorch</a>
+          >dl</a>
         
       </div>
     
@@ -857,7 +896,7 @@
       
 
       <a
-        href="https://twitter.com/intent/tweet?text=Day8%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay8%2F"
+        href="https://twitter.com/intent/tweet?text=%ED%96%89%EB%A0%AC%20%EA%B3%B1%EC%97%90%EC%84%9C%EC%9D%98%20transpose%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fmatmul_transpose%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -872,7 +911,7 @@
       
 
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Day8%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay8%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=%ED%96%89%EB%A0%AC%20%EA%B3%B1%EC%97%90%EC%84%9C%EC%9D%98%20transpose%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fmatmul_transpose%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -887,7 +926,7 @@
       
 
       <a
-        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay8%2F&text=Day8%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fmatmul_transpose%2F&text=%ED%96%89%EB%A0%AC%20%EA%B3%B1%EC%97%90%EC%84%9C%EC%9D%98%20transpose%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1140,79 +1179,79 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1312,7 +1351,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/Day6/" class="post-preview card h-100">
+          <a href="/posts/transfer_learning/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1324,14 +1363,14 @@
 
 <time
   
-  data-ts="1699873200"
+  data-ts="1700478000"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/13
+  2023/11/20
 </time>
 
-              <h4 class="pt-0 my-2">Day6</h4>
+              <h4 class="pt-0 my-2">Transfer Learning에서의 의문</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1340,21 +1379,9 @@
 
 
 
-                  PyTorch
-
-  basic
-  구조 이해
+                  transfer learning의 layer 수정 이유
 
 
-피어세션
-
-  심화과제 1 &amp;amp; 2 &amp;amp; 3
-  기본 과제 1 (nn.Module 알쓸신잡 전까지)
-
-
-기본 과제 1
-
-  상당히 오래걸렸지만 새로 알아가는 것이 많았다.
 
 
                 </p>
@@ -1364,7 +1391,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/Day7/" class="post-preview card h-100">
+          <a href="/posts/Day11/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1376,14 +1403,14 @@
 
 <time
   
-  data-ts="1699959600"
+  data-ts="1700478000"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/14
+  2023/11/20
 </time>
 
-              <h4 class="pt-0 my-2">Day7</h4>
+              <h4 class="pt-0 my-2">Day11</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1392,22 +1419,25 @@
 
 
 
-                  Pytorch AutoGrad &amp;amp; Optimizer
+                  DL Historical review
 
-  nn.Module
-  nn.Parameter
-  forward
-  backward
+NN &amp;amp; MLP
+
+Optimization
+
+  Generalization
+  Under-fitting vs Over-fitting
+  Cross Validation
+  Bias-Variance tradeoff
+  Bootstrapping
+  Bagging &amp;amp; Boosting
 
 
-PyTorch Dataset &amp;amp; DataLoader
+CNN
 
-  transforms / Dataset / DataLoader 모듈
+RNN
 
-
-피어세션
-
-  기본 과제 1 (~nn.Module 알쓸신접 전까지) ...
+ ...
                 </p>
               </div>
             </div>
@@ -1415,7 +1445,7 @@ PyTorch Dataset &amp;amp; DataLoader
         </article>
       
         <article class="col">
-          <a href="/posts/Day9/" class="post-preview card h-100">
+          <a href="/posts/Day12/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1427,14 +1457,14 @@ PyTorch Dataset &amp;amp; DataLoader
 
 <time
   
-  data-ts="1700132400"
+  data-ts="1700564400"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/16
+  2023/11/21
 </time>
 
-              <h4 class="pt-0 my-2">Day9</h4>
+              <h4 class="pt-0 my-2">Day12</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1443,21 +1473,13 @@ PyTorch Dataset &amp;amp; DataLoader
 
 
 
-                  Multi GPU
+                  Transformer
 
-  Single Node Single GPU
-  Single Node Multi GPU
-  Multi Node Multi GPU
-  Model Parallel
-  Data Parallel
-    
-      Data Parallel
-      DistributedData Parallel
-    
-  
+과제 5
+
+  score 파트에서 생긴 의문 → 행렬 곱에서의 transpose
 
 
-Hyperparameter ...
                 </p>
               </div>
             </div>
@@ -1479,22 +1501,18 @@ Hyperparameter ...
 
   
     <a
-      href="/posts/Day7/"
+      href="/posts/Day12/"
       class="btn btn-outline-primary"
       aria-label="이전 글"
     >
-      <p>Day7</p>
+      <p>Day12</p>
     </a>
   
 
   
-    <a
-      href="/posts/Day9/"
-      class="btn btn-outline-primary"
-      aria-label="다음 글"
-    >
-      <p>Day9</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="다음 글">
+      <p>-</p>
+    </div>
   
 </nav>
 

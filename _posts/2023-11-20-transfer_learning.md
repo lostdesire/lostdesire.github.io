@@ -8,6 +8,6 @@ toc_sticky: true
 ---
 
 ## transfer learning의 layer 수정 이유
-![image](./image/transfer_1.png)
+![image](https://github.com/lostdesire/lostdesire.github.io/blob/main/_posts/image/transfer_1.png?raw=true)
 
-![image](./image/transfer_2.png)
+![image](https://github.com/lostdesire/lostdesire.github.io/blob/main/_posts/image/transfer_2.png?raw=true)
