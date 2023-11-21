@@ -21,6 +21,9 @@ tagline: Towards a Data Scientist # it will display as the sub-title
 description: >- # used by seo meta and the atom feed
   나의 개발일지
 
+future: true
+published: true
+
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://lostdesire.github.io"
