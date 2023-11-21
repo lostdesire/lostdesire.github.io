@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>이로디의 개발냥발</title>
   <subtitle>나의 개발일지</subtitle>
-  <updated>2023-11-21T15:36:20+09:00</updated>
+  <updated>2023-11-21T17:03:42+09:00</updated>
   <author>
     <name>lostdesire</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/matmul_transpose/" rel="alternate" type="text/html" title="행렬 곱에서의 transpose" />
     <published>2023-11-21T20:00:00+09:00</published>
   
-    <updated>2023-11-21T15:30:44+09:00</updated>
+    <updated>2023-11-21T15:59:22+09:00</updated>
   
     <id>http://localhost:4000/posts/matmul_transpose/</id>
     <content src="http://localhost:4000/posts/matmul_transpose/" />
@@ -107,7 +107,7 @@
     <link href="http://localhost:4000/posts/transfer_learning/" rel="alternate" type="text/html" title="Transfer Learning에서의 의문" />
     <published>2023-11-20T20:00:00+09:00</published>
   
-    <updated>2023-11-21T15:30:44+09:00</updated>
+    <updated>2023-11-21T15:59:22+09:00</updated>
   
     <id>http://localhost:4000/posts/transfer_learning/</id>
     <content src="http://localhost:4000/posts/transfer_learning/" />

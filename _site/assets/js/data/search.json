@@ -4,7 +4,7 @@
     "title": "행렬 곱에서의 transpose",
     "url": "/posts/matmul_transpose/",
     "categories": "BoostCamp, 궁금증",
-    "tags": "dl",
+    "tags": "dl, transformer, score, T, transpose, permute",
     "date": "2023-11-21 20:00:00 +0900",
     
 
@@ -38,7 +38,7 @@
     "title": "Transfer Learning에서의 의문",
     "url": "/posts/transfer_learning/",
     "categories": "BoostCamp, 궁금증",
-    "tags": "dl",
+    "tags": "dl, transfer, transfer learning",
     "date": "2023-11-20 20:00:00 +0900",
     
 
