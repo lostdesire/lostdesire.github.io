@@ -41,24 +41,24 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Day2" />
+<meta property="og:title" content="Matrix Multiply" />
 <meta property="og:locale" content="ko_KR" />
-<meta name="description" content="파이썬 데이터 구조" />
-<meta property="og:description" content="파이썬 데이터 구조" />
-<link rel="canonical" href="http://localhost:4000/posts/Day2/" />
-<meta property="og:url" content="http://localhost:4000/posts/Day2/" />
+<meta name="description" content="다차원에서의 행렬곱 행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 3, 5)가 곱해진다는 것을 알고 혼란에 빠져 버렸다. 이를 해결하기 위해 chat gpt에게 물어본 결과다." />
+<meta property="og:description" content="다차원에서의 행렬곱 행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 3, 5)가 곱해진다는 것을 알고 혼란에 빠져 버렸다. 이를 해결하기 위해 chat gpt에게 물어본 결과다." />
+<link rel="canonical" href="http://localhost:4000/posts/Matrix_Multiply/" />
+<meta property="og:url" content="http://localhost:4000/posts/Matrix_Multiply/" />
 <meta property="og:site_name" content="이로디의 개발냥발" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-11-07T20:00:00+09:00" />
+<meta property="article:published_time" content="2023-11-22T20:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Day2" />
+<meta property="twitter:title" content="Matrix Multiply" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-21T20:29:18+09:00","datePublished":"2023-11-07T20:00:00+09:00","description":"파이썬 데이터 구조","headline":"Day2","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day2/"},"url":"http://localhost:4000/posts/Day2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-22T20:00:00+09:00","datePublished":"2023-11-22T20:00:00+09:00","description":"다차원에서의 행렬곱 행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 3, 5)가 곱해진다는 것을 알고 혼란에 빠져 버렸다. 이를 해결하기 위해 chat gpt에게 물어본 결과다.","headline":"Matrix Multiply","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Matrix_Multiply/"},"url":"http://localhost:4000/posts/Matrix_Multiply/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Day2 | 이로디의 개발냥발
+  <title>Matrix Multiply | 이로디의 개발냥발
   </title>
 
   <!--
@@ -482,7 +482,7 @@
         
           
             
-              <span>Day2</span>
+              <span>Matrix Multiply</span>
             
 
           
@@ -627,39 +627,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -691,7 +658,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Day2</h1>
+    <h1 data-toc-skip>Matrix Multiply</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -707,41 +674,18 @@
 
 <time
   
-  data-ts="1699354800"
+  data-ts="1700650800"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2023/11/07
+  2023/11/22
 </time>
 
       </span>
 
       <!-- lastmod date -->
-      
-        <span>
-          업데이트
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1700566158"
-  data-df="YYYY/MM/DD"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  2023/11/21
-</time>
-
-        </span>
       
 
       
@@ -781,9 +725,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="103 단어"
+  title="984 단어"
 >
-  <em>1 분</em>읽는 시간</span>
+  <em>5 분</em>읽는 시간</span>
 
       </div>
       <!-- .d-flex -->
@@ -792,49 +736,82 @@
   </header>
 
   <div class="content">
-    <h2 id="파이썬-데이터-구조"><span class="me-2">파이썬 데이터 구조</span><a href="#파이썬-데이터-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h2 id="파이썬-코드"><span class="me-2">파이썬 코드</span><a href="#파이썬-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="다차원에서의-행렬곱"><span class="me-2">다차원에서의 행렬곱</span><a href="#다차원에서의-행렬곱" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>python style code
+  <li>행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 3, 5)가 곱해진다는 것을 알고 혼란에 빠져 버렸다.</li>
+  <li>이를 해결하기 위해 chat gpt에게 물어본 결과다.</li>
+</ul>
+
+<h2 id="broadcasting"><span class="me-2">Broadcasting</span><a href="#broadcasting" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>NumPy에서는 서로 다른 크기의 배열 간에도 행렬 연산을 수행할 수 있는 기능인 broadcasting이 제공됩니다. Broadcasting은 배열의 차원을 자동으로 조정하여 연산이 가능하도록 만듭니다. 특히, 크기가 1인 차원을 다른 배열의 차원에 맞춰 확장시키는 것이 주요한 원리입니다.</p>
+
+<p>다음은 broadcasting이 가능한 경우와 그 원리에 대한 설명입니다:</p>
+
+<ol>
+  <li><strong>차원 수가 다른 경우</strong>:
     <ul>
-      <li>ex) split &amp; join, list comprehension…</li>
+      <li>broadcasting은 차원 수가 다르더라도 가능합니다. 누락된 차원은 크기가 1로 간주됩니다.</li>
     </ul>
   </li>
-</ul>
-
-<h2 id="파이썬-객체지향-프로그래밍"><span class="me-2">파이썬 객체지향 프로그래밍</span><a href="#파이썬-객체지향-프로그래밍" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>Class
+  <li><strong>한 배열의 차원 크기가 다른 배열의 해당 차원 크기에 1이 있는 경우</strong>:
     <ul>
-      <li>Inheritance / Polymorphism / Visibility</li>
+      <li>차원 크기가 1인 차원은 다른 배열의 해당 차원 크기에 맞춰 확장됩니다.</li>
     </ul>
   </li>
-  <li>decorator</li>
+</ol>
+
+<p>예를 들어, <code class="language-plaintext highlighter-rouge">x</code> 배열이 shape이 (2, 1, 2, 1)이고 <code class="language-plaintext highlighter-rouge">y</code> 배열이 shape이 (1, 4, 1, 1)인 경우, broadcasting이 가능합니다. 이 경우, <code class="language-plaintext highlighter-rouge">x</code>의 두 번째 차원과 <code class="language-plaintext highlighter-rouge">y</code>의 두 번째 차원이 크기 1에서 서로 맞춰져 확장됩니다. 따라서 <code class="language-plaintext highlighter-rouge">x @ y</code>에서 두 배열 간의 행렬 곱셈이 가능합니다.</p>
+
+<p>이런 방식으로 broadcasting이 작동하면서 두 배열 간의 연산이 가능하게 됩니다. NumPy는 이러한 broadcasting을 통해 편리하게 다양한 형태의 배열 간 연산을 수행할 수 있도록 지원합니다.</p>
+
+<h2 id="예시"><span class="me-2">예시</span><a href="#예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>두 5차원 배열 A와 B, 그리고 5차원 배열 C에 대한 행렬 곱셈을 예시로 들어보겠습니다. 각 배열의 차원과 크기를 명시하겠습니다.</p>
+
+\[D_{ijkln} = \sum_{m} A_{ijmkl} \cdot B_{mklno} \cdot C_{opqnr}\]
+
+<p>여기서:</p>
+<ul>
+  <li>( A )의 shape: (2, 3, 4, 5, 6)</li>
+  <li>( B )의 shape: (3, 4, 2, 6, 1)</li>
+  <li>( C )의 shape: (4, 2, 3, 1, 5)</li>
 </ul>
 
-<h2 id="모듈--프로젝트"><span class="me-2">모듈 / 프로젝트</span><a href="#모듈--프로젝트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>import / namespace</li>
-  <li>Virtual Environment</li>
-</ul>
+<p>이제 곱셈을 수행하는 과정을 자세히 설명하겠습니다.</p>
 
-<h2 id="파일--예외-처리--로그"><span class="me-2">파일 / 예외 처리 / 로그</span><a href="#파일--예외-처리--로그" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>configparser / argparser</li>
-</ul>
+<h2 id="과정"><span class="me-2">과정</span><a href="#과정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ol>
+  <li><strong>D의 첫 번째 차원 (i에 대한 차원)</strong>:
+    <ul>
+      <li>( A )의 첫 번째 차원과 ( B )의 첫 번째 차원 중 크기가 더 큰 값으로 결정합니다. 따라서 ( D )의 첫 번째 차원은 3입니다.</li>
+    </ul>
+  </li>
+  <li><strong>D의 두 번째 차원 (j에 대한 차원)</strong>:
+    <ul>
+      <li>( B )의 두 번째 차원이 그대로 사용됩니다. 따라서 ( D )의 두 번째 차원은 4입니다.</li>
+    </ul>
+  </li>
+  <li><strong>D의 세 번째 차원 (k에 대한 차원)</strong>:
+    <ul>
+      <li>( A )의 세 번째 차원과 ( C )의 첫 번째 차원 중 크기가 더 큰 값으로 결정합니다. 따라서 ( D )의 세 번째 차원은 4입니다.</li>
+    </ul>
+  </li>
+  <li><strong>D의 네 번째 차원 (l에 대한 차원)</strong>:
+    <ul>
+      <li>( A )의 네 번째 차원이 그대로 사용됩니다. 따라서 ( D )의 네 번째 차원은 5입니다.</li>
+    </ul>
+  </li>
+  <li><strong>D의 다섯 번째 차원 (n에 대한 차원)</strong>:
+    <ul>
+      <li>( C )의 다섯 번째 차원이 그대로 사용됩니다. 따라서 ( D )의 다섯 번째 차원은 5입니다.</li>
+    </ul>
+  </li>
+</ol>
 
-<h2 id="기본-과제-1"><span class="me-2">기본 과제 1</span><a href="#기본-과제-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="결론"><span class="me-2">결론</span><a href="#결론" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>따라서, ( D )의 shape은 (3, 4, 4, 5, 5)가 됩니다. 이제 ( D )의 각 원소를 구하는데 필요한 곱셈을 수행하여 최종 결과를 얻을 수 있습니다. 이 과정은 각 차원에 대해 대응하는 크기를 고려하여 수행됩니다.</p>
 
-<h2 id="피어세션"><span class="me-2">피어세션</span><a href="#피어세션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>데이터 전처리 (Getting &amp; Knowing) 리뷰</li>
-  <li>팀 그라운드 룰 설정</li>
-</ul>
-
-<h2 id="데이터-전처리"><span class="me-2">데이터 전처리</span><a href="#데이터-전처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>Filtering &amp; Sorting</li>
+  <li>아직도 100퍼센트 이해가 안된것같다…</li>
 </ul>
 
   </div>
@@ -846,7 +823,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/boostcamp/">BoostCamp</a>,
-          <a href="/categories/week1/">Week1</a>
+          <a href="/categories/%EA%B6%81%EA%B8%88%EC%A6%9D/">궁금증</a>
       </div>
     
 
@@ -856,9 +833,14 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/python/"
+            href="/tags/numpy/"
             class="post-tag no-text-decoration"
-          >python</a>
+          >numpy</a>
+        
+          <a
+            href="/tags/matmul/"
+            class="post-tag no-text-decoration"
+          >matmul</a>
         
       </div>
     
@@ -895,7 +877,7 @@
       
 
       <a
-        href="https://twitter.com/intent/tweet?text=Day2%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay2%2F"
+        href="https://twitter.com/intent/tweet?text=Matrix%20Multiply%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FMatrix_Multiply%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -910,7 +892,7 @@
       
 
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Day2%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay2%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Matrix%20Multiply%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FMatrix_Multiply%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -925,7 +907,7 @@
       
 
       <a
-        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay2%2F&text=Day2%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FMatrix_Multiply%2F&text=Matrix%20Multiply%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1475,175 +1457,175 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1671,7 +1653,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/Day1/" class="post-preview card h-100">
+          <a href="/posts/transfer_learning/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1683,14 +1665,14 @@
 
 <time
   
-  data-ts="1699268400"
+  data-ts="1700478000"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/06
+  2023/11/20
 </time>
 
-              <h4 class="pt-0 my-2">Day1</h4>
+              <h4 class="pt-0 my-2">Transfer Learning에서의 의문</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1699,124 +1681,103 @@
 
 
 
-                  파이썬 개발환경 설정
-
-  vscode / anaconda / terminal 등
+                  transfer learning의 layer 수정 이유
 
 
-파이썬 기초 문법
 
-  variable / function / conditional &amp;amp; loop / string
+
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/matmul_transpose/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1700564400"
+  data-df="YYYY/MM/DD"
+  
+>
+  2023/11/21
+</time>
+
+              <h4 class="pt-0 my-2">행렬 곱에서의 transpose</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  transformer score 파트에서 생긴 의문들
+
+
+
+
+
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/Day7/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1699959600"
+  data-df="YYYY/MM/DD"
+  
+>
+  2023/11/14
+</time>
+
+              <h4 class="pt-0 my-2">Day7</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Pytorch AutoGrad &amp;amp; Optimizer
+
+  nn.Module
+  nn.Parameter
+  forward
+  backward
+
+
+PyTorch Dataset &amp;amp; DataLoader
+
+  transforms / Dataset / DataLoader 모듈
 
 
 피어세션
 
-  자기소개
-  Datamanim 사이트 이용 -&amp;gt; 전처리 관련 학습 계획
-
-
-데이터 전처리
-
-  Getting &amp;amp; Kn...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/Day3/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1699441200"
-  data-df="YYYY/MM/DD"
-  
->
-  2023/11/08
-</time>
-
-              <h4 class="pt-0 my-2">Day3</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Python Data Handling
-
-  csv / html / xml / json
-
-
-넘파이
-
-판다스
-
-  series / dataframe
-  lambda / map / apply
-  pandas built-in functions
-  groupby / crosstab / merge / concat
-  persistence
-
-
-벡터
-
-  basic...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/Day4/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1699527600"
-  data-df="YYYY/MM/DD"
-  
->
-  2023/11/09
-</time>
-
-              <h4 class="pt-0 my-2">Day4</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  경사하강법
-
-  미분 / gradient vector
-  gradient descent / stochastic gradient descent(minibatch)
-    딥러닝
-  
-  softmax(classification)
-  activation function
-  multi-layer perceptron
-  backprogpagation(chia...
+  기본 과제 1 (~nn.Module 알쓸신접 전까지) ...
                 </p>
               </div>
             </div>
@@ -1838,22 +1799,18 @@
 
   
     <a
-      href="/posts/Day1/"
+      href="/posts/Day13/"
       class="btn btn-outline-primary"
       aria-label="이전 글"
     >
-      <p>Day1</p>
+      <p>Day13</p>
     </a>
   
 
   
-    <a
-      href="/posts/Day3/"
-      class="btn btn-outline-primary"
-      aria-label="다음 글"
-    >
-      <p>Day3</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="다음 글">
+      <p>-</p>
+    </div>
   
 </nav>
 
