@@ -43,8 +43,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Matrix Multiply" />
 <meta property="og:locale" content="ko_KR" />
-<meta name="description" content="다차원에서의 행렬곱 행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 3, 5)가 곱해진다는 것을 알고 혼란에 빠져 버렸다. 이를 해결하기 위해 chat gpt에게 물어본 결과다." />
-<meta property="og:description" content="다차원에서의 행렬곱 행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 3, 5)가 곱해진다는 것을 알고 혼란에 빠져 버렸다. 이를 해결하기 위해 chat gpt에게 물어본 결과다." />
+<meta name="description" content="다차원에서의 행렬곱 행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 5, 3)가 곱해진다는 것을 알고 혼란에 빠져 버렸다. 이를 해결하기 위해 chat gpt에게 물어본 결과다." />
+<meta property="og:description" content="다차원에서의 행렬곱 행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 5, 3)가 곱해진다는 것을 알고 혼란에 빠져 버렸다. 이를 해결하기 위해 chat gpt에게 물어본 결과다." />
 <link rel="canonical" href="http://localhost:4000/posts/Matrix_Multiply/" />
 <meta property="og:url" content="http://localhost:4000/posts/Matrix_Multiply/" />
 <meta property="og:site_name" content="이로디의 개발냥발" />
@@ -53,7 +53,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Matrix Multiply" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-22T20:00:00+09:00","datePublished":"2023-11-22T20:00:00+09:00","description":"다차원에서의 행렬곱 행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 3, 5)가 곱해진다는 것을 알고 혼란에 빠져 버렸다. 이를 해결하기 위해 chat gpt에게 물어본 결과다.","headline":"Matrix Multiply","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Matrix_Multiply/"},"url":"http://localhost:4000/posts/Matrix_Multiply/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-23T19:18:36+09:00","datePublished":"2023-11-22T20:00:00+09:00","description":"다차원에서의 행렬곱 행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 5, 3)가 곱해진다는 것을 알고 혼란에 빠져 버렸다. 이를 해결하기 위해 chat gpt에게 물어본 결과다.","headline":"Matrix Multiply","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Matrix_Multiply/"},"url":"http://localhost:4000/posts/Matrix_Multiply/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -627,6 +627,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -687,6 +698,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          업데이트
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1700734716"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2023/11/23
+</time>
+
+        </span>
+      
 
       
 
@@ -725,7 +759,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="984 단어"
+  title="1058 단어"
 >
   <em>5 분</em>읽는 시간</span>
 
@@ -738,7 +772,7 @@
   <div class="content">
     <h2 id="다차원에서의-행렬곱"><span class="me-2">다차원에서의 행렬곱</span><a href="#다차원에서의-행렬곱" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 3, 5)가 곱해진다는 것을 알고 혼란에 빠져 버렸다.</li>
+  <li>행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 5, 3)가 곱해진다는 것을 알고 혼란에 빠져 버렸다.</li>
   <li>이를 해결하기 위해 chat gpt에게 물어본 결과다.</li>
 </ul>
 
@@ -812,7 +846,12 @@
 
 <ul>
   <li>아직도 100퍼센트 이해가 안된것같다…</li>
+  <li>해당 내용을 코드로 바꿔서 돌려보니 작동하지 않는다.
+ chat gpt 3.5로 돌려서 지 멋대로 내용을 만들어 낸듯하다…</li>
 </ul>
+
+<h2 id="제대로-알아내면-올릴-곳"><span class="me-2">제대로 알아내면 올릴 곳…</span><a href="#제대로-알아내면-올릴-곳" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>해당 내용에 대해 더 찾아보고 수정해야겠다</p>
 
   </div>
 
@@ -969,7 +1008,7 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Day7/">Day7</a>
+          <a href="/posts/Matrix_Multiply/">Matrix Multiply</a>
         </li>
       
         
@@ -1036,6 +1075,172 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1080,51 +1285,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1143,48 +1303,6 @@
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1216,8 +1334,6 @@
     
     
     
-    
-      
     
   
     
@@ -1257,8 +1373,6 @@
     
     
     
-      
-    
   
     
     
@@ -1294,70 +1408,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1375,10 +1425,10 @@
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/dl/">dl</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dl/">dl</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/ai-math/">ai math</a>
@@ -1388,6 +1438,9 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/data/">data</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/visualization/">visualization</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/matmul/">matmul</a>
@@ -1400,9 +1453,6 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/score/">score</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/t/">T</a>
       
     </div>
   </section>
@@ -1453,6 +1503,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -1734,7 +1796,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/Day7/" class="post-preview card h-100">
+          <a href="/posts/Day8/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1746,14 +1808,14 @@
 
 <time
   
-  data-ts="1699959600"
+  data-ts="1700046000"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/14
+  2023/11/15
 </time>
 
-              <h4 class="pt-0 my-2">Day7</h4>
+              <h4 class="pt-0 my-2">Day8</h4>
               <div class="text-muted">
                 <p>
                   
@@ -1762,22 +1824,35 @@
 
 
 
-                  Pytorch AutoGrad &amp;amp; Optimizer
+                  PyTorch 모델 불러오기
 
-  nn.Module
-  nn.Parameter
-  forward
-  backward
+  save
+  checkpoint
+  transfer learning
 
 
-PyTorch Dataset &amp;amp; DataLoader
+Monitoring tools
 
-  transforms / Dataset / DataLoader 모듈
+  Tensorboard
+  Wandb
+
+
+기본 과제 2
+
+멘토링
+
+  논문 읽는 법에 대하여
 
 
 피어세션
 
-  기본 과제 1 (~nn.Module 알쓸신접 전까지) ...
+  기본 과제 1 리뷰
+
+
+두런두런 1회차
+
+  변성윤 마스터님 &amp;lt;어쩌다 데이터 사이언티스트&amp;gt;
+...
                 </p>
               </div>
             </div>
@@ -1808,9 +1883,13 @@ PyTorch Dataset &amp;amp; DataLoader
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="다음 글">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/Day14/"
+      class="btn btn-outline-primary"
+      aria-label="다음 글"
+    >
+      <p>Day14</p>
+    </a>
   
 </nav>
 
@@ -1886,6 +1965,172 @@ PyTorch Dataset &amp;amp; DataLoader
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1930,51 +2175,6 @@ PyTorch Dataset &amp;amp; DataLoader
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1993,48 +2193,6 @@ PyTorch Dataset &amp;amp; DataLoader
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2066,8 +2224,6 @@ PyTorch Dataset &amp;amp; DataLoader
     
     
     
-    
-      
     
   
     
@@ -2107,8 +2263,6 @@ PyTorch Dataset &amp;amp; DataLoader
     
     
     
-      
-    
   
     
     
@@ -2144,70 +2298,6 @@ PyTorch Dataset &amp;amp; DataLoader
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2225,10 +2315,10 @@ PyTorch Dataset &amp;amp; DataLoader
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/dl/">dl</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dl/">dl</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/ai-math/">ai math</a>
@@ -2238,6 +2328,9 @@ PyTorch Dataset &amp;amp; DataLoader
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/data/">data</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/visualization/">visualization</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/matmul/">matmul</a>
@@ -2250,9 +2343,6 @@ PyTorch Dataset &amp;amp; DataLoader
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/score/">score</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/t/">T</a>
       
     </div>
   </section>

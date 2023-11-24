@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Day14",
+    "url": "/posts/Day14/",
+    "categories": "BoostCamp, Week3",
+    "tags": "dl, data, visualization",
+    "date": "2023-11-23 20:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "Data Viz  Text  Color  Facet  More Tips피어세션  심화 과제 1 &amp; 2 리뷰마스터 클래스  최성준 마스터님의 &lt;Learning by Teaching&gt;  가르치는게 머리 속에 가장 오래 남는다",
+    "content": "Data Viz  Text  Color  Facet  More Tips피어세션  심화 과제 1 &amp; 2 리뷰마스터 클래스  최성준 마스터님의 &lt;Learning by Teaching&gt;  가르치는게 머리 속에 가장 오래 남는다"
+  },
+  
+  {
     "title": "Matrix Multiply",
     "url": "/posts/Matrix_Multiply/",
     "categories": "BoostCamp, 궁금증",
@@ -13,8 +30,8 @@
 
 
     
-    "snippet": "다차원에서의 행렬곱  행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 3, 5)가 곱해진다는 것을 알고 혼란에 빠져 버렸다.  이를 해결하기 위해 chat gpt에게 물어본 결과다.BroadcastingNumPy에서는 서로 다른 크기의 배열 간에도 행렬 연산을 수행할 수 있는 기능인 broadcasting이 제공...",
-    "content": "다차원에서의 행렬곱  행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 3, 5)가 곱해진다는 것을 알고 혼란에 빠져 버렸다.  이를 해결하기 위해 chat gpt에게 물어본 결과다.BroadcastingNumPy에서는 서로 다른 크기의 배열 간에도 행렬 연산을 수행할 수 있는 기능인 broadcasting이 제공됩니다. Broadcasting은 배열의 차원을 자동으로 조정하여 연산이 가능하도록 만듭니다. 특히, 크기가 1인 차원을 다른 배열의 차원에 맞춰 확장시키는 것이 주요한 원리입니다.다음은 broadcasting이 가능한 경우와 그 원리에 대한 설명입니다:  차원 수가 다른 경우:          broadcasting은 차원 수가 다르더라도 가능합니다. 누락된 차원은 크기가 1로 간주됩니다.        한 배열의 차원 크기가 다른 배열의 해당 차원 크기에 1이 있는 경우:          차원 크기가 1인 차원은 다른 배열의 해당 차원 크기에 맞춰 확장됩니다.      예를 들어, x 배열이 shape이 (2, 1, 2, 1)이고 y 배열이 shape이 (1, 4, 1, 1)인 경우, broadcasting이 가능합니다. 이 경우, x의 두 번째 차원과 y의 두 번째 차원이 크기 1에서 서로 맞춰져 확장됩니다. 따라서 x @ y에서 두 배열 간의 행렬 곱셈이 가능합니다.이런 방식으로 broadcasting이 작동하면서 두 배열 간의 연산이 가능하게 됩니다. NumPy는 이러한 broadcasting을 통해 편리하게 다양한 형태의 배열 간 연산을 수행할 수 있도록 지원합니다.예시두 5차원 배열 A와 B, 그리고 5차원 배열 C에 대한 행렬 곱셈을 예시로 들어보겠습니다. 각 배열의 차원과 크기를 명시하겠습니다.\\[D_{ijkln} = \\sum_{m} A_{ijmkl} \\cdot B_{mklno} \\cdot C_{opqnr}\\]여기서:  ( A )의 shape: (2, 3, 4, 5, 6)  ( B )의 shape: (3, 4, 2, 6, 1)  ( C )의 shape: (4, 2, 3, 1, 5)이제 곱셈을 수행하는 과정을 자세히 설명하겠습니다.과정  D의 첫 번째 차원 (i에 대한 차원):          ( A )의 첫 번째 차원과 ( B )의 첫 번째 차원 중 크기가 더 큰 값으로 결정합니다. 따라서 ( D )의 첫 번째 차원은 3입니다.        D의 두 번째 차원 (j에 대한 차원):          ( B )의 두 번째 차원이 그대로 사용됩니다. 따라서 ( D )의 두 번째 차원은 4입니다.        D의 세 번째 차원 (k에 대한 차원):          ( A )의 세 번째 차원과 ( C )의 첫 번째 차원 중 크기가 더 큰 값으로 결정합니다. 따라서 ( D )의 세 번째 차원은 4입니다.        D의 네 번째 차원 (l에 대한 차원):          ( A )의 네 번째 차원이 그대로 사용됩니다. 따라서 ( D )의 네 번째 차원은 5입니다.        D의 다섯 번째 차원 (n에 대한 차원):          ( C )의 다섯 번째 차원이 그대로 사용됩니다. 따라서 ( D )의 다섯 번째 차원은 5입니다.      결론따라서, ( D )의 shape은 (3, 4, 4, 5, 5)가 됩니다. 이제 ( D )의 각 원소를 구하는데 필요한 곱셈을 수행하여 최종 결과를 얻을 수 있습니다. 이 과정은 각 차원에 대해 대응하는 크기를 고려하여 수행됩니다.  아직도 100퍼센트 이해가 안된것같다…"
+    "snippet": "다차원에서의 행렬곱  행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 5, 3)가 곱해진다는 것을 알고 혼란에 빠져 버렸다.  이를 해결하기 위해 chat gpt에게 물어본 결과다.BroadcastingNumPy에서는 서로 다른 크기의 배열 간에도 행렬 연산을 수행할 수 있는 기능인 broadcasting이 제공...",
+    "content": "다차원에서의 행렬곱  행렬 곱에 대해서 고민하며 시도해보다가 (2, 1, 2, 3, 5)와 (1, 4, 1, 5, 3)가 곱해진다는 것을 알고 혼란에 빠져 버렸다.  이를 해결하기 위해 chat gpt에게 물어본 결과다.BroadcastingNumPy에서는 서로 다른 크기의 배열 간에도 행렬 연산을 수행할 수 있는 기능인 broadcasting이 제공됩니다. Broadcasting은 배열의 차원을 자동으로 조정하여 연산이 가능하도록 만듭니다. 특히, 크기가 1인 차원을 다른 배열의 차원에 맞춰 확장시키는 것이 주요한 원리입니다.다음은 broadcasting이 가능한 경우와 그 원리에 대한 설명입니다:  차원 수가 다른 경우:          broadcasting은 차원 수가 다르더라도 가능합니다. 누락된 차원은 크기가 1로 간주됩니다.        한 배열의 차원 크기가 다른 배열의 해당 차원 크기에 1이 있는 경우:          차원 크기가 1인 차원은 다른 배열의 해당 차원 크기에 맞춰 확장됩니다.      예를 들어, x 배열이 shape이 (2, 1, 2, 1)이고 y 배열이 shape이 (1, 4, 1, 1)인 경우, broadcasting이 가능합니다. 이 경우, x의 두 번째 차원과 y의 두 번째 차원이 크기 1에서 서로 맞춰져 확장됩니다. 따라서 x @ y에서 두 배열 간의 행렬 곱셈이 가능합니다.이런 방식으로 broadcasting이 작동하면서 두 배열 간의 연산이 가능하게 됩니다. NumPy는 이러한 broadcasting을 통해 편리하게 다양한 형태의 배열 간 연산을 수행할 수 있도록 지원합니다.예시두 5차원 배열 A와 B, 그리고 5차원 배열 C에 대한 행렬 곱셈을 예시로 들어보겠습니다. 각 배열의 차원과 크기를 명시하겠습니다.\\[D_{ijkln} = \\sum_{m} A_{ijmkl} \\cdot B_{mklno} \\cdot C_{opqnr}\\]여기서:  ( A )의 shape: (2, 3, 4, 5, 6)  ( B )의 shape: (3, 4, 2, 6, 1)  ( C )의 shape: (4, 2, 3, 1, 5)이제 곱셈을 수행하는 과정을 자세히 설명하겠습니다.과정  D의 첫 번째 차원 (i에 대한 차원):          ( A )의 첫 번째 차원과 ( B )의 첫 번째 차원 중 크기가 더 큰 값으로 결정합니다. 따라서 ( D )의 첫 번째 차원은 3입니다.        D의 두 번째 차원 (j에 대한 차원):          ( B )의 두 번째 차원이 그대로 사용됩니다. 따라서 ( D )의 두 번째 차원은 4입니다.        D의 세 번째 차원 (k에 대한 차원):          ( A )의 세 번째 차원과 ( C )의 첫 번째 차원 중 크기가 더 큰 값으로 결정합니다. 따라서 ( D )의 세 번째 차원은 4입니다.        D의 네 번째 차원 (l에 대한 차원):          ( A )의 네 번째 차원이 그대로 사용됩니다. 따라서 ( D )의 네 번째 차원은 5입니다.        D의 다섯 번째 차원 (n에 대한 차원):          ( C )의 다섯 번째 차원이 그대로 사용됩니다. 따라서 ( D )의 다섯 번째 차원은 5입니다.      결론따라서, ( D )의 shape은 (3, 4, 4, 5, 5)가 됩니다. 이제 ( D )의 각 원소를 구하는데 필요한 곱셈을 수행하여 최종 결과를 얻을 수 있습니다. 이 과정은 각 차원에 대해 대응하는 크기를 고려하여 수행됩니다.  아직도 100퍼센트 이해가 안된것같다…  해당 내용을 코드로 바꿔서 돌려보니 작동하지 않는다. chat gpt 3.5로 돌려서 지 멋대로 내용을 만들어 낸듯하다…제대로 알아내면 올릴 곳…해당 내용에 대해 더 찾아보고 수정해야겠다"
   },
   
   {
@@ -133,7 +150,7 @@
 
     
     "snippet": "Multi GPU  Single Node Single GPU  Single Node Multi GPU  Multi Node Multi GPU  Model Parallel  Data Parallel          Data Parallel      DistributedData Parallel      Hyperparameter Tuning  Hyperp...",
-    "content": "Multi GPU  Single Node Single GPU  Single Node Multi GPU  Multi Node Multi GPU  Model Parallel  Data Parallel          Data Parallel      DistributedData Parallel      Hyperparameter Tuning  Hyperparameter Tuning(마지막에 쥐어짤 때)          Grid Layout      Random Layout      Bayesian Layout(최근)        Ray          Multi Node Multi GPU 지원      PyTorch Troubleshooting  OOM(Out of Memory)          Batch Size ↓ → GPU clean → Run      torch.cuda.empty_cache()      del      tensor to list      inference → torch.no_grad()                  backward pass에서의 메모리에서 자유로움                    기본 과제 2 마무리피어세션  기본 과제 2 리뷰마스터클래스  최성철 마스터님의   ChatGPT 많이 활용하기"
+    "content": "Multi GPU  Single Node Single GPU  Single Node Multi GPU  Multi Node Multi GPU  Model Parallel  Data Parallel          Data Parallel      DistributedData Parallel      Hyperparameter Tuning  Hyperparameter Tuning(마지막에 쥐어짤 때)          Grid Layout      Random Layout      Bayesian Layout(최근)        Ray          Multi Node Multi GPU 지원      PyTorch Troubleshooting  OOM(Out of Memory)          Batch Size ↓ → GPU clean → Run      torch.cuda.empty_cache()      del      tensor to list      inference → torch.no_grad()                  backward pass에서의 메모리에서 자유로움                    기본 과제 2 마무리피어세션  기본 과제 2 리뷰마스터클래스  최성철 마스터님의 &lt;ChatGPT시대&gt;  ChatGPT 많이 활용하기"
   },
   
   {
@@ -149,8 +166,8 @@
 
 
     
-    "snippet": "PyTorch 모델 불러오기  save  checkpoint  transfer learningMonitoring tools  Tensorboard  Wandb기본 과제 2멘토링  논문 읽는 법에 대하여피어세션  기본 과제 1 리뷰두런두런 1회차  변성윤 마스터님   나는 나 자신을 얼마나 알고 있는가?",
-    "content": "PyTorch 모델 불러오기  save  checkpoint  transfer learningMonitoring tools  Tensorboard  Wandb기본 과제 2멘토링  논문 읽는 법에 대하여피어세션  기본 과제 1 리뷰두런두런 1회차  변성윤 마스터님   나는 나 자신을 얼마나 알고 있는가?"
+    "snippet": "PyTorch 모델 불러오기  save  checkpoint  transfer learningMonitoring tools  Tensorboard  Wandb기본 과제 2멘토링  논문 읽는 법에 대하여피어세션  기본 과제 1 리뷰두런두런 1회차  변성윤 마스터님 &lt;어쩌다 데이터 사이언티스트&gt;  나는 나 자신을 얼마나 알고 있는가?",
+    "content": "PyTorch 모델 불러오기  save  checkpoint  transfer learningMonitoring tools  Tensorboard  Wandb기본 과제 2멘토링  논문 읽는 법에 대하여피어세션  기본 과제 1 리뷰두런두런 1회차  변성윤 마스터님 &lt;어쩌다 데이터 사이언티스트&gt;  나는 나 자신을 얼마나 알고 있는가?"
   },
   
   {
@@ -218,7 +235,7 @@
 
     
     "snippet": "경사하강법  미분 / gradient vector  gradient descent / stochastic gradient descent(minibatch)    딥러닝    softmax(classification)  activation function  multi-layer perceptron  backprogpagation(chian rule)확률...",
-    "content": "경사하강법  미분 / gradient vector  gradient descent / stochastic gradient descent(minibatch)    딥러닝    softmax(classification)  activation function  multi-layer perceptron  backprogpagation(chian rule)확률론  discrete(이산형) / continuous(연속형)  조건부확률  몬테카를로 샘플링(확률 분포를 모를 때)통계학  MLE / Log-likelihood          쿨백-라이블러 발산(KL Divergence)        베이즈 정리  precision / recallCNN  convolution 연산 / convolution 연산의 역전파RNN  시퀀스 데이터  vanishing gradient -&gt; GRU / LSTM피어세션  1 주차 학습내용 리뷰  과제 1 &amp; 2 &amp; 3 리뷰마스터클래스  임성빈 마스터님 &lt;AI &amp; Math FAQ&gt;  AI를 배우는 사람에게 황금같은 조언"
+    "content": "경사하강법  미분 / gradient vector  gradient descent / stochastic gradient descent(minibatch)    딥러닝    softmax(classification)  activation function  multi-layer perceptron  backprogpagation(chian rule)확률론  discrete(이산형) / continuous(연속형)  조건부확률  몬테카를로 샘플링(확률 분포를 모를 때)통계학  MLE / Log-likelihood          쿨백-라이블러 발산(KL Divergence)        베이즈 정리  precision / recallCNN  convolution 연산 / convolution 연산의 역전파RNN  시퀀스 데이터  vanishing gradient -&gt; GRU / LSTM피어세션  1 주차 학습내용 리뷰  과제 1 &amp; 2 &amp; 3 리뷰마스터클래스  임성빈 마스터님의 &lt;AI &amp; Math FAQ&gt;  AI를 배우는 사람에게 황금같은 조언"
   },
   
   {
