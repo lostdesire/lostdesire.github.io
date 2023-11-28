@@ -1,6 +1,57 @@
 [
   
   {
+    "title": "Day17",
+    "url": "/posts/Day17/",
+    "categories": "BoostCamp, Week4",
+    "tags": "dl, git, recsys",
+    "date": "2023-11-28 20:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "생활코딩 egoing님 git 특강  복구          프로젝트 폴더 전체 복사      커밋 id 복사 해두기      위 두개 대신 “branch”        깃 작업 로그 보기          git reflog        merge          원시 코드 base와 3자 대면                  둘 다 수정 안한 코드 → ...",
+    "content": "생활코딩 egoing님 git 특강  복구          프로젝트 폴더 전체 복사      커밋 id 복사 해두기      위 두개 대신 “branch”        깃 작업 로그 보기          git reflog        merge          원시 코드 base와 3자 대면                  둘 다 수정 안한 코드 → 그대로          하나만 수정한 코드 → 수정한거          둘 다 수정한 코드 → 사람이 해결(현재 사항 / 수신 사항 / 모두 수락 / 무시 등)                    피어세션  CNN 리뷰Collaborative Filtering      NBCF                  IBCF                    UBCF                  KNN CF                  KNN Similarity Measure                  MSD(Mean Squared Difference)          Cosine          Pearson          Jaccard 등등                          Rating Prediction                  UBCF                  Absolute Rating                          Average              Weighted Average                                Relative Rating                          Using Deviation                                                  IBCF                  Weighted Average          Using Deviation                          Latent Factor Model          저차원의 행렬로 분해하여 같은 벡터공간으로 만든 후 유사도를 평가            MBCF          모델 학습 / 서빙 빠름      Sparsity / Scalability 개선      Overfitting 방지      Limited Coverage 극복              SVD(Singular Value Decomposition)                  유저 잠재 요인 행렬          잠재 요인 대각 행렬          아이템 잠재 요인 행렬                      Full SVD\\[R = U\\sum\\limits V^T\\]                                Truncated SVD\\[R \\approx \\hat{U} \\sum {_k\\widehat{V^{T}}}= \\hat{R}\\]                    행렬의 Knowledge가 불완전할 때 정의 X          결측치를 모두 채워 Dense Matrix를 만들어서 SVD를 수행하면                          데이터 양 증가, computation 비용 증가                                정확하지 않은 결측치 Imputation은 데이터를 왜곡하고 예층 성능을 저하시킴                          entry가 매우 적을때 SVD 사용하면 과적합                                                  MF(Matrix Factorization)                  User-Item 행렬을 저차원의 User, Item의 latent factor matrix의 곱으로 분해                      관측된 선호도만 모델링에 활용\\[\\begin{aligned}    &amp;R \\approx P \\times Q^{T}= \\hat{R} \\\\    &amp;P \\rightarrow \\left| U \\right| \\times k \\\\    &amp;Q \\rightarrow \\left| I \\right| \\times k  \\end{aligned}\\]                                      ALS(Alternative Least Square)                  User, Item matrix 번갈아가며 업데이트          하나를 고정시키고 다른하나로 least-square          SGD보다 robust하고 병렬처리로 빠른 학습가능                          BPR(Bayesian Personalized Ranking)          item i보다 j를 좋아한다면 더 높은 ranking      관측되지 않은 데이터에 대해                  유저가 아이템에 대해 관심이 없는 것인지          유저가 실제로 관심이 있지만 아직 모르는 것인지 고려                    가정                  관측된 아이템은 관측되지 않은 아이템보다 선호          관측된 아이템끼리는 선호도 추론 불가          관측되지 않은 아이템끼리는 선호도 추론 불가                  \\[\\begin{aligned}    &amp;p(\\theta|_{u}) \\propto p(&gt;_{u}|\\theta)p(\\theta) \\\\    p(\\theta) =\\ 파라미터에\\ 대한&amp;\\ 사전\\ 정보\\ (prior) \\\\    p(&gt;_{u}|\\theta) =\\ 주어진\\ 파라&amp;미터에\\ 대한\\ 유저의\\ 선호\\ 정보의\\ 확률\\ (likelihood) \\\\    p(\\theta|&gt;_{u}) =\\ 주어진\\ 유저&amp;의\\ 선호\\ 정보에\\ 대한\\ 파라미터의\\ 확률\\ (posterior)  \\end{aligned}\\]  "
+  },
+  
+  {
+    "title": "Day16",
+    "url": "/posts/Day16/",
+    "categories": "BoostCamp, Week4",
+    "tags": "dl, data, visualization, recsys",
+    "date": "2023-11-27 20:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "Data Viz  SeabornRecSys Basic  추천 시스템 개요          Explicit Feedback / Implicit Feedback      Ranking / Prediction        Offline Test          고전적인 통계학 지표      Ranking                  Precision, R...",
+    "content": "Data Viz  SeabornRecSys Basic  추천 시스템 개요          Explicit Feedback / Implicit Feedback      Ranking / Prediction        Offline Test          고전적인 통계학 지표      Ranking                  Precision, Recall, MAP, NDCG, Hit Rate                    Prediction                  RMSE, MAE                      Online Test          A/B Test        연관분석  TF-IDF를 활용한 CB(Content-based Recommendation)피어세션  DL Basic의 MLP 리뷰마스터클래스  안수빈 마스터님의 &lt;The Journey of a Data Analyst&gt;"
+  },
+  
+  {
+    "title": "Day15",
+    "url": "/posts/Day15/",
+    "categories": "BoostCamp, Week3",
+    "tags": "dl, data, visualization",
+    "date": "2023-11-24 20:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "부족한 부분 복습스페셜 피어세션피어세션  주간 회고주간 학습 회고  이번 주는 생긴 의문점들이 많았다.  해결된 것도 있고 안 된 것도 있어서 주말에 좀 더 고민해 봐야겠다.",
+    "content": "부족한 부분 복습스페셜 피어세션피어세션  주간 회고주간 학습 회고  이번 주는 생긴 의문점들이 많았다.  해결된 것도 있고 안 된 것도 있어서 주말에 좀 더 고민해 봐야겠다."
+  },
+  
+  {
     "title": "Day14",
     "url": "/posts/Day14/",
     "categories": "BoostCamp, Week3",
