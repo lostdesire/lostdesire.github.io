@@ -41,24 +41,24 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Day16" />
+<meta property="og:title" content="Day21" />
 <meta property="og:locale" content="ko_KR" />
-<meta name="description" content="Data Viz Seaborn" />
-<meta property="og:description" content="Data Viz Seaborn" />
-<link rel="canonical" href="http://localhost:4000/posts/Day16/" />
-<meta property="og:url" content="http://localhost:4000/posts/Day16/" />
+<meta name="description" content="DL RecSys GNN Relation, Interaction에 적합 Non-Euclidean Space의 표현, 학습 가능 (sns, 분자) NGCF 유저와 아이템 임베딩 상호작용 모델링 임베딩 레이어 임베딩 전파 레이어 유저-아이템 선호도 예측 레이어 L = 3~4일 때 가장 좋은 성능 MF보다 빠르게 수렴하고 recall이 높음 LightGCN 이웃노드의 임베딩을 가중합 concat 하지 않고 가중합으로 대체하여 연산량 감소 training loss와 추천 성능 모두 NGCF보다 뛰어남 GRU4Rec 고객이 지금 좋아하는 것 찾기 세션을 GRU 레이어에 입력하여 다음에 올 확률이 높은 아이템 추천 길이가 짧은 세션과 긴 세션을 묶어 병렬적으로 구성하여 mini-batch 학습 아이템을 negative sampling하여 subset만으로 loss 계산 상호작용하지 않은 아이템은 몰랐거나 관심이 없는 것" />
+<meta property="og:description" content="DL RecSys GNN Relation, Interaction에 적합 Non-Euclidean Space의 표현, 학습 가능 (sns, 분자) NGCF 유저와 아이템 임베딩 상호작용 모델링 임베딩 레이어 임베딩 전파 레이어 유저-아이템 선호도 예측 레이어 L = 3~4일 때 가장 좋은 성능 MF보다 빠르게 수렴하고 recall이 높음 LightGCN 이웃노드의 임베딩을 가중합 concat 하지 않고 가중합으로 대체하여 연산량 감소 training loss와 추천 성능 모두 NGCF보다 뛰어남 GRU4Rec 고객이 지금 좋아하는 것 찾기 세션을 GRU 레이어에 입력하여 다음에 올 확률이 높은 아이템 추천 길이가 짧은 세션과 긴 세션을 묶어 병렬적으로 구성하여 mini-batch 학습 아이템을 negative sampling하여 subset만으로 loss 계산 상호작용하지 않은 아이템은 몰랐거나 관심이 없는 것" />
+<link rel="canonical" href="http://localhost:4000/posts/Day21/" />
+<meta property="og:url" content="http://localhost:4000/posts/Day21/" />
 <meta property="og:site_name" content="이로디의 개발냥발" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-11-27T20:00:00+09:00" />
+<meta property="article:published_time" content="2023-12-04T20:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Day16" />
+<meta property="twitter:title" content="Day21" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-27T20:00:00+09:00","datePublished":"2023-11-27T20:00:00+09:00","description":"Data Viz Seaborn","headline":"Day16","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day16/"},"url":"http://localhost:4000/posts/Day16/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-04T20:00:00+09:00","datePublished":"2023-12-04T20:00:00+09:00","description":"DL RecSys GNN Relation, Interaction에 적합 Non-Euclidean Space의 표현, 학습 가능 (sns, 분자) NGCF 유저와 아이템 임베딩 상호작용 모델링 임베딩 레이어 임베딩 전파 레이어 유저-아이템 선호도 예측 레이어 L = 3~4일 때 가장 좋은 성능 MF보다 빠르게 수렴하고 recall이 높음 LightGCN 이웃노드의 임베딩을 가중합 concat 하지 않고 가중합으로 대체하여 연산량 감소 training loss와 추천 성능 모두 NGCF보다 뛰어남 GRU4Rec 고객이 지금 좋아하는 것 찾기 세션을 GRU 레이어에 입력하여 다음에 올 확률이 높은 아이템 추천 길이가 짧은 세션과 긴 세션을 묶어 병렬적으로 구성하여 mini-batch 학습 아이템을 negative sampling하여 subset만으로 loss 계산 상호작용하지 않은 아이템은 몰랐거나 관심이 없는 것","headline":"Day21","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day21/"},"url":"http://localhost:4000/posts/Day21/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Day16 | 이로디의 개발냥발
+  <title>Day21 | 이로디의 개발냥발
   </title>
 
   <!--
@@ -482,7 +482,7 @@
         
           
             
-              <span>Day16</span>
+              <span>Day21</span>
             
 
           
@@ -616,6 +616,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -647,7 +658,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Day16</h1>
+    <h1 data-toc-skip>Day21</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -663,13 +674,13 @@
 
 <time
   
-  data-ts="1701082800"
+  data-ts="1701687600"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2023/11/27
+  2023/12/04
 </time>
 
       </span>
@@ -714,9 +725,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="86 단어"
+  title="555 단어"
 >
-  <em>1 분</em>읽는 시간</span>
+  <em>3 분</em>읽는 시간</span>
 
       </div>
       <!-- .d-flex -->
@@ -725,51 +736,130 @@
   </header>
 
   <div class="content">
-    <h2 id="data-viz"><span class="me-2">Data Viz</span><a href="#data-viz" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="dl-recsys"><span class="me-2">DL RecSys</span><a href="#dl-recsys" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>Seaborn</li>
-</ul>
-
-<h2 id="recsys-basic"><span class="me-2">RecSys Basic</span><a href="#recsys-basic" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>추천 시스템 개요
+  <li>GNN
     <ul>
-      <li>Explicit Feedback / Implicit Feedback</li>
-      <li>Ranking / Prediction</li>
+      <li>Relation, Interaction에 적합</li>
+      <li>Non-Euclidean Space의 표현, 학습 가능 (sns, 분자)</li>
     </ul>
   </li>
-  <li>Offline Test
+  <li>NGCF
     <ul>
-      <li>고전적인 통계학 지표</li>
-      <li>Ranking
+      <li>유저와 아이템 임베딩</li>
+      <li>상호작용 모델링
         <ul>
-          <li>Precision, Recall, MAP, NDCG, Hit Rate</li>
+          <li>
+            <ol>
+              <li>임베딩 레이어</li>
+            </ol>
+          </li>
+          <li>
+            <ol>
+              <li><strong>임베딩 전파 레이어</strong></li>
+            </ol>
+          </li>
+          <li>
+            <ol>
+              <li>유저-아이템 선호도 예측 레이어</li>
+            </ol>
+          </li>
         </ul>
       </li>
-      <li>Prediction
+      <li>L = 3~4일 때 가장 좋은 성능</li>
+      <li>MF보다 빠르게 수렴하고 recall이 높음</li>
+    </ul>
+  </li>
+  <li>LightGCN
+    <ul>
+      <li>이웃노드의 임베딩을 가중합</li>
+      <li>concat 하지 않고 가중합으로 대체하여 연산량 감소</li>
+      <li>training loss와 추천 성능 모두 NGCF보다 뛰어남</li>
+    </ul>
+  </li>
+  <li>GRU4Rec
+    <ul>
+      <li>고객이 지금 좋아하는 것 찾기</li>
+      <li>세션을 GRU 레이어에 입력하여 다음에 올 확률이 높은 아이템 추천</li>
+      <li>길이가 짧은 세션과 긴 세션을 묶어 병렬적으로 구성하여 mini-batch 학습</li>
+      <li>아이템을 negative sampling하여 subset만으로 loss 계산</li>
+      <li>상호작용하지 않은 아이템은 몰랐거나 관심이 없는 것</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="context-aware-recommendation"><span class="me-2">Context-aware Recommendation</span><a href="#context-aware-recommendation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>MF 기반 CF는 상호작용 정보가 부족할 때(cold start)에 대한 대처가 어려움</li>
+  <li>상호작용 정보 뿐만 아니라 맥락 정보도 함께 반영</li>
+  <li>CTR 예측 등에 사용</li>
+  <li>sparse feature에 매우 좋은 성능</li>
+</ul>
+
+<h2 id="fm"><span class="me-2">FM</span><a href="#fm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>Factorization Machine</li>
+  <li>
+\[\hat{y}(x) = w_{0} + \sum_{i=1}^{n}w_{i}x_{i} + \sum_{i=1}^{n}\sum_{j=i+1}^{n} &lt;v_{i}, v_{j}&gt;x_{i}x_{j}\]
+  </li>
+  <li>MF와 다르게 범용적인 지도 학습 모델</li>
+  <li>유저, 아이템 id외에 다른 정보도 모델의 feature로 사용 가능</li>
+</ul>
+
+<h2 id="ffm"><span class="me-2">FFM</span><a href="#ffm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>Field-aware FM</li>
+  <li>
+\[\hat{y}(x) = w_{0} + \sum_{i=1}^{n}w_{i}x_{i} + \sum_{i=1}^{n}\sum_{j=i+1}^{n} &lt;v_{i, f_j}, v_{j, f_i}&gt;x_{i}x_{j}\]
+  </li>
+  <li>하나의 변수에 대해 필드 개수(f)와 factorization 차원(k)의 곱(fk)만큼의 파라미터 학습 (FM은 k 파라미터)</li>
+</ul>
+
+<h2 id="gbm"><span class="me-2">GBM</span><a href="#gbm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>Gradient Boosting Machine</li>
+  <li>하이퍼파라미터에 비교적 민감하지 않은 robust한 모델</li>
+  <li>이전 단계 weak learner까지의 잔차(residual)을 계산하여 다음 weak learner를 학습함</li>
+  <li>회귀문제
+    <ul>
+      <li>residual</li>
+    </ul>
+  </li>
+  <li>분류문제
+    <ul>
+      <li>log(odds)</li>
+    </ul>
+  </li>
+  <li>장점
+    <ul>
+      <li>random forest보다 나은 성능</li>
+    </ul>
+  </li>
+  <li>단점
+    <ul>
+      <li>느린 학습 속도</li>
+      <li>과적합 문제</li>
+    </ul>
+  </li>
+  <li>GBM의 단점을 해결하기 위한 모델 / 라이브러리
+    <ul>
+      <li>XGBoost
         <ul>
-          <li>RMSE, MAE</li>
+          <li>병렬처리 / 근사 알고리즘 사용으로 학습 속도 개선</li>
+        </ul>
+      </li>
+      <li>LightGBM
+        <ul>
+          <li>병렬처리 없이도 빠르게 학습</li>
+        </ul>
+      </li>
+      <li>CatBoost
+        <ul>
+          <li>범주형 변수에 효과적</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>Online Test
-    <ul>
-      <li>A/B Test</li>
-    </ul>
-  </li>
-  <li>연관분석</li>
-  <li>TF-IDF를 활용한 CB(Content-based Recommendation)</li>
-</ul>
-
-<h2 id="피어세션"><span class="me-2">피어세션</span><a href="#피어세션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>DL Basic의 MLP 리뷰</li>
-</ul>
-
-<h2 id="마스터클래스"><span class="me-2">마스터클래스</span><a href="#마스터클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>안수빈 마스터님의 &lt;The Journey of a Data Analyst&gt;</li>
 </ul>
 
   </div>
@@ -781,7 +871,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/boostcamp/">BoostCamp</a>,
-          <a href="/categories/week4/">Week4</a>
+          <a href="/categories/week5/">Week5</a>
       </div>
     
 
@@ -801,14 +891,24 @@
           >data</a>
         
           <a
-            href="/tags/visualization/"
-            class="post-tag no-text-decoration"
-          >visualization</a>
-        
-          <a
             href="/tags/recsys/"
             class="post-tag no-text-decoration"
           >recsys</a>
+        
+          <a
+            href="/tags/fm/"
+            class="post-tag no-text-decoration"
+          >fm</a>
+        
+          <a
+            href="/tags/ffm/"
+            class="post-tag no-text-decoration"
+          >ffm</a>
+        
+          <a
+            href="/tags/gbm/"
+            class="post-tag no-text-decoration"
+          >gbm</a>
         
       </div>
     
@@ -845,7 +945,7 @@
       
 
       <a
-        href="https://twitter.com/intent/tweet?text=Day16%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay16%2F"
+        href="https://twitter.com/intent/tweet?text=Day21%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay21%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -860,7 +960,7 @@
       
 
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Day16%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay16%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Day21%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay21%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -875,7 +975,7 @@
       
 
       <a
-        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay16%2F&text=Day16%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay21%2F&text=Day21%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1829,67 +1929,67 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -2121,6 +2221,60 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
+          <a href="/posts/Day16/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1701082800"
+  data-df="YYYY/MM/DD"
+  
+>
+  2023/11/27
+</time>
+
+              <h4 class="pt-0 my-2">Day16</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Data Viz
+
+  Seaborn
+
+
+RecSys Basic
+
+  추천 시스템 개요
+    
+      Explicit Feedback / Implicit Feedback
+      Ranking / Prediction
+    
+  
+  Offline Test
+    
+      고전적인 통계학 지표
+      Ranking
+        
+    ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/Day19/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -2227,60 +2381,6 @@ Data Viz
           </a>
         </article>
       
-        <article class="col">
-          <a href="/posts/Day14/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1700737200"
-  data-df="YYYY/MM/DD"
-  
->
-  2023/11/23
-</time>
-
-              <h4 class="pt-0 my-2">Day14</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Data Viz
-
-  Text
-  Color
-  Facet
-  More Tips
-
-
-피어세션
-
-  심화 과제 1 &amp;amp; 2 리뷰
-
-
-마스터 클래스
-
-  최성준 마스터님의 &amp;lt;Learning by Teaching&amp;gt;
-  가르치는게 머리 속에 가장 오래 남는다
-
-
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -2296,22 +2396,18 @@ Data Viz
 
   
     <a
-      href="/posts/Day15/"
+      href="/posts/Day20/"
       class="btn btn-outline-primary"
       aria-label="이전 글"
     >
-      <p>Day15</p>
+      <p>Day20</p>
     </a>
   
 
   
-    <a
-      href="/posts/Day17/"
-      class="btn btn-outline-primary"
-      aria-label="다음 글"
-    >
-      <p>Day17</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="다음 글">
+      <p>-</p>
+    </div>
   
 </nav>
 

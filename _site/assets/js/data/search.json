@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Day21",
+    "url": "/posts/Day21/",
+    "categories": "BoostCamp, Week5",
+    "tags": "dl, data, recsys, fm, ffm, gbm",
+    "date": "2023-12-04 20:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "DL RecSys  GNN          Relation, Interaction에 적합      Non-Euclidean Space의 표현, 학습 가능 (sns, 분자)        NGCF          유저와 아이템 임베딩      상호작용 모델링                                            임베딩 레이어    ...",
+    "content": "DL RecSys  GNN          Relation, Interaction에 적합      Non-Euclidean Space의 표현, 학습 가능 (sns, 분자)        NGCF          유저와 아이템 임베딩      상호작용 모델링                                            임베딩 레이어                                                          임베딩 전파 레이어                                                          유저-아이템 선호도 예측 레이어                                          L = 3~4일 때 가장 좋은 성능      MF보다 빠르게 수렴하고 recall이 높음        LightGCN          이웃노드의 임베딩을 가중합      concat 하지 않고 가중합으로 대체하여 연산량 감소      training loss와 추천 성능 모두 NGCF보다 뛰어남        GRU4Rec          고객이 지금 좋아하는 것 찾기      세션을 GRU 레이어에 입력하여 다음에 올 확률이 높은 아이템 추천      길이가 짧은 세션과 긴 세션을 묶어 병렬적으로 구성하여 mini-batch 학습      아이템을 negative sampling하여 subset만으로 loss 계산      상호작용하지 않은 아이템은 몰랐거나 관심이 없는 것      Context-aware Recommendation  MF 기반 CF는 상호작용 정보가 부족할 때(cold start)에 대한 대처가 어려움  상호작용 정보 뿐만 아니라 맥락 정보도 함께 반영  CTR 예측 등에 사용  sparse feature에 매우 좋은 성능FM  Factorization Machine  \\[\\hat{y}(x) = w_{0} + \\sum_{i=1}^{n}w_{i}x_{i} + \\sum_{i=1}^{n}\\sum_{j=i+1}^{n} &lt;v_{i}, v_{j}&gt;x_{i}x_{j}\\]    MF와 다르게 범용적인 지도 학습 모델  유저, 아이템 id외에 다른 정보도 모델의 feature로 사용 가능FFM  Field-aware FM  \\[\\hat{y}(x) = w_{0} + \\sum_{i=1}^{n}w_{i}x_{i} + \\sum_{i=1}^{n}\\sum_{j=i+1}^{n} &lt;v_{i, f_j}, v_{j, f_i}&gt;x_{i}x_{j}\\]    하나의 변수에 대해 필드 개수(f)와 factorization 차원(k)의 곱(fk)만큼의 파라미터 학습 (FM은 k 파라미터)GBM  Gradient Boosting Machine  하이퍼파라미터에 비교적 민감하지 않은 robust한 모델  이전 단계 weak learner까지의 잔차(residual)을 계산하여 다음 weak learner를 학습함  회귀문제          residual        분류문제          log(odds)        장점          random forest보다 나은 성능        단점          느린 학습 속도      과적합 문제        GBM의 단점을 해결하기 위한 모델 / 라이브러리          XGBoost                  병렬처리 / 근사 알고리즘 사용으로 학습 속도 개선                    LightGBM                  병렬처리 없이도 빠르게 학습                    CatBoost                  범주형 변수에 효과적                    "
+  },
+  
+  {
     "title": "Day20",
     "url": "/posts/Day20/",
     "categories": "BoostCamp, Week4",
