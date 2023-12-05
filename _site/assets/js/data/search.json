@@ -1,6 +1,40 @@
 [
   
   {
+    "title": "Macbook Setting",
+    "url": "/posts/Macbook_Setting/",
+    "categories": "Mac, Setting",
+    "tags": "mac",
+    "date": "2023-12-05 20:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "언젠가 맥북을 다시 설정하는 날이 있을 때 한번에 해결하기 위한 포스트Karabiner  마우스를 사용할 시 인터넷 환경에서 뒤로가기 앞으로가기를 활성화 시키기          Karabiner를 설치 후 여러 권한들 허용      Karabiner-Elements → Complex Modifications → Add rule      하단의 Impo...",
+    "content": "언젠가 맥북을 다시 설정하는 날이 있을 때 한번에 해결하기 위한 포스트Karabiner  마우스를 사용할 시 인터넷 환경에서 뒤로가기 앞으로가기를 활성화 시키기          Karabiner를 설치 후 여러 권한들 허용      Karabiner-Elements → Complex Modifications → Add rule      하단의 Import → Change mouse buttons (rev 2) Import      Change button4,5 to back,forward (rev 1) Enable      Devices → Mouse의 Modifiy events 활성화      Homebrew  터미널에서 homebrew 설치하기    /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"        버전 확인    brew --version        오류 발생시      $ brew --version  zsh: command not found: brew  # zshrc에 homebrew path 추가  $ echo 'export PATH=/opt/homebrew/bin:$PATH' &gt;&gt; ~/.zshrc  # zshrc 반영  $ source ~/.zshrc      Iterm2brew install --cask iterm2  Appearance → Theme - Minimal  Profiles → Session → Status bar enabled (세부설정으로 여러가지 설정가능)  Profiles → Colors → Color Presets로 다운 받은 iterm2 color 적용  iCloud 접근          /Users/UserName/Library/Mobile\\ Documents/com~apple~CloudDocs      Oh-my-zshsh -c \"$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\"  p10k    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k        테마 적용          vi ~/.zshrc → ZSH_THEME=”ZSH_THEME=”powerlevel10k/powerlevel10k”      재실행      Meslo Nerd Font 설치 후 재실행      아이콘이 다 보이면 y      세부 테마 설정      3 → 1 → 1 → 3 → 1 → 1 → 1 → 1 → 2 → 1 → n → 1 → y        추천 플러그인batbrew install batfdbrew install fdauto suggestionsgit clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestionssyntax highlightinggit clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting$vi ~/.zshrcsource ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zshautojumpbrew install autojumpghbrew install ghVSCode  homebrew를 통해 vscode 설치하기    brew install --cask visual-studio-code        –cask는 GUI 응용프로그램 설치할 때 (~/Applications에 설치됨)  깔면 좋은 익스텐션          Korean Language Pack for Visual Studio Code (대부분 기본 설치)      Git Graph      Jupyter / Jupyter PowerToys      Material Icon Theme      Prettier        terminal font family          MesloLGS NF      anaconda3  homebrew를 통해 anaconda 설치하기    brew install --cask anaconda        버전 확인    conda -V        오류 발생시    $ echo 'export PATH=/opt/homebrew/anaconda3/bin:$PATH' &gt;&gt; ~/.zshrc$ source ~/.zshrc      Ruby &amp; Jekyll  github blog 로컬 테스트를 위한 jekyll 설치      brew install rbenv ruby-build  rbenv install -l  rbenv install 3.2.2 (2023-12-06 기준)  $ vi ~/.zshrc  [[ -d ~/.rbenv  ]] &amp;&amp; \\\texport PATH=${HOME}/.rbenv/bin:${PATH} &amp;&amp; \\\teval \"$(rbenv init -)\"  rbenv global 3.2.2  bundle install  gem install jekyll bundler      "
+  },
+  
+  {
+    "title": "Day22",
+    "url": "/posts/Day22/",
+    "categories": "BoostCamp, Week5",
+    "tags": "dl, data, recsys, git",
+    "date": "2023-12-05 20:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "생활코딩 egoing님 2차 특강      1차 특강 복습          git add      git commit                  –amend -m “example”          head가 가리키는 commit message 바뀜 (commit id도 달라짐)                    git checkout      gi...",
+    "content": "생활코딩 egoing님 2차 특강      1차 특강 복습          git add      git commit                  –amend -m “example”          head가 가리키는 commit message 바뀜 (commit id도 달라짐)                    git checkout      git branch      git reset (–hard)                  checkout은 head를 reset은 branch를 변경                    git merge                  rebase, revert, cherry-pick은 3-way merge에 의해 conflict 발생                          git rebase          base를 변경하여 history가 마치 한 줄인 것처럼      이미 공개 저장소에 Push 한 커밋을 Rebase 하지 마라      타임라인의 축소 branch의 commit 순서 합치고 main의 commit 순서 합치고      git rebase main exp                  main의 base를 exp로 간주          main → exp                          main의 원래 base에서 첫 commit까지의 변화를 exp에 반영              main의 이후 commit을 새로 생긴 것과 결합                                exp1 → exp2 → exp2 &amp; main1 &amp; base (main1) → rebase1 &amp; main2 &amp; main1 (main2)                          git cherry-pick          다른 branch의 특정 commit 하나의 변경사항을 가져오는 것      main이 exp1에서 exp2의 변경사항을 가져오는 것      exp2 &amp; main2 &amp; exp1      git cherry-pick –abort                  cherry-pick을 되돌리고 싶으면 –abort를 사용                          git pull          git에 있는 remote repository 변경사항 local에 반영      fetch + merge      내용이 다를시 merge commit 자동 생성            git clone          remote repository 복사      init + remote add REPO_URL + pull      "
+  },
+  
+  {
     "title": "Day21",
     "url": "/posts/Day21/",
     "categories": "BoostCamp, Week5",

@@ -22,19 +22,21 @@ toc_sticky: true
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
 - 버전 확인
 ```
 brew --version
 ```
+
 - 오류 발생시
 ```
-$ brew --version
-zsh: command not found: brew
+	$ brew --version
+	zsh: command not found: brew
 
-# zshrc에 homebrew path 추가
-$ echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshrc
-# zshrc 반영
-$ source ~/.zshrc
+	# zshrc에 homebrew path 추가
+	$ echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshrc
+	# zshrc 반영
+	$ source ~/.zshrc
 ```
 
 ## Iterm2
@@ -123,3 +125,24 @@ $ echo 'export PATH=/opt/homebrew/anaconda3/bin:$PATH' >> ~/.zshrc
 $ source ~/.zshrc
 ```
 
+## Ruby & Jekyll
+- github blog 로컬 테스트를 위한 jekyll 설치
+```
+	brew install rbenv ruby-build
+
+	rbenv install -l
+
+	rbenv install 3.2.2 (2023-12-06 기준)
+
+	$ vi ~/.zshrc
+
+	[[ -d ~/.rbenv  ]] && \
+  	export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  	eval "$(rbenv init -)"
+
+	rbenv global 3.2.2
+
+	bundle install
+
+	gem install jekyll bundler
+```

@@ -41,24 +41,24 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Day1" />
+<meta property="og:title" content="Day22" />
 <meta property="og:locale" content="ko_KR" />
-<meta name="description" content="파이썬 개발환경 설정 vscode / anaconda / terminal 등" />
-<meta property="og:description" content="파이썬 개발환경 설정 vscode / anaconda / terminal 등" />
-<link rel="canonical" href="http://localhost:4000/posts/Day1/" />
-<meta property="og:url" content="http://localhost:4000/posts/Day1/" />
+<meta name="description" content="생활코딩 egoing님 2차 특강 1차 특강 복습 git add git commit –amend -m “example” head가 가리키는 commit message 바뀜 (commit id도 달라짐) git checkout git branch git reset (–hard) checkout은 head를 reset은 branch를 변경 git merge rebase, revert, cherry-pick은 3-way merge에 의해 conflict 발생 git rebase base를 변경하여 history가 마치 한 줄인 것처럼 이미 공개 저장소에 Push 한 커밋을 Rebase 하지 마라 타임라인의 축소 branch의 commit 순서 합치고 main의 commit 순서 합치고 git rebase main exp main의 base를 exp로 간주 main → exp main의 원래 base에서 첫 commit까지의 변화를 exp에 반영 main의 이후 commit을 새로 생긴 것과 결합 exp1 → exp2 → exp2 &amp; main1 &amp; base (main1) → rebase1 &amp; main2 &amp; main1 (main2) git cherry-pick 다른 branch의 특정 commit 하나의 변경사항을 가져오는 것 main이 exp1에서 exp2의 변경사항을 가져오는 것 exp2 &amp; main2 &amp; exp1 git cherry-pick –abort cherry-pick을 되돌리고 싶으면 –abort를 사용 git pull git에 있는 remote repository 변경사항 local에 반영 fetch + merge 내용이 다를시 merge commit 자동 생성 git clone remote repository 복사 init + remote add REPO_URL + pull" />
+<meta property="og:description" content="생활코딩 egoing님 2차 특강 1차 특강 복습 git add git commit –amend -m “example” head가 가리키는 commit message 바뀜 (commit id도 달라짐) git checkout git branch git reset (–hard) checkout은 head를 reset은 branch를 변경 git merge rebase, revert, cherry-pick은 3-way merge에 의해 conflict 발생 git rebase base를 변경하여 history가 마치 한 줄인 것처럼 이미 공개 저장소에 Push 한 커밋을 Rebase 하지 마라 타임라인의 축소 branch의 commit 순서 합치고 main의 commit 순서 합치고 git rebase main exp main의 base를 exp로 간주 main → exp main의 원래 base에서 첫 commit까지의 변화를 exp에 반영 main의 이후 commit을 새로 생긴 것과 결합 exp1 → exp2 → exp2 &amp; main1 &amp; base (main1) → rebase1 &amp; main2 &amp; main1 (main2) git cherry-pick 다른 branch의 특정 commit 하나의 변경사항을 가져오는 것 main이 exp1에서 exp2의 변경사항을 가져오는 것 exp2 &amp; main2 &amp; exp1 git cherry-pick –abort cherry-pick을 되돌리고 싶으면 –abort를 사용 git pull git에 있는 remote repository 변경사항 local에 반영 fetch + merge 내용이 다를시 merge commit 자동 생성 git clone remote repository 복사 init + remote add REPO_URL + pull" />
+<link rel="canonical" href="http://localhost:4000/posts/Day22/" />
+<meta property="og:url" content="http://localhost:4000/posts/Day22/" />
 <meta property="og:site_name" content="이로디의 개발냥발" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-11-06T20:00:00+09:00" />
+<meta property="article:published_time" content="2023-12-05T20:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Day1" />
+<meta property="twitter:title" content="Day22" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-24T18:26:18+09:00","datePublished":"2023-11-06T20:00:00+09:00","description":"파이썬 개발환경 설정 vscode / anaconda / terminal 등","headline":"Day1","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day1/"},"url":"http://localhost:4000/posts/Day1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-05T20:22:57+09:00","datePublished":"2023-12-05T20:00:00+09:00","description":"생활코딩 egoing님 2차 특강 1차 특강 복습 git add git commit –amend -m “example” head가 가리키는 commit message 바뀜 (commit id도 달라짐) git checkout git branch git reset (–hard) checkout은 head를 reset은 branch를 변경 git merge rebase, revert, cherry-pick은 3-way merge에 의해 conflict 발생 git rebase base를 변경하여 history가 마치 한 줄인 것처럼 이미 공개 저장소에 Push 한 커밋을 Rebase 하지 마라 타임라인의 축소 branch의 commit 순서 합치고 main의 commit 순서 합치고 git rebase main exp main의 base를 exp로 간주 main → exp main의 원래 base에서 첫 commit까지의 변화를 exp에 반영 main의 이후 commit을 새로 생긴 것과 결합 exp1 → exp2 → exp2 &amp; main1 &amp; base (main1) → rebase1 &amp; main2 &amp; main1 (main2) git cherry-pick 다른 branch의 특정 commit 하나의 변경사항을 가져오는 것 main이 exp1에서 exp2의 변경사항을 가져오는 것 exp2 &amp; main2 &amp; exp1 git cherry-pick –abort cherry-pick을 되돌리고 싶으면 –abort를 사용 git pull git에 있는 remote repository 변경사항 local에 반영 fetch + merge 내용이 다를시 merge commit 자동 생성 git clone remote repository 복사 init + remote add REPO_URL + pull","headline":"Day22","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day22/"},"url":"http://localhost:4000/posts/Day22/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Day1 | 이로디의 개발냥발
+  <title>Day22 | 이로디의 개발냥발
   </title>
 
   <!--
@@ -482,7 +482,7 @@
         
           
             
-              <span>Day1</span>
+              <span>Day22</span>
             
 
           
@@ -583,50 +583,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -634,6 +590,71 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -658,7 +679,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Day1</h1>
+    <h1 data-toc-skip>Day22</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -674,13 +695,13 @@
 
 <time
   
-  data-ts="1699268400"
+  data-ts="1701774000"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2023/11/06
+  2023/12/05
 </time>
 
       </span>
@@ -699,13 +720,13 @@
 
 <time
   
-  data-ts="1700817978"
+  data-ts="1701775377"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2023/11/24
+  2023/12/05
 </time>
 
         </span>
@@ -748,7 +769,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="79 단어"
+  title="299 단어"
 >
   <em>1 분</em>읽는 시간</span>
 
@@ -759,30 +780,80 @@
   </header>
 
   <div class="content">
-    <h2 id="파이썬-개발환경-설정"><span class="me-2">파이썬 개발환경 설정</span><a href="#파이썬-개발환경-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="생활코딩-egoing님-2차-특강"><span class="me-2">생활코딩 egoing님 2차 특강</span><a href="#생활코딩-egoing님-2차-특강" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>vscode / anaconda / terminal 등</li>
-</ul>
-
-<h2 id="파이썬-기초-문법"><span class="me-2">파이썬 기초 문법</span><a href="#파이썬-기초-문법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>variable / function / conditional &amp; loop / string</li>
-</ul>
-
-<h2 id="피어세션"><span class="me-2">피어세션</span><a href="#피어세션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>자기소개</li>
-  <li>Datamanim 사이트 이용 -&gt; 전처리 관련 학습 계획</li>
-</ul>
-
-<h2 id="데이터-전처리"><span class="me-2">데이터 전처리</span><a href="#데이터-전처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>Getting &amp; Knowing</li>
-</ul>
-
-<h2 id="깃블로그-생성"><span class="me-2">깃블로그 생성</span><a href="#깃블로그-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>theme / google search console / google ad sense</li>
+  <li>
+    <h3 id="1차-특강-복습"><span class="me-2">1차 특강 복습</span><a href="#1차-특강-복습" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>git add</li>
+      <li>git commit
+        <ul>
+          <li>–amend -m “example”</li>
+          <li>head가 가리키는 commit message 바뀜 (commit id도 달라짐)</li>
+        </ul>
+      </li>
+      <li>git checkout</li>
+      <li>git branch</li>
+      <li>git reset (–hard)
+        <ul>
+          <li><strong><em>checkout</em></strong>은 <strong><em>head</em></strong>를 <strong><em>reset</em></strong>은 <strong><em>branch</em></strong>를 변경</li>
+        </ul>
+      </li>
+      <li>git merge
+        <ul>
+          <li>rebase, revert, cherry-pick은 3-way merge에 의해 conflict 발생</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="git-rebase"><span class="me-2">git rebase</span><a href="#git-rebase" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>base를 변경하여 history가 마치 한 줄인 것처럼</li>
+      <li><strong>이미 공개 저장소에 Push 한 커밋을 Rebase 하지 마라</strong></li>
+      <li>타임라인의 축소 branch의 commit 순서 합치고 main의 commit 순서 합치고</li>
+      <li>git rebase main exp
+        <ul>
+          <li>main의 base를 exp로 간주</li>
+          <li>main → exp
+            <ol>
+              <li>main의 원래 base에서 첫 commit까지의 변화를 exp에 반영</li>
+              <li>main의 이후 commit을 새로 생긴 것과 결합</li>
+            </ol>
+          </li>
+          <li>exp1 → exp2 → exp2 &amp; main1 &amp; <u>base</u> (main1) → rebase1 &amp; main2 &amp; <u>main1</u> (main2)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="git-cherry-pick"><span class="me-2">git cherry-pick</span><a href="#git-cherry-pick" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>다른 branch의 특정 commit 하나의 변경사항을 가져오는 것</li>
+      <li>main이 exp1에서 exp2의 변경사항을 가져오는 것</li>
+      <li>exp2 &amp; main2 &amp; <u>exp1</u></li>
+      <li>git cherry-pick –abort
+        <ul>
+          <li>cherry-pick을 되돌리고 싶으면 –abort를 사용</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="git-pull"><span class="me-2">git pull</span><a href="#git-pull" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>git에 있는 remote repository 변경사항 local에 반영</li>
+      <li>fetch + merge</li>
+      <li>내용이 다를시 merge commit 자동 생성</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="git-clone"><span class="me-2">git clone</span><a href="#git-clone" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>remote repository 복사</li>
+      <li>init + remote add REPO_URL + pull</li>
+    </ul>
+  </li>
 </ul>
 
   </div>
@@ -794,7 +865,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/boostcamp/">BoostCamp</a>,
-          <a href="/categories/week1/">Week1</a>
+          <a href="/categories/week5/">Week5</a>
       </div>
     
 
@@ -804,9 +875,24 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/python/"
+            href="/tags/dl/"
             class="post-tag no-text-decoration"
-          >python</a>
+          >dl</a>
+        
+          <a
+            href="/tags/data/"
+            class="post-tag no-text-decoration"
+          >data</a>
+        
+          <a
+            href="/tags/recsys/"
+            class="post-tag no-text-decoration"
+          >recsys</a>
+        
+          <a
+            href="/tags/git/"
+            class="post-tag no-text-decoration"
+          >git</a>
         
       </div>
     
@@ -843,7 +929,7 @@
       
 
       <a
-        href="https://twitter.com/intent/tweet?text=Day1%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay1%2F"
+        href="https://twitter.com/intent/tweet?text=Day22%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay22%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -858,7 +944,7 @@
       
 
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Day1%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay1%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Day22%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay22%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -873,7 +959,7 @@
       
 
       <a
-        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay1%2F&text=Day1%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay22%2F&text=Day22%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1849,295 +1935,295 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2153,7 +2239,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/Day2/" class="post-preview card h-100">
+          <a href="/posts/Day21/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2165,14 +2251,14 @@
 
 <time
   
-  data-ts="1699354800"
+  data-ts="1701687600"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/07
+  2023/12/04
 </time>
 
-              <h4 class="pt-0 my-2">Day2</h4>
+              <h4 class="pt-0 my-2">Day21</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2181,25 +2267,22 @@
 
 
 
-                  파이썬 데이터 구조
+                  DL RecSys
 
-파이썬 코드
-
-  python style code
+  GNN
     
-      ex) split &amp;amp; join, list comprehension…
-    
-  
-
-
-파이썬 객체지향 프로그래밍
-
-  Class
-    
-      Inheritance / Polymorphism / Visibility
+      Relation, Interaction에 적합
+      Non-Euclidean Space의 표현, 학습 가능 (sns, 분자)
     
   
-  decorator...
+  NGCF
+    
+      유저와 아이템 임베딩
+      상호작용 모델링
+        
+          
+            
+          ...
                 </p>
               </div>
             </div>
@@ -2207,7 +2290,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/Day3/" class="post-preview card h-100">
+          <a href="/posts/Day16/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2219,14 +2302,14 @@
 
 <time
   
-  data-ts="1699441200"
+  data-ts="1701082800"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/08
+  2023/11/27
 </time>
 
-              <h4 class="pt-0 my-2">Day3</h4>
+              <h4 class="pt-0 my-2">Day16</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2235,25 +2318,25 @@
 
 
 
-                  Python Data Handling
+                  Data Viz
 
-  csv / html / xml / json
-
-
-넘파이
-
-판다스
-
-  series / dataframe
-  lambda / map / apply
-  pandas built-in functions
-  groupby / crosstab / merge / concat
-  persistence
+  Seaborn
 
 
-벡터
+RecSys Basic
 
-  basic...
+  추천 시스템 개요
+    
+      Explicit Feedback / Implicit Feedback
+      Ranking / Prediction
+    
+  
+  Offline Test
+    
+      고전적인 통계학 지표
+      Ranking
+        
+    ...
                 </p>
               </div>
             </div>
@@ -2261,7 +2344,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/Day4/" class="post-preview card h-100">
+          <a href="/posts/Day17/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2273,14 +2356,14 @@
 
 <time
   
-  data-ts="1699527600"
+  data-ts="1701169200"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/09
+  2023/11/28
 </time>
 
-              <h4 class="pt-0 my-2">Day4</h4>
+              <h4 class="pt-0 my-2">Day17</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2289,16 +2372,25 @@
 
 
 
-                  경사하강법
+                  생활코딩 egoing님 git 특강
 
-  미분 / gradient vector
-  gradient descent / stochastic gradient descent(minibatch)
-    딥러닝
+  복구
+    
+      프로젝트 폴더 전체 복사
+      커밋 id 복사 해두기
+      위 두개 대신 “branch”
+    
   
-  softmax(classification)
-  activation function
-  multi-layer perceptron
-  backprogpagation(chia...
+  깃 작업 로그 보기
+    
+      git reflog
+    
+  
+  merge
+    
+      원시 코드 base와 3자 대면
+        
+       ...
                 </p>
               </div>
             </div>
@@ -2319,18 +2411,22 @@
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="이전 글">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/Day21/"
+      class="btn btn-outline-primary"
+      aria-label="이전 글"
+    >
+      <p>Day21</p>
+    </a>
   
 
   
     <a
-      href="/posts/Day2/"
+      href="/posts/Macbook_Setting/"
       class="btn btn-outline-primary"
       aria-label="다음 글"
     >
-      <p>Day2</p>
+      <p>Macbook Setting</p>
     </a>
   
 </nav>

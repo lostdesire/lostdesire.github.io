@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>이로디의 개발냥발</title>
   <subtitle>나의 개발일지</subtitle>
-  <updated>2023-12-04T21:38:11+09:00</updated>
+  <updated>2023-12-06T01:23:55+09:00</updated>
   <author>
     <name>lostdesire</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,117 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Macbook Setting</title>
+    <link href="http://localhost:4000/posts/Macbook_Setting/" rel="alternate" type="text/html" title="Macbook Setting" />
+    <published>2023-12-05T20:00:00+09:00</published>
+  
+    <updated>2023-12-05T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Macbook_Setting/</id>
+    <content src="http://localhost:4000/posts/Macbook_Setting/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="Mac" />
+    
+    <category term="Setting" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      언젠가 맥북을 다시 설정하는 날이 있을 때 한번에 해결하기 위한 포스트
+
+Karabiner
+
+  마우스를 사용할 시 인터넷 환경에서 뒤로가기 앞으로가기를 활성화 시키기
+    
+      Karabiner를 설치 후 여러 권한들 허용
+      Karabiner-Elements → Complex Modifications → Add rule
+      하단의 Import → Change mouse buttons (rev 2) Import
+      Change button4,5 to back,forward (rev 1) Enable
+      Devices → Mouse의 Modifiy events 활성화
+    
+  
+
+
+Homebrew
+
+  터미널에서 homebrew 설치하기
+    /bin/bash...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Day22</title>
+    <link href="http://localhost:4000/posts/Day22/" rel="alternate" type="text/html" title="Day22" />
+    <published>2023-12-05T20:00:00+09:00</published>
+  
+    <updated>2023-12-05T20:22:57+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day22/</id>
+    <content src="http://localhost:4000/posts/Day22/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week5" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      생활코딩 egoing님 2차 특강
+
+  
+    1차 특강 복습
+    
+      git add
+      git commit
+        
+          –amend -m “example”
+          head가 가리키는 commit message 바뀜 (commit id도 달라짐)
+        
+      
+      git checkout
+      git branch
+      git reset (–hard)
+        
+          checkout은 head를 reset은 branch를 변경
+        
+      
+      git merge
+        
+          rebase, revert, cherry-pick은 3-way merge에 의해 confl...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -195,144 +306,6 @@ Data Viz
 
 내일은 18일차 정리 안된거 정리하기
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day18</title>
-    <link href="http://localhost:4000/posts/Day18/" rel="alternate" type="text/html" title="Day18" />
-    <published>2023-11-29T20:00:00+09:00</published>
-  
-    <updated>2023-12-01T18:52:58+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day18/</id>
-    <content src="http://localhost:4000/posts/Day18/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week4" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      기본 과제 1
-
-  Matrix Factorization
-  Alternative Least Squares
-
-
-피어세션
-
-  RNN, LSTM 리뷰
-
-
-Item2Vec
-
-  CBOW(Continuous Bag of Words)
-    
-      앞 뒤로 각각 n개의 단어 슬라이딩 윈도우 형태로
-    
-  
-  SG(Skip Gram)
-    
-      CBOW의 입력층과 출력층이 바뀐 모델
-      CBOW보다 성능이 좋다고 알려져 있음
-    
-  
-  SGNS(Skip Gram with Negative Sampling)
-    
-      Item2Vec에서 사용하는 학습 방법
-      SG의 입력과 레이블을 모두 입력값으로
-      레이블을 이진 분류(주변 단어는 1, 그 외는 0)
- ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day17</title>
-    <link href="http://localhost:4000/posts/Day17/" rel="alternate" type="text/html" title="Day17" />
-    <published>2023-11-28T20:00:00+09:00</published>
-  
-    <updated>2023-11-28T21:12:59+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day17/</id>
-    <content src="http://localhost:4000/posts/Day17/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week4" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      생활코딩 egoing님 git 특강
-
-  복구
-    
-      프로젝트 폴더 전체 복사
-      커밋 id 복사 해두기
-      위 두개 대신 “branch”
-    
-  
-  깃 작업 로그 보기
-    
-      git reflog
-    
-  
-  merge
-    
-      원시 코드 base와 3자 대면
-        
-          둘 다 수정 안한 코드 → 그대로
-          하나만 수정한 코드 → 수정한거
-          둘 다 수정한 코드 → 사람이 해결(현재 사항 / 수신 사항 / 모두 수락 / 무시 등)
-        
-      
-    
-  
-
-
-피어세션
-
-  CNN 리뷰
-
-
-Collaborative Filtering
-
-  
-    NBCF
-    
-     ...
     </summary>
   
 
