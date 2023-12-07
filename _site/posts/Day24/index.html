@@ -14,6 +14,30 @@
 
 
 
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+    displayMath: [ ['$$', '$$'], ['\\[', '\\]'] ],
+    processEscapes: true,
+  }
+});
+MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="ko-KR" >
@@ -43,24 +67,24 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Day14" />
+<meta property="og:title" content="Day24" />
 <meta property="og:locale" content="ko_KR" />
-<meta name="description" content="Data Viz Text Color Facet More Tips" />
-<meta property="og:description" content="Data Viz Text Color Facet More Tips" />
-<link rel="canonical" href="http://localhost:4000/posts/Day14/" />
-<meta property="og:url" content="http://localhost:4000/posts/Day14/" />
+<meta name="description" content="MAB(Multi-Armed Bandit) MAB의 정책 모든 슬롯머신을 동일한 횟수로 당김 높은 reward 불가능 일정 횟수 후 제일 높은 확률의 슬롯머신만 당김 동일한 슬롯만 계속 당김 Exploration 더 많은 정보를 얻기 위해 새로운 arm을 선택하는 것 Exploitation 경험 / 관측을 토대로 가장 좋은 arm을 선택하는 것 \[q_{*}(a) \doteq \mathbb{E}[R_{t} | A_{t} = a]\] $A_{t}$ : action $R_{t}$ : reward $q_{*}(a)$ : 액션 a에 따른 reward의 실제 기대값 $q_{*}(a)$에 대한 시간 t에서의 추정치 $Q_{t}(a)$를 최대한 정밀하게 구하는 것이 목표 greedy action 선택 → exploitation 다른 action 선택 → exploration Greedy Algorithm Simple Average Method \[Q_{t}(a) \doteq \frac{sum\ of\ rewards\ when\ a\ taken\ prior\ to\ t}{number\ of\ times\ a\ taken\ prior\ to\ t} = \frac{\sum_{i=1}^{t-1}R_{i}\cdot 1_{A_{i}=a}}{\sum_{i=1}^{t-1}1_{A_{i}=a}}\] 실제 기대값 $q_{*}(a)$의 가장 간단한 추정 방식으로 표본 평균을 사용 평균 리워드가 최대인 action을 선택하는 것 → Greedy 처음 선택되는 action과 reward에 크게 영향을 받음(exploration이 부족) Epsilon-Greedy Algorithm exploration이 부족한 greedy algorithm을 수정 ​일정한 확률에 의해 랜덤으로 슬롯머신을 선택 \[A_{t} \doteq \underset{a}{argmax}\begin{bmatrix}Q_{t}(a) + c\sqrt\frac{\ln t}{N_{t}(a)}\end{bmatrix}\] $Q_{t}(a)$ : action a에 대한 reward의 추정치 (simple average) $N_{t}(a)$ : action a를 선택한 횟수 c : exploration을 조정하는 하이퍼파라미터 ​개별 아이템 ← 개별 action ​추천 방식 ← MAB policy ​클릭 여부 ← reward 유저 추천 ​클러스터링을 통해 비슷한 유저끼리 그룹화 필요 Bandit 개수 = 유저 클러스터 개수 x 후보 아이템 개수 유사 아이템 추천 주어진 아이템과 유사한 후보 아이템 리스트를 생성 필요 Bandit 개수 = 아이템 개수 x 후보 아이템 개수 Thompson Sampling 주어진 k개의 action에 해당하는 확률분포를 구하는 문제 베타 분포 두 개의 양의 변수로 표현 가능한 확률 분포 \[Beta(x|\alpha, \beta) = \frac{1}{B(\alpha, \beta)}x^{\alpha-1}(1-x)^{\beta-1}\] $B(\alpha, \beta)$는 $\alpha, \beta$에 의해 정해지는 베타 함수 배너를 보고 클릭한 횟수 $\alpha$ 배너를 보고 클릭하지 않은 횟수 $\beta$ 배너를 클릭할 확률 ~ $Beta(\alpha+1, \beta+1)$ 초기에는 랜덤 노출 → 베타 분포에서 샘플링하여 노출 LinUCB Contextual Bandit 유저 context 정보에 따라 동일한 action이더라도 다른 reward를 가짐 (개인화 추천) \[A_{t} \doteq \underset{a}{argmax}\begin{bmatrix}x_{t,a}^{T}\theta_{a}^{*} + \alpha\sqrt{x_{t,a}^{T}A_{a}^{-1}X_{t,a}}\end{bmatrix} \qquad where A_{a} = D_{a}^{T}D_{a}+I_{d}\] $x_{t,a}$ : d-차원 컨텍스트 벡터 $\theta_{a}^{*}$ : action a에 대한 d-차원 학습 파라미터 $D_{a}$ : m개의 컨텍스트 벡터로 구성된 $m\times d$ 행렬" />
+<meta property="og:description" content="MAB(Multi-Armed Bandit) MAB의 정책 모든 슬롯머신을 동일한 횟수로 당김 높은 reward 불가능 일정 횟수 후 제일 높은 확률의 슬롯머신만 당김 동일한 슬롯만 계속 당김 Exploration 더 많은 정보를 얻기 위해 새로운 arm을 선택하는 것 Exploitation 경험 / 관측을 토대로 가장 좋은 arm을 선택하는 것 \[q_{*}(a) \doteq \mathbb{E}[R_{t} | A_{t} = a]\] $A_{t}$ : action $R_{t}$ : reward $q_{*}(a)$ : 액션 a에 따른 reward의 실제 기대값 $q_{*}(a)$에 대한 시간 t에서의 추정치 $Q_{t}(a)$를 최대한 정밀하게 구하는 것이 목표 greedy action 선택 → exploitation 다른 action 선택 → exploration Greedy Algorithm Simple Average Method \[Q_{t}(a) \doteq \frac{sum\ of\ rewards\ when\ a\ taken\ prior\ to\ t}{number\ of\ times\ a\ taken\ prior\ to\ t} = \frac{\sum_{i=1}^{t-1}R_{i}\cdot 1_{A_{i}=a}}{\sum_{i=1}^{t-1}1_{A_{i}=a}}\] 실제 기대값 $q_{*}(a)$의 가장 간단한 추정 방식으로 표본 평균을 사용 평균 리워드가 최대인 action을 선택하는 것 → Greedy 처음 선택되는 action과 reward에 크게 영향을 받음(exploration이 부족) Epsilon-Greedy Algorithm exploration이 부족한 greedy algorithm을 수정 ​일정한 확률에 의해 랜덤으로 슬롯머신을 선택 \[A_{t} \doteq \underset{a}{argmax}\begin{bmatrix}Q_{t}(a) + c\sqrt\frac{\ln t}{N_{t}(a)}\end{bmatrix}\] $Q_{t}(a)$ : action a에 대한 reward의 추정치 (simple average) $N_{t}(a)$ : action a를 선택한 횟수 c : exploration을 조정하는 하이퍼파라미터 ​개별 아이템 ← 개별 action ​추천 방식 ← MAB policy ​클릭 여부 ← reward 유저 추천 ​클러스터링을 통해 비슷한 유저끼리 그룹화 필요 Bandit 개수 = 유저 클러스터 개수 x 후보 아이템 개수 유사 아이템 추천 주어진 아이템과 유사한 후보 아이템 리스트를 생성 필요 Bandit 개수 = 아이템 개수 x 후보 아이템 개수 Thompson Sampling 주어진 k개의 action에 해당하는 확률분포를 구하는 문제 베타 분포 두 개의 양의 변수로 표현 가능한 확률 분포 \[Beta(x|\alpha, \beta) = \frac{1}{B(\alpha, \beta)}x^{\alpha-1}(1-x)^{\beta-1}\] $B(\alpha, \beta)$는 $\alpha, \beta$에 의해 정해지는 베타 함수 배너를 보고 클릭한 횟수 $\alpha$ 배너를 보고 클릭하지 않은 횟수 $\beta$ 배너를 클릭할 확률 ~ $Beta(\alpha+1, \beta+1)$ 초기에는 랜덤 노출 → 베타 분포에서 샘플링하여 노출 LinUCB Contextual Bandit 유저 context 정보에 따라 동일한 action이더라도 다른 reward를 가짐 (개인화 추천) \[A_{t} \doteq \underset{a}{argmax}\begin{bmatrix}x_{t,a}^{T}\theta_{a}^{*} + \alpha\sqrt{x_{t,a}^{T}A_{a}^{-1}X_{t,a}}\end{bmatrix} \qquad where A_{a} = D_{a}^{T}D_{a}+I_{d}\] $x_{t,a}$ : d-차원 컨텍스트 벡터 $\theta_{a}^{*}$ : action a에 대한 d-차원 학습 파라미터 $D_{a}$ : m개의 컨텍스트 벡터로 구성된 $m\times d$ 행렬" />
+<link rel="canonical" href="http://localhost:4000/posts/Day24/" />
+<meta property="og:url" content="http://localhost:4000/posts/Day24/" />
 <meta property="og:site_name" content="이로디의 개발냥발" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-11-23T20:00:00+09:00" />
+<meta property="article:published_time" content="2023-12-07T20:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Day14" />
+<meta property="twitter:title" content="Day24" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-24T18:26:18+09:00","datePublished":"2023-11-23T20:00:00+09:00","description":"Data Viz Text Color Facet More Tips","headline":"Day14","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day14/"},"url":"http://localhost:4000/posts/Day14/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-07T20:00:00+09:00","datePublished":"2023-12-07T20:00:00+09:00","description":"MAB(Multi-Armed Bandit) MAB의 정책 모든 슬롯머신을 동일한 횟수로 당김 높은 reward 불가능 일정 횟수 후 제일 높은 확률의 슬롯머신만 당김 동일한 슬롯만 계속 당김 Exploration 더 많은 정보를 얻기 위해 새로운 arm을 선택하는 것 Exploitation 경험 / 관측을 토대로 가장 좋은 arm을 선택하는 것 \\[q_{*}(a) \\doteq \\mathbb{E}[R_{t} | A_{t} = a]\\] $A_{t}$ : action $R_{t}$ : reward $q_{*}(a)$ : 액션 a에 따른 reward의 실제 기대값 $q_{*}(a)$에 대한 시간 t에서의 추정치 $Q_{t}(a)$를 최대한 정밀하게 구하는 것이 목표 greedy action 선택 → exploitation 다른 action 선택 → exploration Greedy Algorithm Simple Average Method \\[Q_{t}(a) \\doteq \\frac{sum\\ of\\ rewards\\ when\\ a\\ taken\\ prior\\ to\\ t}{number\\ of\\ times\\ a\\ taken\\ prior\\ to\\ t} = \\frac{\\sum_{i=1}^{t-1}R_{i}\\cdot 1_{A_{i}=a}}{\\sum_{i=1}^{t-1}1_{A_{i}=a}}\\] 실제 기대값 $q_{*}(a)$의 가장 간단한 추정 방식으로 표본 평균을 사용 평균 리워드가 최대인 action을 선택하는 것 → Greedy 처음 선택되는 action과 reward에 크게 영향을 받음(exploration이 부족) Epsilon-Greedy Algorithm exploration이 부족한 greedy algorithm을 수정 ​일정한 확률에 의해 랜덤으로 슬롯머신을 선택 \\[A_{t} \\doteq \\underset{a}{argmax}\\begin{bmatrix}Q_{t}(a) + c\\sqrt\\frac{\\ln t}{N_{t}(a)}\\end{bmatrix}\\] $Q_{t}(a)$ : action a에 대한 reward의 추정치 (simple average) $N_{t}(a)$ : action a를 선택한 횟수 c : exploration을 조정하는 하이퍼파라미터 ​개별 아이템 ← 개별 action ​추천 방식 ← MAB policy ​클릭 여부 ← reward 유저 추천 ​클러스터링을 통해 비슷한 유저끼리 그룹화 필요 Bandit 개수 = 유저 클러스터 개수 x 후보 아이템 개수 유사 아이템 추천 주어진 아이템과 유사한 후보 아이템 리스트를 생성 필요 Bandit 개수 = 아이템 개수 x 후보 아이템 개수 Thompson Sampling 주어진 k개의 action에 해당하는 확률분포를 구하는 문제 베타 분포 두 개의 양의 변수로 표현 가능한 확률 분포 \\[Beta(x|\\alpha, \\beta) = \\frac{1}{B(\\alpha, \\beta)}x^{\\alpha-1}(1-x)^{\\beta-1}\\] $B(\\alpha, \\beta)$는 $\\alpha, \\beta$에 의해 정해지는 베타 함수 배너를 보고 클릭한 횟수 $\\alpha$ 배너를 보고 클릭하지 않은 횟수 $\\beta$ 배너를 클릭할 확률 ~ $Beta(\\alpha+1, \\beta+1)$ 초기에는 랜덤 노출 → 베타 분포에서 샘플링하여 노출 LinUCB Contextual Bandit 유저 context 정보에 따라 동일한 action이더라도 다른 reward를 가짐 (개인화 추천) \\[A_{t} \\doteq \\underset{a}{argmax}\\begin{bmatrix}x_{t,a}^{T}\\theta_{a}^{*} + \\alpha\\sqrt{x_{t,a}^{T}A_{a}^{-1}X_{t,a}}\\end{bmatrix} \\qquad where A_{a} = D_{a}^{T}D_{a}+I_{d}\\] $x_{t,a}$ : d-차원 컨텍스트 벡터 $\\theta_{a}^{*}$ : action a에 대한 d-차원 학습 파라미터 $D_{a}$ : m개의 컨텍스트 벡터로 구성된 $m\\times d$ 행렬","headline":"Day24","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day24/"},"url":"http://localhost:4000/posts/Day24/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Day14 | 이로디의 개발냥발
+  <title>Day24 | 이로디의 개발냥발
   </title>
 
   <!--
@@ -280,6 +304,30 @@
 
 
   
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+    displayMath: [ ['$$', '$$'], ['\\[', '\\]'] ],
+    processEscapes: true,
+  }
+});
+MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+  
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5183775453892384"
      crossorigin="anonymous"></script>
@@ -486,7 +534,7 @@
         
           
             
-              <span>Day14</span>
+              <span>Day24</span>
             
 
           
@@ -617,6 +665,82 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -640,7 +764,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Day14</h1>
+    <h1 data-toc-skip>Day24</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -656,41 +780,18 @@
 
 <time
   
-  data-ts="1700737200"
+  data-ts="1701946800"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2023/11/23
+  2023/12/07
 </time>
 
       </span>
 
       <!-- lastmod date -->
-      
-        <span>
-          업데이트
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1700817978"
-  data-df="YYYY/MM/DD"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  2023/11/24
-</time>
-
-        </span>
       
 
       
@@ -730,9 +831,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="53 단어"
+  title="776 단어"
 >
-  <em>1 분</em>읽는 시간</span>
+  <em>4 분</em>읽는 시간</span>
 
       </div>
       <!-- .d-flex -->
@@ -741,23 +842,137 @@
   </header>
 
   <div class="content">
-    <h2 id="data-viz"><span class="me-2">Data Viz</span><a href="#data-viz" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="mabmulti-armed-bandit"><span class="me-2">MAB(Multi-Armed Bandit)</span><a href="#mabmulti-armed-bandit" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>Text</li>
-  <li>Color</li>
-  <li>Facet</li>
-  <li>More Tips</li>
+  <li>MAB의 정책
+    <ul>
+      <li>모든 슬롯머신을 동일한 횟수로 당김
+        <ul>
+          <li>높은 reward 불가능</li>
+        </ul>
+      </li>
+      <li>일정 횟수 후 제일 높은 확률의 슬롯머신만 당김
+        <ul>
+          <li>동일한 슬롯만 계속 당김</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Exploration
+    <ul>
+      <li>더 많은 정보를 얻기 위해 새로운 arm을 선택하는 것</li>
+    </ul>
+  </li>
+  <li>Exploitation
+    <ul>
+      <li>경험 / 관측을 토대로 가장 좋은 arm을 선택하는 것</li>
+    </ul>
+  </li>
+  <li>
+\[q_{*}(a) \doteq \mathbb{E}[R_{t} | A_{t} = a]\]
+    <ul>
+      <li>$A_{t}$ : action</li>
+      <li>$R_{t}$ : reward</li>
+      <li>$q_{*}(a)$ : 액션 a에 따른 reward의 실제 기대값</li>
+    </ul>
+  </li>
+  <li>$q_{*}(a)$에 대한 시간 t에서의 추정치 $Q_{t}(a)$를 최대한 정밀하게 구하는 것이 목표</li>
+  <li>greedy action 선택 → exploitation</li>
+  <li>다른 action 선택 → exploration</li>
+  <li>
+    <h3 id="greedy-algorithm"><span class="me-2">Greedy Algorithm</span><a href="#greedy-algorithm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>Simple Average Method</li>
+      <li>
+\[Q_{t}(a) \doteq \frac{sum\ of\ rewards\ when\ a\ taken\ prior\ to\ t}{number\ of\ times\ a\ taken\ prior\ to\ t} = \frac{\sum_{i=1}^{t-1}R_{i}\cdot 1_{A_{i}=a}}{\sum_{i=1}^{t-1}1_{A_{i}=a}}\]
+      </li>
+      <li>실제 기대값 $q_{*}(a)$의 가장 간단한 추정 방식으로 <font color="#ffff00">표본 평균</font>을 사용</li>
+      <li>평균 리워드가 최대인 action을 선택하는 것 → Greedy
+        <ul>
+          <li>처음 선택되는 action과 reward에 크게 영향을 받음(exploration이 부족)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="epsilon-greedy-algorithm"><span class="me-2">Epsilon-Greedy Algorithm</span><a href="#epsilon-greedy-algorithm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>exploration이 부족한 greedy algorithm을 수정</li>
+      <li>​<font color="#ffff00">일정한 확률</font>에 의해 <font color="#ffff00">랜덤</font>으로 슬롯머신을 선택</li>
+      <li>
+\[A_{t} \doteq \underset{a}{argmax}\begin{bmatrix}Q_{t}(a) + c\sqrt\frac{\ln t}{N_{t}(a)}\end{bmatrix}\]
+        <ul>
+          <li>$Q_{t}(a)$ : action a에 대한 reward의 추정치 (simple average)</li>
+          <li>$N_{t}(a)$ : action a를 선택한 횟수</li>
+          <li>c : exploration을 조정하는 하이퍼파라미터</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>​<font color="#ffff00">개별 아이템</font> ← 개별 action</li>
+  <li>​<font color="#ffff00">추천 방식</font> ← MAB policy</li>
+  <li>​<font color="#ffff00">클릭 여부</font> ← reward</li>
+  <li>
+    <h3 id="유저-추천"><span class="me-2">유저 추천</span><a href="#유저-추천" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>​<font color="#ffff00">클러스터링</font>을 통해 비슷한 <font color="#ffff00">유저</font>끼리 <font color="#ffff00">그룹화</font></li>
+      <li>필요 Bandit 개수 = 유저 클러스터 개수 x 후보 아이템 개수</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="유사-아이템-추천"><span class="me-2">유사 아이템 추천</span><a href="#유사-아이템-추천" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>주어진 아이템과 <font color="#ffff00">유사한 후보 아이템 리스트를 생성</font></li>
+      <li>필요 Bandit 개수 = 아이템 개수 x 후보 아이템 개수</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="thompson-sampling"><span class="me-2">Thompson Sampling</span><a href="#thompson-sampling" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>주어진<font color="#ffff00"> k개의 action에 해당하는 확률분포</font>를 구하는 문제</li>
+      <li>베타 분포
+        <ul>
+          <li>두 개의 양의 변수로 표현 가능한 확률 분포</li>
+          <li>
+\[Beta(x|\alpha, \beta) = \frac{1}{B(\alpha, \beta)}x^{\alpha-1}(1-x)^{\beta-1}\]
+          </li>
+          <li>$B(\alpha, \beta)$는 $\alpha, \beta$에 의해 정해지는 베타 함수</li>
+          <li>배너를 보고 클릭한 횟수 $\alpha$</li>
+          <li>배너를 보고 클릭하지 않은 횟수 $\beta$</li>
+          <li>배너를 클릭할 확률 ~ $Beta(\alpha+1, \beta+1)$</li>
+          <li>초기에는 <font color="#ffff00">랜덤 노출</font> → <font color="#ffff00">베타 분포에서 샘플링하여 노출</font></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="linucb"><span class="me-2">LinUCB</span><a href="#linucb" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>Contextual Bandit</li>
+      <li>유저 context 정보에 따라 동일한 action이더라도 다른 reward를 가짐 (개인화 추천)</li>
+      <li>
+\[A_{t} \doteq \underset{a}{argmax}\begin{bmatrix}x_{t,a}^{T}\theta_{a}^{*} + \alpha\sqrt{x_{t,a}^{T}A_{a}^{-1}X_{t,a}}\end{bmatrix} \qquad where A_{a} = D_{a}^{T}D_{a}+I_{d}\]
+        <ul>
+          <li>$x_{t,a}$ : d-차원 컨텍스트 벡터</li>
+          <li>$\theta_{a}^{*}$ : action a에 대한 d-차원 학습 파라미터</li>
+          <li>$D_{a}$ : m개의 컨텍스트 벡터로 구성된 $m\times d$ 행렬</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="피어세션"><span class="me-2">피어세션</span><a href="#피어세션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>심화 과제 1 &amp; 2 리뷰</li>
+  <li>Item2Vec &amp; ANN 리뷰</li>
 </ul>
 
-<h2 id="마스터-클래스"><span class="me-2">마스터 클래스</span><a href="#마스터-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="마스터클래스"><span class="me-2">마스터클래스</span><a href="#마스터클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>최성준 마스터님의 &lt;Learning by Teaching&gt;</li>
-  <li>가르치는게 머리 속에 가장 오래 남는다</li>
+  <li>이준원 마스터님의 &lt;<strong>ML Career 만들기 (Feat. AD-Tech)</strong>&gt;</li>
+  <li>이직 : 필수 조건 / 꼭 만족하지 않아도 되는 조건 고려</li>
+  <li>중요한 것 : 1. 개발 능력, 2. ML/DL 지식 및 이해도, 3) 커뮤니케이션 → <font color="#ffff00">문제해결력</font></li>
+  <li>주니어 때는 하나의 도메인과 직무에서 깊이를 쌓는 것이 좋다.</li>
 </ul>
 
   </div>
@@ -769,7 +984,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/boostcamp/">BoostCamp</a>,
-          <a href="/categories/week3/">Week3</a>
+          <a href="/categories/week5/">Week5</a>
       </div>
     
 
@@ -789,9 +1004,9 @@
           >data</a>
         
           <a
-            href="/tags/visualization/"
+            href="/tags/recsys/"
             class="post-tag no-text-decoration"
-          >visualization</a>
+          >recsys</a>
         
       </div>
     
@@ -828,7 +1043,7 @@
       
 
       <a
-        href="https://twitter.com/intent/tweet?text=Day14%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay14%2F"
+        href="https://twitter.com/intent/tweet?text=Day24%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay24%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -843,7 +1058,7 @@
       
 
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Day14%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay14%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Day24%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay24%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -858,7 +1073,7 @@
       
 
       <a
-        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay14%2F&text=Day14%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay24%2F&text=Day24%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1929,127 +2144,127 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -2257,7 +2472,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/Day15/" class="post-preview card h-100">
+          <a href="/posts/Day21/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2269,14 +2484,14 @@
 
 <time
   
-  data-ts="1700823600"
+  data-ts="1701687600"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/24
+  2023/12/04
 </time>
 
-              <h4 class="pt-0 my-2">Day15</h4>
+              <h4 class="pt-0 my-2">Day21</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2285,75 +2500,22 @@
 
 
 
-                  부족한 부분 복습
+                  DL RecSys
 
-스페셜 피어세션
-
-피어세션
-
-  주간 회고
-
-
-주간 학습 회고
-
-  이번 주는 생긴 의문점들이 많았다.
-  해결된 것도 있고 안 된 것도 있어서 주말에 좀 더 고민해 봐야겠다.
-
-
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/Day16/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1701082800"
-  data-df="YYYY/MM/DD"
-  
->
-  2023/11/27
-</time>
-
-              <h4 class="pt-0 my-2">Day16</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Data Viz
-
-  Seaborn
-
-
-RecSys Basic
-
-  추천 시스템 개요
+  GNN
     
-      Explicit Feedback / Implicit Feedback
-      Ranking / Prediction
+      Relation, Interaction에 적합
+      Non-Euclidean Space의 표현, 학습 가능 (sns, 분자)
     
   
-  Offline Test
+  NGCF
     
-      고전적인 통계학 지표
-      Ranking
+      유저와 아이템 임베딩
+      상호작용 모델링
         
-    ...
+          
+            
+          ...
                 </p>
               </div>
             </div>
@@ -2361,7 +2523,7 @@ RecSys Basic
         </article>
       
         <article class="col">
-          <a href="/posts/Day19/" class="post-preview card h-100">
+          <a href="/posts/Day22/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2373,14 +2535,14 @@ RecSys Basic
 
 <time
   
-  data-ts="1701342000"
+  data-ts="1701774000"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/30
+  2023/12/05
 </time>
 
-              <h4 class="pt-0 my-2">Day19</h4>
+              <h4 class="pt-0 my-2">Day22</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2389,25 +2551,69 @@ RecSys Basic
 
 
 
-                  기본 과제 2 마무리
+                  생활코딩 egoing님 2차 특강
 
-  It works…? Why?
-
-
-Data Viz
-
-  Polar Coordinate
-  Pie Chart
-  시각화 라이브러리
-  Interactive Visualization
+  
+    1차 특강 복습
     
-      Plotly
-      Plotly Express
-      Bokeh
-      Altair
+      git add
+      git commit
+        
+          –amend -m “example”
+          head가 가리키는 commit message 바뀜 (commit id도 달라짐)
+        
+      
+      git chec...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/Day23/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1701860400"
+  data-df="YYYY/MM/DD"
+  
+>
+  2023/12/06
+</time>
+
+              <h4 class="pt-0 my-2">Day23</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Wide &amp;amp; Deep
+
+  
+    Memorization
+    
+      같이 자주 등장하는 item / feature를 과거로부터 학습
+      LR
     
   
-  Custom Ma...
+  
+    Generalization
+    
+      드물거나 전혀 발생한 적 없는 item / feature를 기존 관계로부터 발견
+      FM, DNN
+    ...
                 </p>
               </div>
             </div>
@@ -2429,22 +2635,18 @@ Data Viz
 
   
     <a
-      href="/posts/Matrix_Multiply/"
+      href="/posts/Day23/"
       class="btn btn-outline-primary"
       aria-label="이전 글"
     >
-      <p>Matrix Multiply</p>
+      <p>Day23</p>
     </a>
   
 
   
-    <a
-      href="/posts/Day15/"
-      class="btn btn-outline-primary"
-      aria-label="다음 글"
-    >
-      <p>Day15</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="다음 글">
+      <p>-</p>
+    </div>
   
 </nav>
 

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>이로디의 개발냥발</title>
   <subtitle>나의 개발일지</subtitle>
-  <updated>2023-12-07T11:41:49+09:00</updated>
+  <updated>2023-12-07T21:26:10+09:00</updated>
   <author>
     <name>lostdesire</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,71 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Day24</title>
+    <link href="http://localhost:4000/posts/Day24/" rel="alternate" type="text/html" title="Day24" />
+    <published>2023-12-07T20:00:00+09:00</published>
+  
+    <updated>2023-12-07T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day24/</id>
+    <content src="http://localhost:4000/posts/Day24/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week5" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      MAB(Multi-Armed Bandit)
+
+  MAB의 정책
+    
+      모든 슬롯머신을 동일한 횟수로 당김
+        
+          높은 reward 불가능
+        
+      
+      일정 횟수 후 제일 높은 확률의 슬롯머신만 당김
+        
+          동일한 슬롯만 계속 당김
+        
+      
+    
+  
+  Exploration
+    
+      더 많은 정보를 얻기 위해 새로운 arm을 선택하는 것
+    
+  
+  Exploitation
+    
+      경험 / 관측을 토대로 가장 좋은 arm을 선택하는 것
+    
+  
+  
+\[q_{*}(a) \doteq \mathbb{E}[R_{t} | A_{t} = a]\]
+    
+     ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -254,59 +319,6 @@ Homebrew
           
         
   ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day20</title>
-    <link href="http://localhost:4000/posts/Day20/" rel="alternate" type="text/html" title="Day20" />
-    <published>2023-12-01T20:00:00+09:00</published>
-  
-    <updated>2023-12-01T20:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day20/</id>
-    <content src="http://localhost:4000/posts/Day20/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week4" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Item2Vec, ANN, DL RecSys 정리
-
-  Day18
-
-
-스페셜 피어세션
-
-피어세션
-
-  Generative Model 리뷰
-
-
-주간회고
-
-  이번주부터 처음으로 RecSys에 관련된 내용을 학습했다
-  내용들이 전부 처음보는 거라 주말에 진짜 복습을 좀 해서 정리를 해야겠다
-
-
     </summary>
   
 
