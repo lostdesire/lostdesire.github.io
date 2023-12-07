@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Day23",
+    "url": "/posts/Day23/",
+    "categories": "BoostCamp, Week5",
+    "tags": "dl, data, recsys, wide&deep, deepfm, din, bst",
+    "date": "2023-12-06 20:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "Wide &amp; Deep      Memorization          같이 자주 등장하는 item / feature를 과거로부터 학습      LR            Generalization          드물거나 전혀 발생한 적 없는 item / feature를 기존 관계로부터 발견      FM, DNN        두 특성을 가지는 ...",
+    "content": "Wide &amp; Deep      Memorization          같이 자주 등장하는 item / feature를 과거로부터 학습      LR            Generalization          드물거나 전혀 발생한 적 없는 item / feature를 기존 관계로부터 발견      FM, DNN        두 특성을 가지는 구조를 결합      The Wide Component          Generalized Linear Model                  \\[y = w^Tx + b\\]                              Cross-Product Transformation                  \\[\\phi_{k}(x) = \\prod_{i=1}^{d}x_{i}^{c_{ki}} \\qquad c_{ki} \\in \\{0, 1\\}\\]                                    The Deep Component          Feed-Forward Neural Network                  3 layer (ReLU)          연속형 변수 → 그대로 사용          범주형 변수 → feature embedding 후 사용                      \\[P(Y = 1|x) = \\sigma(W_{wide}^{T}[x, \\phi(x)] + W_{deep}^{T}a^{(lf)} + b)\\]    Wide model은 offline / Deep model은 online에서 좋은 현상을 보이므로 두 모델을 결합하여 모두 좋은 성능DeepFM  Wide &amp; Deep model의 wide component는 feature engineering(Cross-Product Transformation)이 필요하다는 단점이 있음  wide component로 FM을 사용하여 deep component의 dense embedding 입력값을 공유  DeepFM = FM + DNN  \\(\\hat y = sigmoid(y_{FM}+y_{DNN})\\)DIN(Deep Interest Network)  다양한 관심사를 반영하기 위해 나온 모델          Embedding Layer              Local Activation Layer                  후보군이 되는 광고를 기존에 본 광고들의 연관성을 계산하여 가중치로 표현                    Fully-connected Layer      BST(Behavior Sequence Transformer)  CTR 예측과 NLP 번역 데이터 간의 공통점                  대부분 sparse feature            low/high-order feature interaction 모두 존재 (비선형적 관계)        Transformer의 encoder만 사용  vs DIN          local activation layer → transformer layer      user behavior feature → user behavior sequence        vs Transformer                  dropout, leakyReLU        추가                    layer 1~4개만        사용 (best는 1개)                    Custom Positional Encoding                  \\(pos(v_{i}) = t(v_{t}) - t(v_{i})\\)                    "
+  },
+  
+  {
     "title": "Macbook Setting",
     "url": "/posts/Macbook_Setting/",
     "categories": "Mac, Setting",

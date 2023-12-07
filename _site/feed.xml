@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>이로디의 개발냥발</title>
   <subtitle>나의 개발일지</subtitle>
-  <updated>2023-12-06T01:23:55+09:00</updated>
+  <updated>2023-12-07T11:41:49+09:00</updated>
   <author>
     <name>lostdesire</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,76 @@
 
   
   <entry>
+    <title>Day23</title>
+    <link href="http://localhost:4000/posts/Day23/" rel="alternate" type="text/html" title="Day23" />
+    <published>2023-12-06T20:00:00+09:00</published>
+  
+    <updated>2023-12-06T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day23/</id>
+    <content src="http://localhost:4000/posts/Day23/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week5" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Wide &amp;amp; Deep
+
+  
+    Memorization
+    
+      같이 자주 등장하는 item / feature를 과거로부터 학습
+      LR
+    
+  
+  
+    Generalization
+    
+      드물거나 전혀 발생한 적 없는 item / feature를 기존 관계로부터 발견
+      FM, DNN
+    
+  
+  두 특성을 가지는 구조를 결합
+  
+    The Wide Component
+    
+      Generalized Linear Model
+        
+          
+\[y = w^Tx + b\]
+          
+        
+      
+      Cross-Product Transformation
+        
+       ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Macbook Setting</title>
     <link href="http://localhost:4000/posts/Macbook_Setting/" rel="alternate" type="text/html" title="Macbook Setting" />
     <published>2023-12-05T20:00:00+09:00</published>
   
-    <updated>2023-12-05T20:00:00+09:00</updated>
+    <updated>2023-12-06T01:24:18+09:00</updated>
   
     <id>http://localhost:4000/posts/Macbook_Setting/</id>
     <content src="http://localhost:4000/posts/Macbook_Setting/" />
@@ -241,70 +306,6 @@ Homebrew
   이번주부터 처음으로 RecSys에 관련된 내용을 학습했다
   내용들이 전부 처음보는 거라 주말에 진짜 복습을 좀 해서 정리를 해야겠다
 
-
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day19</title>
-    <link href="http://localhost:4000/posts/Day19/" rel="alternate" type="text/html" title="Day19" />
-    <published>2023-11-30T20:00:00+09:00</published>
-  
-    <updated>2023-11-30T20:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day19/</id>
-    <content src="http://localhost:4000/posts/Day19/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week4" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      기본 과제 2 마무리
-
-  It works…? Why?
-
-
-Data Viz
-
-  Polar Coordinate
-  Pie Chart
-  시각화 라이브러리
-  Interactive Visualization
-    
-      Plotly
-      Plotly Express
-      Bokeh
-      Altair
-    
-  
-  Custom Matplotlib Theme
-  Image &amp;amp; Text Visualization Techniques
-
-
-피어세션
-
-  transformer 리뷰
-
-
-내일은 18일차 정리 안된거 정리하기
 
     </summary>
   
