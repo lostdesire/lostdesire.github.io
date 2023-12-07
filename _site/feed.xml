@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>이로디의 개발냥발</title>
   <subtitle>나의 개발일지</subtitle>
-  <updated>2023-12-07T21:26:10+09:00</updated>
+  <updated>2023-12-07T22:54:44+09:00</updated>
   <author>
     <name>lostdesire</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,63 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Mathjax 적용하기</title>
+    <link href="http://localhost:4000/posts/Mathjax-%EC%A0%81%EC%9A%A9/" rel="alternate" type="text/html" title="Mathjax 적용하기" />
+    <published>2023-12-07T20:00:00+09:00</published>
+  
+    <updated>2023-12-07T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Mathjax-%EC%A0%81%EC%9A%A9/</id>
+    <content src="http://localhost:4000/posts/Mathjax-%EC%A0%81%EC%9A%A9/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="Github" />
+    
+    <category term="blog" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      _config.yml 수정
+ markdown: kramdown
+ highlighter: rouge
+ lsi: false
+ excerpt_separator: "\n\n"
+ incremental: false
+
+
+mathjax_support.html 추가
+
+  _includes 폴더에 mathjax_support.html 추가
+    &amp;lt;script type="text/x-mathjax-config"&amp;gt;
+MathJax.Hub.Config({
+  TeX: {
+  	equationNumbers: {
+      	autoNumber: "AMS"
+  	}
+  },
+  tex2jax: {
+  	inlineMath: [ ['$', '$'] ],
+  	displayMath: [ ['$$', '$$'] ],
+  	...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -89,7 +146,7 @@
     <link href="http://localhost:4000/posts/Day23/" rel="alternate" type="text/html" title="Day23" />
     <published>2023-12-06T20:00:00+09:00</published>
   
-    <updated>2023-12-06T20:00:00+09:00</updated>
+    <updated>2023-12-07T21:26:49+09:00</updated>
   
     <id>http://localhost:4000/posts/Day23/</id>
     <content src="http://localhost:4000/posts/Day23/" />
@@ -254,71 +311,6 @@ Homebrew
       git merge
         
           rebase, revert, cherry-pick은 3-way merge에 의해 confl...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day21</title>
-    <link href="http://localhost:4000/posts/Day21/" rel="alternate" type="text/html" title="Day21" />
-    <published>2023-12-04T20:00:00+09:00</published>
-  
-    <updated>2023-12-04T20:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day21/</id>
-    <content src="http://localhost:4000/posts/Day21/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week5" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      DL RecSys
-
-  GNN
-    
-      Relation, Interaction에 적합
-      Non-Euclidean Space의 표현, 학습 가능 (sns, 분자)
-    
-  
-  NGCF
-    
-      유저와 아이템 임베딩
-      상호작용 모델링
-        
-          
-            
-              임베딩 레이어
-            
-          
-          
-            
-              임베딩 전파 레이어
-            
-          
-          
-            
-              유저-아이템 선호도 예측 레이어
-            
-          
-        
-  ...
     </summary>
   
 

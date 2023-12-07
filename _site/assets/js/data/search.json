@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Mathjax 적용하기",
+    "url": "/posts/Mathjax-%EC%A0%81%EC%9A%A9/",
+    "categories": "Github, blog",
+    "tags": "mathjax",
+    "date": "2023-12-07 20:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "_config.yml 수정 markdown: kramdown highlighter: rouge lsi: false excerpt_separator: \"\\n\\n\" incremental: falsemathjax_support.html 추가  _includes 폴더에 mathjax_support.html 추가    &lt;script type=\"text/x...",
+    "content": "_config.yml 수정 markdown: kramdown highlighter: rouge lsi: false excerpt_separator: \"\\n\\n\" incremental: falsemathjax_support.html 추가  _includes 폴더에 mathjax_support.html 추가    &lt;script type=\"text/x-mathjax-config\"&gt;MathJax.Hub.Config({  TeX: {  \tequationNumbers: {      \tautoNumber: \"AMS\"  \t}  },  tex2jax: {  \tinlineMath: [ ['$', '$'] ],  \tdisplayMath: [ ['$$', '$$'] ],  \tprocessEscapes: true,  }});MathJax.Hub.Register.MessageHook(\"Math Processing Error\",function (message) {  alert(\"Math Processing Error: \"+message[1]);});MathJax.Hub.Register.MessageHook(\"TeX Jax - parse error\",function (message) {  alert(\"Math Processing Error: \"+message[1]);});&lt;/script&gt;&lt;script type=\"text/javascript\" asyncsrc=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML\"&gt;&lt;/script&gt;        만약 작동하지 않는다면 다음과 같이 추가    ​&lt;script type=\"text/x-mathjax-config\"&gt;MathJax.Hub.Config({  TeX: {    equationNumbers: {      autoNumber: \"AMS\"    }  },  tex2jax: {  inlineMath: [ ['$', '$'], ['\\\\(', '\\\\)'] ],  displayMath: [ ['$$', '$$'], ['\\\\[', '\\\\]'] ],  processEscapes: true,}});MathJax.Hub.Register.MessageHook(\"Math Processing Error\",function (message) {    alert(\"Math Processing Error: \"+message[1]);  });MathJax.Hub.Register.MessageHook(\"TeX Jax - parse error\",function (message) {    alert(\"Math Processing Error: \"+message[1]);  });&lt;/script&gt;&lt;script type=\"text/javascript\" asyncsrc=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML\"&gt;&lt;/script&gt;      default.html 추가하기  _layouts 폴더에 있는 default.html에 해당 코드 추가{% if page.use_math %}{% include mathjax_support.html %}{% endif %}mathjax post에 적용하기  적용할 post의 front-matter에 use_math 항목 추가    ---title: Mathjax 적용하기date: 2023-12-07 20:00:00 +09:00categories: [Github, blog]tags: [mathjax]     # TAG names should always be lowercasetoc: truetoc_sticky: trueuse_math: true---      "
+  },
+  
+  {
     "title": "Day24",
     "url": "/posts/Day24/",
     "categories": "BoostCamp, Week5",
