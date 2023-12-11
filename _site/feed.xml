@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>이로디의 개발냥발</title>
   <subtitle>나의 개발일지</subtitle>
-  <updated>2023-12-07T22:54:44+09:00</updated>
+  <updated>2023-12-11T21:56:44+09:00</updated>
   <author>
     <name>lostdesire</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,127 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Day26</title>
+    <link href="http://localhost:4000/posts/Day26/" rel="alternate" type="text/html" title="Day26" />
+    <published>2023-12-11T20:00:00+09:00</published>
+  
+    <updated>2023-12-11T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day26/</id>
+    <content src="http://localhost:4000/posts/Day26/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week6" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      추천 시스템 정의
+
+  정보 필터링 기술의 일종
+  아마존의 1/3, 넷플릭스의 3/4가 추천시스템을 통해 컨텐츠 소비
+  
+    Push
+    
+      사용자가 관심을 가질 만한 정보를 시스템이 밀어내듯이 제공
+    
+  
+  
+    Pull
+    
+      사용자의 의도가 명확할 때 사용자의 의도에 맞는 항목을 찾고 추천
+    
+  
+  대부분의 추천 시스템은 Push와 Pull의 중간에 위치
+
+
+추천 시스템 개발 시 고려할 점
+1. 데이터
+
+  사용자 / 아이템 관련 정보
+  상호작용 했을 때 발생한 피드백 (CTR, 평점 등)
+
+
+2. Task 설정
+
+  단기 목표
+    
+      클릭 수, 특정 기간의 총 수익
+    
+  
+  장기 목표
+    
+      사이트 소비 시...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Day25</title>
+    <link href="http://localhost:4000/posts/Day25/" rel="alternate" type="text/html" title="Day25" />
+    <published>2023-12-08T20:00:00+09:00</published>
+  
+    <updated>2023-12-08T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day25/</id>
+    <content src="http://localhost:4000/posts/Day25/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week5" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      심화과제 2
+
+스페셜 피어세션
+
+피어세션
+
+  DL RecSys (1) 리뷰
+
+
+주간 회고
+
+  이번 주는 처음보는 내용들이 대부분이고 내용도 어려운 편이라 강의 수는 적어도 복습에 시간을 많이 쓰게 된 것 같다.
+  실습과 과제를 하면서 이해가 안됐던 부분들이 머리 속으로 조금씩 들어오는 느낌
+
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -200,117 +321,6 @@ MathJax.Hub.Config({
       Cross-Product Transformation
         
        ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Macbook Setting</title>
-    <link href="http://localhost:4000/posts/Macbook_Setting/" rel="alternate" type="text/html" title="Macbook Setting" />
-    <published>2023-12-05T20:00:00+09:00</published>
-  
-    <updated>2023-12-06T01:24:18+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Macbook_Setting/</id>
-    <content src="http://localhost:4000/posts/Macbook_Setting/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="Mac" />
-    
-    <category term="Setting" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      언젠가 맥북을 다시 설정하는 날이 있을 때 한번에 해결하기 위한 포스트
-
-Karabiner
-
-  마우스를 사용할 시 인터넷 환경에서 뒤로가기 앞으로가기를 활성화 시키기
-    
-      Karabiner를 설치 후 여러 권한들 허용
-      Karabiner-Elements → Complex Modifications → Add rule
-      하단의 Import → Change mouse buttons (rev 2) Import
-      Change button4,5 to back,forward (rev 1) Enable
-      Devices → Mouse의 Modifiy events 활성화
-    
-  
-
-
-Homebrew
-
-  터미널에서 homebrew 설치하기
-    /bin/bash...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day22</title>
-    <link href="http://localhost:4000/posts/Day22/" rel="alternate" type="text/html" title="Day22" />
-    <published>2023-12-05T20:00:00+09:00</published>
-  
-    <updated>2023-12-05T20:22:57+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day22/</id>
-    <content src="http://localhost:4000/posts/Day22/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week5" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      생활코딩 egoing님 2차 특강
-
-  
-    1차 특강 복습
-    
-      git add
-      git commit
-        
-          –amend -m “example”
-          head가 가리키는 commit message 바뀜 (commit id도 달라짐)
-        
-      
-      git checkout
-      git branch
-      git reset (–hard)
-        
-          checkout은 head를 reset은 branch를 변경
-        
-      
-      git merge
-        
-          rebase, revert, cherry-pick은 3-way merge에 의해 confl...
     </summary>
   
 

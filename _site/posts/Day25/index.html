@@ -14,6 +14,30 @@
 
 
 
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+    displayMath: [ ['$$', '$$'], ['\\[', '\\]'] ],
+    processEscapes: true,
+  }
+});
+MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="ko-KR" >
@@ -43,24 +67,24 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Day20" />
+<meta property="og:title" content="Day25" />
 <meta property="og:locale" content="ko_KR" />
-<meta name="description" content="Item2Vec, ANN, DL RecSys 정리 Day18" />
-<meta property="og:description" content="Item2Vec, ANN, DL RecSys 정리 Day18" />
-<link rel="canonical" href="http://localhost:4000/posts/Day20/" />
-<meta property="og:url" content="http://localhost:4000/posts/Day20/" />
+<meta name="description" content="심화과제 2" />
+<meta property="og:description" content="심화과제 2" />
+<link rel="canonical" href="http://localhost:4000/posts/Day25/" />
+<meta property="og:url" content="http://localhost:4000/posts/Day25/" />
 <meta property="og:site_name" content="이로디의 개발냥발" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-12-01T20:00:00+09:00" />
+<meta property="article:published_time" content="2023-12-08T20:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Day20" />
+<meta property="twitter:title" content="Day25" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-01T20:00:00+09:00","datePublished":"2023-12-01T20:00:00+09:00","description":"Item2Vec, ANN, DL RecSys 정리 Day18","headline":"Day20","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day20/"},"url":"http://localhost:4000/posts/Day20/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-08T20:00:00+09:00","datePublished":"2023-12-08T20:00:00+09:00","description":"심화과제 2","headline":"Day25","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day25/"},"url":"http://localhost:4000/posts/Day25/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Day20 | 이로디의 개발냥발
+  <title>Day25 | 이로디의 개발냥발
   </title>
 
   <!--
@@ -484,7 +508,7 @@
         
           
             
-              <span>Day20</span>
+              <span>Day25</span>
             
 
           
@@ -649,7 +673,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Day20</h1>
+    <h1 data-toc-skip>Day25</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -665,13 +689,13 @@
 
 <time
   
-  data-ts="1701428400"
+  data-ts="1702033200"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2023/12/01
+  2023/12/08
 </time>
 
       </span>
@@ -716,7 +740,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="77 단어"
+  title="106 단어"
 >
   <em>1 분</em>읽는 시간</span>
 
@@ -727,22 +751,19 @@
   </header>
 
   <div class="content">
-    <h2 id="item2vec-ann-dl-recsys-정리"><span class="me-2">Item2Vec, ANN, DL RecSys 정리</span><a href="#item2vec-ann-dl-recsys-정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li><a href="https://lostdesire.github.io/posts/Day18/">Day18</a></li>
-</ul>
+    <h2 id="심화과제-2"><span class="me-2">심화과제 2</span><a href="#심화과제-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h2 id="스페셜-피어세션"><span class="me-2">스페셜 피어세션</span><a href="#스페셜-피어세션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h2 id="피어세션"><span class="me-2">피어세션</span><a href="#피어세션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>Generative Model 리뷰</li>
+  <li>DL RecSys (1) 리뷰</li>
 </ul>
 
-<h2 id="주간회고"><span class="me-2">주간회고</span><a href="#주간회고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="주간-회고"><span class="me-2">주간 회고</span><a href="#주간-회고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>이번주부터 처음으로 RecSys에 관련된 내용을 학습했다</li>
-  <li>내용들이 전부 처음보는 거라 주말에 진짜 복습을 좀 해서 정리를 해야겠다</li>
+  <li>이번 주는 처음보는 내용들이 대부분이고 내용도 어려운 편이라 강의 수는 적어도 복습에 시간을 많이 쓰게 된 것 같다.</li>
+  <li>실습과 과제를 하면서 이해가 안됐던 부분들이 머리 속으로 조금씩 들어오는 느낌</li>
 </ul>
 
   </div>
@@ -754,7 +775,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/boostcamp/">BoostCamp</a>,
-          <a href="/categories/week4/">Week4</a>
+          <a href="/categories/week5/">Week5</a>
       </div>
     
 
@@ -777,11 +798,6 @@
             href="/tags/recsys/"
             class="post-tag no-text-decoration"
           >recsys</a>
-        
-          <a
-            href="/tags/visualization/"
-            class="post-tag no-text-decoration"
-          >visualization</a>
         
       </div>
     
@@ -818,7 +834,7 @@
       
 
       <a
-        href="https://twitter.com/intent/tweet?text=Day20%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay20%2F"
+        href="https://twitter.com/intent/tweet?text=Day25%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay25%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -833,7 +849,7 @@
       
 
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Day20%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay20%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Day25%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay25%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -848,7 +864,7 @@
       
 
       <a
-        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay20%2F&text=Day20%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay25%2F&text=Day25%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1951,67 +1967,67 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -2291,114 +2307,6 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/Day19/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1701342000"
-  data-df="YYYY/MM/DD"
-  
->
-  2023/11/30
-</time>
-
-              <h4 class="pt-0 my-2">Day19</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  기본 과제 2 마무리
-
-  It works…? Why?
-
-
-Data Viz
-
-  Polar Coordinate
-  Pie Chart
-  시각화 라이브러리
-  Interactive Visualization
-    
-      Plotly
-      Plotly Express
-      Bokeh
-      Altair
-    
-  
-  Custom Ma...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/Day16/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1701082800"
-  data-df="YYYY/MM/DD"
-  
->
-  2023/11/27
-</time>
-
-              <h4 class="pt-0 my-2">Day16</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Data Viz
-
-  Seaborn
-
-
-RecSys Basic
-
-  추천 시스템 개요
-    
-      Explicit Feedback / Implicit Feedback
-      Ranking / Prediction
-    
-  
-  Offline Test
-    
-      고전적인 통계학 지표
-      Ranking
-        
-    ...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/Day21/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -2449,6 +2357,104 @@ RecSys Basic
           </a>
         </article>
       
+        <article class="col">
+          <a href="/posts/Day22/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1701774000"
+  data-df="YYYY/MM/DD"
+  
+>
+  2023/12/05
+</time>
+
+              <h4 class="pt-0 my-2">Day22</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  생활코딩 egoing님 2차 특강
+
+  
+    1차 특강 복습
+    
+      git add
+      git commit
+        
+          –amend -m “example”
+          head가 가리키는 commit message 바뀜 (commit id도 달라짐)
+        
+      
+      git chec...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/Day23/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1701860400"
+  data-df="YYYY/MM/DD"
+  
+>
+  2023/12/06
+</time>
+
+              <h4 class="pt-0 my-2">Day23</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Wide &amp;amp; Deep
+
+  
+    Memorization
+    
+      같이 자주 등장하는 item / feature를 과거로부터 학습
+      LR
+    
+  
+  
+    Generalization
+    
+      드물거나 전혀 발생한 적 없는 item / feature를 기존 관계로부터 발견
+      FM, DNN
+    ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -2464,21 +2470,21 @@ RecSys Basic
 
   
     <a
-      href="/posts/Day19/"
+      href="/posts/Mathjax-%EC%A0%81%EC%9A%A9/"
       class="btn btn-outline-primary"
       aria-label="이전 글"
     >
-      <p>Day19</p>
+      <p>Mathjax 적용하기</p>
     </a>
   
 
   
     <a
-      href="/posts/Day21/"
+      href="/posts/Day26/"
       class="btn btn-outline-primary"
       aria-label="다음 글"
     >
-      <p>Day21</p>
+      <p>Day26</p>
     </a>
   
 </nav>

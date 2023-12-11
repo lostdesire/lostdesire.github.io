@@ -14,6 +14,30 @@
 
 
 
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+    displayMath: [ ['$$', '$$'], ['\\[', '\\]'] ],
+    processEscapes: true,
+  }
+});
+MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="ko-KR" >
@@ -43,24 +67,24 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Day20" />
+<meta property="og:title" content="Day26" />
 <meta property="og:locale" content="ko_KR" />
-<meta name="description" content="Item2Vec, ANN, DL RecSys 정리 Day18" />
-<meta property="og:description" content="Item2Vec, ANN, DL RecSys 정리 Day18" />
-<link rel="canonical" href="http://localhost:4000/posts/Day20/" />
-<meta property="og:url" content="http://localhost:4000/posts/Day20/" />
+<meta name="description" content="추천 시스템 정의 정보 필터링 기술의 일종 아마존의 1/3, 넷플릭스의 3/4가 추천시스템을 통해 컨텐츠 소비 Push 사용자가 관심을 가질 만한 정보를 시스템이 밀어내듯이 제공 Pull 사용자의 의도가 명확할 때 사용자의 의도에 맞는 항목을 찾고 추천 대부분의 추천 시스템은 Push와 Pull의 중간에 위치" />
+<meta property="og:description" content="추천 시스템 정의 정보 필터링 기술의 일종 아마존의 1/3, 넷플릭스의 3/4가 추천시스템을 통해 컨텐츠 소비 Push 사용자가 관심을 가질 만한 정보를 시스템이 밀어내듯이 제공 Pull 사용자의 의도가 명확할 때 사용자의 의도에 맞는 항목을 찾고 추천 대부분의 추천 시스템은 Push와 Pull의 중간에 위치" />
+<link rel="canonical" href="http://localhost:4000/posts/Day26/" />
+<meta property="og:url" content="http://localhost:4000/posts/Day26/" />
 <meta property="og:site_name" content="이로디의 개발냥발" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-12-01T20:00:00+09:00" />
+<meta property="article:published_time" content="2023-12-11T20:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Day20" />
+<meta property="twitter:title" content="Day26" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-01T20:00:00+09:00","datePublished":"2023-12-01T20:00:00+09:00","description":"Item2Vec, ANN, DL RecSys 정리 Day18","headline":"Day20","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day20/"},"url":"http://localhost:4000/posts/Day20/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-11T20:00:00+09:00","datePublished":"2023-12-11T20:00:00+09:00","description":"추천 시스템 정의 정보 필터링 기술의 일종 아마존의 1/3, 넷플릭스의 3/4가 추천시스템을 통해 컨텐츠 소비 Push 사용자가 관심을 가질 만한 정보를 시스템이 밀어내듯이 제공 Pull 사용자의 의도가 명확할 때 사용자의 의도에 맞는 항목을 찾고 추천 대부분의 추천 시스템은 Push와 Pull의 중간에 위치","headline":"Day26","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day26/"},"url":"http://localhost:4000/posts/Day26/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Day20 | 이로디의 개발냥발
+  <title>Day26 | 이로디의 개발냥발
   </title>
 
   <!--
@@ -484,7 +508,7 @@
         
           
             
-              <span>Day20</span>
+              <span>Day26</span>
             
 
           
@@ -618,6 +642,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -626,15 +672,463 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
 
@@ -649,7 +1143,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Day20</h1>
+    <h1 data-toc-skip>Day26</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -665,13 +1159,13 @@
 
 <time
   
-  data-ts="1701428400"
+  data-ts="1702292400"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2023/12/01
+  2023/12/11
 </time>
 
       </span>
@@ -716,9 +1210,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="77 단어"
+  title="2174 단어"
 >
-  <em>1 분</em>읽는 시간</span>
+  <em>12 분</em>읽는 시간</span>
 
       </div>
       <!-- .d-flex -->
@@ -727,22 +1221,466 @@
   </header>
 
   <div class="content">
-    <h2 id="item2vec-ann-dl-recsys-정리"><span class="me-2">Item2Vec, ANN, DL RecSys 정리</span><a href="#item2vec-ann-dl-recsys-정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="추천-시스템-정의"><span class="me-2">추천 시스템 정의</span><a href="#추천-시스템-정의" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li><a href="https://lostdesire.github.io/posts/Day18/">Day18</a></li>
+  <li>정보 필터링 기술의 일종</li>
+  <li>아마존의 1/3, 넷플릭스의 3/4가 추천시스템을 통해 컨텐츠 소비</li>
+  <li>
+    <h3 id="push"><span class="me-2">Push</span><a href="#push" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>사용자가 관심을 가질 만한 정보를 시스템이 밀어내듯이 제공</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="pull"><span class="me-2">Pull</span><a href="#pull" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>사용자의 의도가 명확할 때 사용자의 의도에 맞는 항목을 찾고 추천</li>
+    </ul>
+  </li>
+  <li>대부분의 추천 시스템은 Push와 Pull의 중간에 위치</li>
 </ul>
 
-<h2 id="스페셜-피어세션"><span class="me-2">스페셜 피어세션</span><a href="#스페셜-피어세션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="추천-시스템-개발-시-고려할-점"><span class="me-2">추천 시스템 개발 시 고려할 점</span><a href="#추천-시스템-개발-시-고려할-점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="1-데이터"><span class="me-2">1. 데이터</span><a href="#1-데이터" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>사용자 / 아이템 관련 정보</li>
+  <li>상호작용 했을 때 발생한 피드백 (CTR, 평점 등)</li>
+</ul>
+
+<h3 id="2-task-설정"><span class="me-2">2. Task 설정</span><a href="#2-task-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>단기 목표
+    <ul>
+      <li>클릭 수, 특정 기간의 총 수익</li>
+    </ul>
+  </li>
+  <li>장기 목표
+    <ul>
+      <li>사이트 소비 시간 증가, 재방문 및 사용자 유지 비율 개선, 구독자 증가</li>
+    </ul>
+  </li>
+  <li>일반적으로 최적화 대상은 1가지 (2개 이상을 대상으로 하는 경우도 존재)</li>
+</ul>
+
+<h3 id="3-목적함수-설계"><span class="me-2">3. 목적함수 설계</span><a href="#3-목적함수-설계" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>설정된 Task에 맞는 목적 함수 설계</li>
+  <li>미래 특정 상황에서 사용자에게 아이템을 제안했을 때 발생하는 <font color="#ffff00">가치</font>를 예측</li>
+</ul>
+
+<h3 id="4-랭킹"><span class="me-2">4. 랭킹</span><a href="#4-랭킹" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>목적 함수의 기댓값을 최대화할 수 있도록 랭킹 선정 방법 정의</li>
+  <li>연관성, 여러 지표, 비즈니스 규칙 등의 요소를 적절히 조합</li>
+</ul>
+
+<h2 id="추천-시스템-성능-평가-방법"><span class="me-2">추천 시스템 성능 평가 방법</span><a href="#추천-시스템-성능-평가-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>
+    <h3 id="오프라인-평가"><span class="me-2">오프라인 평가</span><a href="#오프라인-평가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>수집된 데이터를 train, valid, test 3가지로 분할하여 성능 평가 시 사용</li>
+      <li>
+        <h4 id="데이터-분할-방법"><span class="me-2">데이터 분할 방법</span><a href="#데이터-분할-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>
+            <h5 id="leave-one-last"><span class="me-2">Leave One Last</span><a href="#leave-one-last" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>마지막 구매를 test</li>
+              <li>마지막에서 2번째를 valid</li>
+              <li>장점
+                <ul>
+                  <li>학습 시 많은 데이터 사용 가능</li>
+                </ul>
+              </li>
+              <li>단점
+                <ul>
+                  <li>테스트 성능이 전체적인 성능을 반영한다고 보기 어려움</li>
+                  <li>모델이 테스트 데이터 상호작용을 특징으로 학습할 가능성 있음</li>
+                  <li>과거의 데이터가 미래의 정보를 알게되는 <font color="#ffff00">Data Leakage</font>가 발생</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="temporal-userglobal-split"><span class="me-2">Temporal User/Global Split</span><a href="#temporal-userglobal-split" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>특정 시점을 이용한 분할 전략</li>
+              <li>Temporal User
+                <ul>
+                  <li>시간 순서에 따라 일정 비율로 데이터 분할</li>
+                  <li>Leave One Last와 유사</li>
+                  <li>Data Leakage 발생</li>
+                </ul>
+              </li>
+              <li>Temporal Global
+                <ul>
+                  <li>유저들의 분할 시점을 고정</li>
+                  <li>학습 및 검증에 사용할 수 있는 상호작용이 적을 수 있음</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="random-split"><span class="me-2">Random Split</span><a href="#random-split" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>시간 순서에 관계 없이 Random하게 분할</li>
+              <li>사용하기 쉬움</li>
+              <li>많은 training data</li>
+              <li>Data Leakage 발생</li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="user-split"><span class="me-2">User Split</span><a href="#user-split" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>사용자가 겹치지 않게 사용자를 기준으로 분할</li>
+              <li>Cold-Start 대응 가능</li>
+              <li>User-free 모델에서만 사용 가능</li>
+              <li>Data Leakage 발생</li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="k-fold-cross-validation"><span class="me-2">K-Fold Cross Validation</span><a href="#k-fold-cross-validation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>training data를 k개의 fold로 분할하여 한 fold씩 valid data로 사용</li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="time-series-cross-validation"><span class="me-2">Time Series Cross Validation</span><a href="#time-series-cross-validation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>일반적인 CV은 미래를 학습하여 과거를 예측하는 문제가 있음</li>
+              <li>fold 분할 시 시간을 고려 (미래의 데이터 학습 x)</li>
+              <li>데이터를 늘려가는 방식</li>
+              <li>데이터를 줄여가는 방식</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="예측-알고리즘-평가-지표"><span class="me-2">예측 알고리즘 평가 지표</span><a href="#예측-알고리즘-평가-지표" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>
+            <h5 id="평점-예측-문제"><span class="me-2">평점 예측 문제</span><a href="#평점-예측-문제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>RMSE
+                <ul>
+                  <li>$RMSE = \sqrt{\frac{1}{n}\sum\limits_{i=1}^{N}(y_{i}-\hat{y_{i}})^2}$</li>
+                </ul>
+              </li>
+              <li>MAE
+                <ul>
+                  <li>$MAE = \frac{1}{N}\sum\limits_{i=1}^{N} \left\vert y_{i}-\hat{y_{i}}\right\vert$</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="랭킹-문제"><span class="me-2">랭킹 문제</span><a href="#랭킹-문제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>Precision@K
+                <ul>
+                  <li>추천한 K개의 아이템 중 유저가 관심있는 아이템의 비율</li>
+                </ul>
+              </li>
+              <li>Recall@K
+                <ul>
+                  <li>유저가 관심있는 아이템 중 추천한 아이템의 비율</li>
+                </ul>
+              </li>
+              <li>
+                <font color="#ff0000">AP@K</font>
+                <ul>
+                  <li>Precision@1 ~ Precision@K 평균</li>
+                  <li>$AP@K = \frac{1}{m}\sum\limits_{i=1}^{K}Precision@i \cdot rel(i)$</li>
+                  <li>$m$ : 사용자가 반응한 아이템의 갯수</li>
+                  <li>$rel(i)$ : item i와의 relevance score</li>
+                </ul>
+              </li>
+              <li>
+                <font color="#ff0000">MAP@K</font>
+                <ul>
+                  <li>$MAP@K=\frac{1}{\left\vert U\right\vert}\sum\limits_{u=1}^{\left\vert U\right\vert}(AP@K)_{u}$</li>
+                  <li>$\left\vert U\right\vert$ : 유저 수</li>
+                </ul>
+              </li>
+              <li>
+                <h6 id="relevance-score">Relevance Score</h6>
+                <ul>
+                  <li>CG(Cumulative Gain)
+                    <ul>
+                      <li>$CG_{K}=\sum\limits_{i=1}^{K}rel_{i}$</li>
+                    </ul>
+                  </li>
+                  <li>DCG(Discounted CG)
+                    <ul>
+                      <li>$DCG_{K}=\sum\limits_{i=1}^{K}\frac{rel_{i}}{log_2(i+1)}$</li>
+                    </ul>
+                  </li>
+                  <li>IDCG(Ideal DCG)
+                    <ul>
+                      <li>$IDCG_{K}=\sum\limits_{i=1}^{K}\frac{rel_{i}^{OPT}}{log_{2}(i+1)}$</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <font color="#ff0000">NDCG(Normalized DCG)</font>
+                    <ul>
+                      <li>$NDCG_{K}=\frac{DCG}{IDCG}$</li>
+                    </ul>
+                  </li>
+                  <li>Hit rate</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="오프라인-평가-지표의-문제점"><span class="me-2">오프라인 평가 지표의 문제점</span><a href="#오프라인-평가-지표의-문제점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>정확성 개선이 실제 시스템 성능 향상이라고 연관 짓기 어려움</li>
+          <li>서비스 만족도를 높인다고 보기 어려움</li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="특성-평가-지표"><span class="me-2">특성 평가 지표</span><a href="#특성-평가-지표" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>Coverage
+            <ul>
+              <li>전체 유저/아이템 중 추천 시스템이 추천하는 유저/아이템의 비율</li>
+            </ul>
+          </li>
+          <li>Novelty
+            <ul>
+              <li>새로운 아이템 추천</li>
+              <li>추천하는 인기 항복 수를 줄이기 위해 사용</li>
+            </ul>
+          </li>
+          <li>Personalization
+            <ul>
+              <li>개인화된 추천</li>
+              <li>다른 사용자와 추천된 아이템을 비교</li>
+            </ul>
+          </li>
+          <li>Serendipity
+            <ul>
+              <li>의외의 아이템 추천</li>
+              <li>online 평가에서 주로 사용</li>
+            </ul>
+          </li>
+          <li>Diversity
+            <ul>
+              <li>얼마나 다양한 아이템이 추천되는지</li>
+              <li>도메인에 따라 여러 방법으로 측정 가능
+                <ul>
+                  <li>카테고리나 장르가 몇가지 추천되는지</li>
+                  <li>판매자, 작가 등이 몇가지 추천되는지</li>
+                  <li>가격 분포의 첨도</li>
+                  <li>추천된 아이템을 임베딩하여 유사도 측정</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="온라인-평가"><span class="me-2">온라인 평가</span><a href="#온라인-평가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>이상적인 테스트
+        <ul>
+          <li>동일 유저에게 A안을 제안하고 시간을 돌려 B안을 제안하는 것</li>
+          <li>현실에서는 A안과 B안 둘 중 하나만 겪을 수 있음</li>
+        </ul>
+      </li>
+      <li>현실적인 테스트
+        <ul>
+          <li>유저를 두 그룹으로 분할 → 각각 A안과 B안을 보여준 후 평균 비교</li>
+          <li>두 그룹의 특성이 모든 면에서 비슷해야함</li>
+          <li>그룹이 나뉘는 시점도 비슷해야함</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="content-based-filtering"><span class="me-2">Content Based Filtering</span><a href="#content-based-filtering" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>
+    <h3 id="아이템-특성화"><span class="me-2">아이템 특성화</span><a href="#아이템-특성화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>Original data → One-hot encoding → Embedding</li>
+      <li>추천 시스템의 경우 아이템의 특성이 왜곡될 수 있어 label encoding은 잘 안함</li>
+      <li>
+        <h4 id="tf-idf"><span class="me-2">TF-IDF</span><a href="#tf-idf" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>다른 문서에는 많지 않고, 해당 문서에만 자주 등장하는 단어에 높은 값</li>
+          <li>$TF-IDF = freq_{w,d}\times log\frac{N}{n_{W}}$</li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="word2vec"><span class="me-2">Word2Vec</span><a href="#word2vec" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="유사도"><span class="me-2">유사도</span><a href="#유사도" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>특성화된 아이템이 서로 얼마나 비슷한지</li>
+      <li>
+        <h4 id="jaccard"><span class="me-2">Jaccard</span><a href="#jaccard" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>0, 1로 이루어진 binary 데이터로 변환 후, 두 벡터의 교집합과 합집합을 구함</li>
+          <li>$J(A,B)=\frac{\left\vert A\cap B\right\vert}{\left\vert A\cup B\right\vert} = \frac{\left\vert A\cap B\right\vert}{\left\vert A\right\vert+\left\vert B\right\vert-\left\vert A\cup B\right\vert}$</li>
+          <li>공식이 간단하여 계산 속도가 빠름</li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="euclidean"><span class="me-2">Euclidean</span><a href="#euclidean" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>n차원으로 주어진 아이템 속성 A,B 벡터 사이의 최단 거리</li>
+          <li>$L_{2}=\sqrt{(A_{1}-B_{1})^2+(A_{2}-B_{2})^2+\cdots+(A_{n}-B_{n})^2}=\sqrt{\sum\limits_{i=1}^{n}(A_{i}-B_{i})^2}$</li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="cosine"><span class="me-2">Cosine</span><a href="#cosine" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>각도 기반</li>
+          <li>$Similarity=cos(\theta)=\frac{A\cdot B}{|A|\cdot|B|}=\frac{\sum\limits_{i=1}{n}A_{i}B_{i}}{\sqrt{\sum\limits_{i=1}^{n}(A_{i})^2}\times\sqrt{\sum\limits_{i=1}^{n}(B_{i})^2}}$</li>
+          <li>-1 ~ 1 사이의 값</li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="pearson-correlation-coefficient"><span class="me-2">Pearson correlation coefficient</span><a href="#pearson-correlation-coefficient" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>$Pearson_sim=\rho_{A,B}=\frac{\sum\limits_{i=1}^{n}(A_{i}-\bar{A})(B_{i}-\bar{B})}{\sqrt{\sum\limits_{i=1}^{n}(A_{i}-\bar{A})^2}\sqrt{\sum\limits{\sum\limits_{i=1}^{n}(B_{i}-\bar{B})^2}}}$</li>
+          <li>-1 ~ 1 사이의 값</li>
+          <li>선형 상관 관계만 나타내므로 0이 나오면 data의 관계를 알 수 없음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="memory-based-collaborative-filtering"><span class="me-2">Memory Based Collaborative Filtering</span><a href="#memory-based-collaborative-filtering" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>내가 좋아하는 장르, 작가, 출판사의 책
+  -&gt; Content Based Filtering</li>
+  <li>나와 비슷한 성향의 사람들이 읽은 책
+  -&gt; Collaborative Filtering</li>
+  <li>
+    <h3 id="memory-based-cf"><span class="me-2">Memory Based CF</span><a href="#memory-based-cf" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>유저와 아이템의 상호 작용</li>
+      <li>최적화나 훈련 과정 필요 없음</li>
+      <li>접근 방식이 쉬움</li>
+      <li>sparse한 데이터의 경우 성능 저하</li>
+      <li>데이터가 많아지면 계산량의 증가로 인한 확장성의 한계</li>
+      <li>
+        <h4 id="user-based-cf"><span class="me-2">User Based CF</span><a href="#user-based-cf" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>새로운 사용자의 경우 정보가 없어 추천이 어려움 (<font color="#ffff00">Cold-Start</font>)
+            <ol>
+              <li>평점을 기반으로 User-Item matrix 생성</li>
+              <li>빈 값을 0으로 채우고, 사용자 사이의 유사도 계산</li>
+              <li>유사도를 통한 가중 평균으로 평점 예상</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="item-based-cf"><span class="me-2">Item Based CF</span><a href="#item-based-cf" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>시간에 따라 유사도 변화가 적고 User based CF에 비해 계산량이 적음</li>
+          <li>사용자가 아이템에 feedback한 정보가 많아야 함
+            <ol>
+              <li>평점을 기준으로 User-Item matrix 생성</li>
+              <li>빈 값을 0으로 채우고, 아이템 사이의 유사도 계산</li>
+              <li>유사도를 통한 가중 평균으로 평점 예상</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="model-based-cf"><span class="me-2">Model Based CF</span><a href="#model-based-cf" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>Unsupervised Learning
+        <ul>
+          <li>Clustering</li>
+          <li>Latent Factor</li>
+        </ul>
+      </li>
+      <li>Supervised Learning
+        <ul>
+          <li>ML</li>
+          <li>DL</li>
+        </ul>
+      </li>
+      <li>데이터 패턴을 학습하여 추천 가능</li>
+      <li>유저-아이템 관계의 잠재적 특성 및 패턴 찾기 가능</li>
+      <li>유저, 아이템 개수가 늘어나도 좋은 성능</li>
+      <li>학습 이후 서빙 속도 빠름</li>
+      <li>
+        <h4 id="clustering"><span class="me-2">Clustering</span><a href="#clustering" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>clustering을 다른 추천 방법론과 함께 사용하여 효과적인 추천 수행 가능
+            <ul>
+              <li>군집내 다른 사용자의 선호 아이템 추천</li>
+              <li>clustering 후 CF를 통해 예측 정확도 향상</li>
+              <li>비슷한 유저 군집 데이터를 추출하여 아이템 선호도를 계산하고 사전 확률로 활용하여 베이지안 방법론 적용 가능</li>
+            </ul>
+          </li>
+          <li>분할 된 데이터의 희소성 문제로 실제 데이터에 적용시 성능 저하</li>
+          <li>군집 개수 등 파라미터를 직접 설정해야함</li>
+          <li>
+            <h5 id="k-means-clustering"><span class="me-2">K-Means Clustering</span><a href="#k-means-clustering" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>군집을 k개로 나누는 알고리즘</li>
+              <li>구형 분포가 아닌 경우 군집화 성능이 저하</li>
+              <li>아웃라이어에 민감
+                <ol>
+                  <li>랜덤하게 초기 중심점 k개 배치</li>
+                  <li>각 데이터를 가장 가까운 중심점으로 할당</li>
+                  <li>모인 데이터 군집의 평균으로 중심점 업데이트</li>
+                  <li>중심점이 업데이트 되지 않을 때까지 2~3 반복</li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="dbscan"><span class="me-2">DBSCAN</span><a href="#dbscan" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>차원 수가 커질수록 데이터 밀도가 떨어져서 군집 형성이 어려움 (<font color="#ffff00">차원의 저주</font>)</li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="gmmgaussian-mixture-model"><span class="me-2">GMM(Gaussian Mixture Model)</span><a href="#gmmgaussian-mixture-model" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>데이터가 정규성을 만족하지 않는 경우 성능 저하</li>
+              <li>계산량 많음</li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="optics"><span class="me-2">OPTICS</span><a href="#optics" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+          </li>
+          <li>
+            <h5 id="hierarchical-clustering"><span class="me-2">Hierarchical clustering</span><a href="#hierarchical-clustering" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>모든 경우에 대해 반복적으로 유사도를 계산</li>
+              <li>계산량 많음</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="피어세션"><span class="me-2">피어세션</span><a href="#피어세션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>Generative Model 리뷰</li>
-</ul>
-
-<h2 id="주간회고"><span class="me-2">주간회고</span><a href="#주간회고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>이번주부터 처음으로 RecSys에 관련된 내용을 학습했다</li>
-  <li>내용들이 전부 처음보는 거라 주말에 진짜 복습을 좀 해서 정리를 해야겠다</li>
+  <li>DL RecSys(2) 리뷰</li>
 </ul>
 
   </div>
@@ -754,7 +1692,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/boostcamp/">BoostCamp</a>,
-          <a href="/categories/week4/">Week4</a>
+          <a href="/categories/week6/">Week6</a>
       </div>
     
 
@@ -777,11 +1715,6 @@
             href="/tags/recsys/"
             class="post-tag no-text-decoration"
           >recsys</a>
-        
-          <a
-            href="/tags/visualization/"
-            class="post-tag no-text-decoration"
-          >visualization</a>
         
       </div>
     
@@ -818,7 +1751,7 @@
       
 
       <a
-        href="https://twitter.com/intent/tweet?text=Day20%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay20%2F"
+        href="https://twitter.com/intent/tweet?text=Day26%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay26%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -833,7 +1766,7 @@
       
 
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Day20%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay20%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Day26%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay26%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -848,7 +1781,7 @@
       
 
       <a
-        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay20%2F&text=Day20%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay26%2F&text=Day26%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1939,79 +2872,79 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -2345,7 +3278,7 @@ Data Viz
         </article>
       
         <article class="col">
-          <a href="/posts/Day16/" class="post-preview card h-100">
+          <a href="/posts/Day20/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2357,14 +3290,14 @@ Data Viz
 
 <time
   
-  data-ts="1701082800"
+  data-ts="1701428400"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/27
+  2023/12/01
 </time>
 
-              <h4 class="pt-0 my-2">Day16</h4>
+              <h4 class="pt-0 my-2">Day20</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2373,25 +3306,24 @@ Data Viz
 
 
 
-                  Data Viz
+                  Item2Vec, ANN, DL RecSys 정리
 
-  Seaborn
+  Day18
 
 
-RecSys Basic
+스페셜 피어세션
 
-  추천 시스템 개요
-    
-      Explicit Feedback / Implicit Feedback
-      Ranking / Prediction
-    
-  
-  Offline Test
-    
-      고전적인 통계학 지표
-      Ranking
-        
-    ...
+피어세션
+
+  Generative Model 리뷰
+
+
+주간회고
+
+  이번주부터 처음으로 RecSys에 관련된 내용을 학습했다
+  내용들이 전부 처음보는 거라 주말에 진짜 복습을 좀 해서 정리를 해야겠다
+
+
                 </p>
               </div>
             </div>
@@ -2464,22 +3396,18 @@ RecSys Basic
 
   
     <a
-      href="/posts/Day19/"
+      href="/posts/Day25/"
       class="btn btn-outline-primary"
       aria-label="이전 글"
     >
-      <p>Day19</p>
+      <p>Day25</p>
     </a>
   
 
   
-    <a
-      href="/posts/Day21/"
-      class="btn btn-outline-primary"
-      aria-label="다음 글"
-    >
-      <p>Day21</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="다음 글">
+      <p>-</p>
+    </div>
   
 </nav>
 
