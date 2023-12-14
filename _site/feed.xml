@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>이로디의 개발냥발</title>
   <subtitle>나의 개발일지</subtitle>
-  <updated>2023-12-11T21:56:44+09:00</updated>
+  <updated>2023-12-14T19:03:07+09:00</updated>
   <author>
     <name>lostdesire</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,158 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Day29</title>
+    <link href="http://localhost:4000/posts/Day29/" rel="alternate" type="text/html" title="Day29" />
+    <published>2023-12-14T20:00:00+09:00</published>
+  
+    <updated>2023-12-14T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day29/</id>
+    <content src="http://localhost:4000/posts/Day29/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week6" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Book-Recommendation 대회
+
+  대회 환경세팅
+  baseline 모델 돌려보기
+
+
+피어세션
+
+  ensemble이나 전처리에 대한 대화
+
+
+오피스아워
+
+  Book Recommendation 베이스라인 모델/코드 설명
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Day28</title>
+    <link href="http://localhost:4000/posts/Day28/" rel="alternate" type="text/html" title="Day28" />
+    <published>2023-12-13T20:00:00+09:00</published>
+  
+    <updated>2023-12-13T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day28/</id>
+    <content src="http://localhost:4000/posts/Day28/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week6" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Book-recommendation 대회
+
+  대회 환경 세팅
+
+
+피어세션
+
+  대회 환경 세팅
+
+
+마스터클래스
+
+  이현호 마스터님의 &amp;lt;강의/프로젝트 설계 의도 설명 / 데이터 사이언티스트 준비물&amp;gt;
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Day27</title>
+    <link href="http://localhost:4000/posts/Day27/" rel="alternate" type="text/html" title="Day27" />
+    <published>2023-12-12T20:00:00+09:00</published>
+  
+    <updated>2023-12-12T20:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Day27/</id>
+    <content src="http://localhost:4000/posts/Day27/" />
+    <author>
+      <name>lostdesire</name>
+    </author>
+
+  
+    
+    <category term="BoostCamp" />
+    
+    <category term="Week6" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Model Based CF
+
+  
+    Unsupervised Learning Model
+    
+      
+        Latent Factor Model
+        
+          유저와 아이템 사이 다양한 정보를 담은 데이터를 축약된 벡터 공간에 표현
+          
+            SVD
+            
+              차원 축소 용도로도 많이 활용되는 SVD를 이용
+              행렬을 분해 → 차원 축소 → 다시 복구
+              $R=U\sum\limits V^{T}\qquad(Full SVD)$
+              $R\approx\hat{U}\sum_{k}\hat V^{T}=\hat R \qquad(Truncated SV...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -134,193 +286,6 @@
   실습과 과제를 하면서 이해가 안됐던 부분들이 머리 속으로 조금씩 들어오는 느낌
 
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Mathjax 적용하기</title>
-    <link href="http://localhost:4000/posts/Mathjax-%EC%A0%81%EC%9A%A9/" rel="alternate" type="text/html" title="Mathjax 적용하기" />
-    <published>2023-12-07T20:00:00+09:00</published>
-  
-    <updated>2023-12-07T20:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Mathjax-%EC%A0%81%EC%9A%A9/</id>
-    <content src="http://localhost:4000/posts/Mathjax-%EC%A0%81%EC%9A%A9/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="Github" />
-    
-    <category term="blog" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      _config.yml 수정
- markdown: kramdown
- highlighter: rouge
- lsi: false
- excerpt_separator: "\n\n"
- incremental: false
-
-
-mathjax_support.html 추가
-
-  _includes 폴더에 mathjax_support.html 추가
-    &amp;lt;script type="text/x-mathjax-config"&amp;gt;
-MathJax.Hub.Config({
-  TeX: {
-  	equationNumbers: {
-      	autoNumber: "AMS"
-  	}
-  },
-  tex2jax: {
-  	inlineMath: [ ['$', '$'] ],
-  	displayMath: [ ['$$', '$$'] ],
-  	...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day24</title>
-    <link href="http://localhost:4000/posts/Day24/" rel="alternate" type="text/html" title="Day24" />
-    <published>2023-12-07T20:00:00+09:00</published>
-  
-    <updated>2023-12-07T20:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day24/</id>
-    <content src="http://localhost:4000/posts/Day24/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week5" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      MAB(Multi-Armed Bandit)
-
-  MAB의 정책
-    
-      모든 슬롯머신을 동일한 횟수로 당김
-        
-          높은 reward 불가능
-        
-      
-      일정 횟수 후 제일 높은 확률의 슬롯머신만 당김
-        
-          동일한 슬롯만 계속 당김
-        
-      
-    
-  
-  Exploration
-    
-      더 많은 정보를 얻기 위해 새로운 arm을 선택하는 것
-    
-  
-  Exploitation
-    
-      경험 / 관측을 토대로 가장 좋은 arm을 선택하는 것
-    
-  
-  
-\[q_{*}(a) \doteq \mathbb{E}[R_{t} | A_{t} = a]\]
-    
-     ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Day23</title>
-    <link href="http://localhost:4000/posts/Day23/" rel="alternate" type="text/html" title="Day23" />
-    <published>2023-12-06T20:00:00+09:00</published>
-  
-    <updated>2023-12-07T21:26:49+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Day23/</id>
-    <content src="http://localhost:4000/posts/Day23/" />
-    <author>
-      <name>lostdesire</name>
-    </author>
-
-  
-    
-    <category term="BoostCamp" />
-    
-    <category term="Week5" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Wide &amp;amp; Deep
-
-  
-    Memorization
-    
-      같이 자주 등장하는 item / feature를 과거로부터 학습
-      LR
-    
-  
-  
-    Generalization
-    
-      드물거나 전혀 발생한 적 없는 item / feature를 기존 관계로부터 발견
-      FM, DNN
-    
-  
-  두 특성을 가지는 구조를 결합
-  
-    The Wide Component
-    
-      Generalized Linear Model
-        
-          
-\[y = w^Tx + b\]
-          
-        
-      
-      Cross-Product Transformation
-        
-       ...
     </summary>
   
 

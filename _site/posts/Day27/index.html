@@ -14,6 +14,30 @@
 
 
 
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+    displayMath: [ ['$$', '$$'], ['\\[', '\\]'] ],
+    processEscapes: true,
+  }
+});
+MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="ko-KR" >
@@ -43,24 +67,24 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Day1" />
+<meta property="og:title" content="Day27" />
 <meta property="og:locale" content="ko_KR" />
-<meta name="description" content="파이썬 개발환경 설정 vscode / anaconda / terminal 등" />
-<meta property="og:description" content="파이썬 개발환경 설정 vscode / anaconda / terminal 등" />
-<link rel="canonical" href="http://localhost:4000/posts/Day1/" />
-<meta property="og:url" content="http://localhost:4000/posts/Day1/" />
+<meta name="description" content="Model Based CF Unsupervised Learning Model Latent Factor Model 유저와 아이템 사이 다양한 정보를 담은 데이터를 축약된 벡터 공간에 표현 SVD 차원 축소 용도로도 많이 활용되는 SVD를 이용 행렬을 분해 → 차원 축소 → 다시 복구 $R=U\sum\limits V^{T}\qquad(Full SVD)$ $R\approx\hat{U}\sum_{k}\hat V^{T}=\hat R \qquad(Truncated SVD)$ 한계점 User와 Item이 많아지면 예측력 감소 결측치가 많은 데이터에 정상 작동 x 현실의 데이터는 결측치가 대부분 MF SVD는 $R=U\sum\limits V^{T}$로 3가지 행렬의 곱으로 표현 MF는 $R\approx PQ^T$로 User Latent Factor와 Item Latent Factor 2가지 행렬의 곱으로 표현 목적함수 $\underset{P,Q}{min} \underset{observed\;r_{u,i}}{\sum\limits}(r_{u,i}-p_{u}q_{i}^{T})^2$ P,Q를 구하기 위해 SGD 활용 과적합 방지를 위한 L2 정규화 term $\underset{P,Q}{min} \underset{observed\;r_{u,i}}{\sum\limits}(r_{u,i}-p_{u}q_{i}^{T})^2+\lambda(\lVert p_{u}\rVert ^{2}+\lVert q_{i}\rVert ^2)$ 기존 편향된 정도를 반영하기 위해 bias term 추가 $\underset{P,Q}{min} \underset{observed\;r_{u,i}}{\sum\limits}(r_{u,i}-\mu-b_{u}-b_{i}-p_{u}q_{i}^{T})^2+\lambda(\lVert p_{u}\rVert ^{2}+\lVert q_{i}\rVert ^2)$ SGD를 이용한 MF의 한계점 p와 q를 변수를 가지므로 빠른 계산 불가능 SGD를 학습하는 과정에서 업데이트를 여러번 → 해당 단점 학습할 때마다 누적 u, i가 커질수록 반복문으로 인하여 연산량 증가 ALS q를 고정값으로 두고 p만 변수로 (p를 고정값으로 두고 q만 변수로) $p_{u}=(Q^{T}Q+\lambda I)^{-1}Q^{T}r_{u}$ $q_{i}=(P^{T}P+\lambda I)^{-1}P^{T}r_{i}$ 여러 연산이 필요하지 않아 계산 속도 증가 element 단위가 아닌 행렬 단위 연산이 가능 → $u \times i$ 만큼 반복문을 돌아야하는 문제 해결 Hybrid Recommender System 여러가지 추천 방법을 사용 하나의 접근법을 다른 접근법에 더하거나 하나의 model로 만드는 등의 방법이 존재 cold start, sparsity 같은 문제들을 효과적으로 극복 가능 CB + CF Memory Based CF + Model Based CF Clustering - Memory Based CF 등 Hybridization 기술 Weighted 서로 다른 추천의 점수를 가중 평균 Switching 추천 시스템을 변경하며 추천 Mixed 서로 다른 추천에서 나오는 추천을 섞어서 추천 Feature Combination 다른 추천에서 나온 특징들을 합쳐 하나의 추천 알고리즘에서 사용 Feature Augmentation Feature Combination 을 여러번 연결 Cascade 상위 추천 → 하위 추천 Meta-level 추천 시스템 model이 입력으로 사용되는 model로 추천 model 자체를 입력으로 전달 Supervised Learning Model Linear(Logistic) Regression Random Forest Naive Bayes 일반 Bayes 공식 $P(Y=k\mid X)=\frac{P(X\mid Y=k)P(Y=k)}{P(X)}$ 다변량 Bayes 공식 $P(Y=k\mid X_{1},X_{2},…,X_{n})=\frac{P(X_{1}\mid Y=k)P(X_{2}\mid Y=k)…P(X_{n}\mid Y=k)P(Y=k)}{P(X_{1},X_{2},…,X_{n})}$ X 변수가 서로에 대해 독립적이라는 가정 -&gt; $P(X_{1}\mid Y,X_{2},X_{3})P(X_{1}\mid Y,X_{3},X_{8},X_{10})$ 같은 조건부 수식 제거 가능 binary 변수 많을 때 (one-hot encoding) BernoulliNB 사용하면 좋음 GBDT (Gradient Boosting Decision Tree) NB에서 독립이라고 가정했던 다른 변수와의 상호 작용을 반영 XGBoost Parallelization 기존 GBDT의 순차적 업데이트 개선 Level-wise depth-fist Regularization overfitting 개선 LightGBM Leaf-wise information gain이 있는 곳으로만 분할 level-wise 보다 좀 더 빠름 과적합에는 취약 GOSS (Gradient-based One-Side Sampling) Top N개 데이터 인스턴스 + 랜덤 샘플링 데이터 인스턴스만 활용 undersampling 되어 데이터 인스턴스 수 감소 EFB (Exclusive Feature Bundling) sparse한 feature가 많을 때 번들링 하는 EFB 여러 feature를 하나의 feature인 것처럼 줄여 feature 수 감소 O(data * feature) → O(data_GOSS * Bundles) CatBoost Level-wise overfitting 방지 Ordered Boosting n+1번째 order의 잔차를 계산할 때 n번째까지 데이터로 학습한 모델에 $x_{n+1}$을 넣어 $y_{n+1}$과 비교 Ordered TS(Target Statics) n+1번째 order의 TS를 계산할 때 n번째까지 데이터의 statistics 정보를 이용 y값의 평균을 사용 예측 시점에서 사용할 수 없는 데이터가 데이터 셋에 포함되지 않도록" />
+<meta property="og:description" content="Model Based CF Unsupervised Learning Model Latent Factor Model 유저와 아이템 사이 다양한 정보를 담은 데이터를 축약된 벡터 공간에 표현 SVD 차원 축소 용도로도 많이 활용되는 SVD를 이용 행렬을 분해 → 차원 축소 → 다시 복구 $R=U\sum\limits V^{T}\qquad(Full SVD)$ $R\approx\hat{U}\sum_{k}\hat V^{T}=\hat R \qquad(Truncated SVD)$ 한계점 User와 Item이 많아지면 예측력 감소 결측치가 많은 데이터에 정상 작동 x 현실의 데이터는 결측치가 대부분 MF SVD는 $R=U\sum\limits V^{T}$로 3가지 행렬의 곱으로 표현 MF는 $R\approx PQ^T$로 User Latent Factor와 Item Latent Factor 2가지 행렬의 곱으로 표현 목적함수 $\underset{P,Q}{min} \underset{observed\;r_{u,i}}{\sum\limits}(r_{u,i}-p_{u}q_{i}^{T})^2$ P,Q를 구하기 위해 SGD 활용 과적합 방지를 위한 L2 정규화 term $\underset{P,Q}{min} \underset{observed\;r_{u,i}}{\sum\limits}(r_{u,i}-p_{u}q_{i}^{T})^2+\lambda(\lVert p_{u}\rVert ^{2}+\lVert q_{i}\rVert ^2)$ 기존 편향된 정도를 반영하기 위해 bias term 추가 $\underset{P,Q}{min} \underset{observed\;r_{u,i}}{\sum\limits}(r_{u,i}-\mu-b_{u}-b_{i}-p_{u}q_{i}^{T})^2+\lambda(\lVert p_{u}\rVert ^{2}+\lVert q_{i}\rVert ^2)$ SGD를 이용한 MF의 한계점 p와 q를 변수를 가지므로 빠른 계산 불가능 SGD를 학습하는 과정에서 업데이트를 여러번 → 해당 단점 학습할 때마다 누적 u, i가 커질수록 반복문으로 인하여 연산량 증가 ALS q를 고정값으로 두고 p만 변수로 (p를 고정값으로 두고 q만 변수로) $p_{u}=(Q^{T}Q+\lambda I)^{-1}Q^{T}r_{u}$ $q_{i}=(P^{T}P+\lambda I)^{-1}P^{T}r_{i}$ 여러 연산이 필요하지 않아 계산 속도 증가 element 단위가 아닌 행렬 단위 연산이 가능 → $u \times i$ 만큼 반복문을 돌아야하는 문제 해결 Hybrid Recommender System 여러가지 추천 방법을 사용 하나의 접근법을 다른 접근법에 더하거나 하나의 model로 만드는 등의 방법이 존재 cold start, sparsity 같은 문제들을 효과적으로 극복 가능 CB + CF Memory Based CF + Model Based CF Clustering - Memory Based CF 등 Hybridization 기술 Weighted 서로 다른 추천의 점수를 가중 평균 Switching 추천 시스템을 변경하며 추천 Mixed 서로 다른 추천에서 나오는 추천을 섞어서 추천 Feature Combination 다른 추천에서 나온 특징들을 합쳐 하나의 추천 알고리즘에서 사용 Feature Augmentation Feature Combination 을 여러번 연결 Cascade 상위 추천 → 하위 추천 Meta-level 추천 시스템 model이 입력으로 사용되는 model로 추천 model 자체를 입력으로 전달 Supervised Learning Model Linear(Logistic) Regression Random Forest Naive Bayes 일반 Bayes 공식 $P(Y=k\mid X)=\frac{P(X\mid Y=k)P(Y=k)}{P(X)}$ 다변량 Bayes 공식 $P(Y=k\mid X_{1},X_{2},…,X_{n})=\frac{P(X_{1}\mid Y=k)P(X_{2}\mid Y=k)…P(X_{n}\mid Y=k)P(Y=k)}{P(X_{1},X_{2},…,X_{n})}$ X 변수가 서로에 대해 독립적이라는 가정 -&gt; $P(X_{1}\mid Y,X_{2},X_{3})P(X_{1}\mid Y,X_{3},X_{8},X_{10})$ 같은 조건부 수식 제거 가능 binary 변수 많을 때 (one-hot encoding) BernoulliNB 사용하면 좋음 GBDT (Gradient Boosting Decision Tree) NB에서 독립이라고 가정했던 다른 변수와의 상호 작용을 반영 XGBoost Parallelization 기존 GBDT의 순차적 업데이트 개선 Level-wise depth-fist Regularization overfitting 개선 LightGBM Leaf-wise information gain이 있는 곳으로만 분할 level-wise 보다 좀 더 빠름 과적합에는 취약 GOSS (Gradient-based One-Side Sampling) Top N개 데이터 인스턴스 + 랜덤 샘플링 데이터 인스턴스만 활용 undersampling 되어 데이터 인스턴스 수 감소 EFB (Exclusive Feature Bundling) sparse한 feature가 많을 때 번들링 하는 EFB 여러 feature를 하나의 feature인 것처럼 줄여 feature 수 감소 O(data * feature) → O(data_GOSS * Bundles) CatBoost Level-wise overfitting 방지 Ordered Boosting n+1번째 order의 잔차를 계산할 때 n번째까지 데이터로 학습한 모델에 $x_{n+1}$을 넣어 $y_{n+1}$과 비교 Ordered TS(Target Statics) n+1번째 order의 TS를 계산할 때 n번째까지 데이터의 statistics 정보를 이용 y값의 평균을 사용 예측 시점에서 사용할 수 없는 데이터가 데이터 셋에 포함되지 않도록" />
+<link rel="canonical" href="http://localhost:4000/posts/Day27/" />
+<meta property="og:url" content="http://localhost:4000/posts/Day27/" />
 <meta property="og:site_name" content="이로디의 개발냥발" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-11-06T20:00:00+09:00" />
+<meta property="article:published_time" content="2023-12-12T20:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Day1" />
+<meta property="twitter:title" content="Day27" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-24T18:26:18+09:00","datePublished":"2023-11-06T20:00:00+09:00","description":"파이썬 개발환경 설정 vscode / anaconda / terminal 등","headline":"Day1","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day1/"},"url":"http://localhost:4000/posts/Day1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-12T20:00:00+09:00","datePublished":"2023-12-12T20:00:00+09:00","description":"Model Based CF Unsupervised Learning Model Latent Factor Model 유저와 아이템 사이 다양한 정보를 담은 데이터를 축약된 벡터 공간에 표현 SVD 차원 축소 용도로도 많이 활용되는 SVD를 이용 행렬을 분해 → 차원 축소 → 다시 복구 $R=U\\sum\\limits V^{T}\\qquad(Full SVD)$ $R\\approx\\hat{U}\\sum_{k}\\hat V^{T}=\\hat R \\qquad(Truncated SVD)$ 한계점 User와 Item이 많아지면 예측력 감소 결측치가 많은 데이터에 정상 작동 x 현실의 데이터는 결측치가 대부분 MF SVD는 $R=U\\sum\\limits V^{T}$로 3가지 행렬의 곱으로 표현 MF는 $R\\approx PQ^T$로 User Latent Factor와 Item Latent Factor 2가지 행렬의 곱으로 표현 목적함수 $\\underset{P,Q}{min} \\underset{observed\\;r_{u,i}}{\\sum\\limits}(r_{u,i}-p_{u}q_{i}^{T})^2$ P,Q를 구하기 위해 SGD 활용 과적합 방지를 위한 L2 정규화 term $\\underset{P,Q}{min} \\underset{observed\\;r_{u,i}}{\\sum\\limits}(r_{u,i}-p_{u}q_{i}^{T})^2+\\lambda(\\lVert p_{u}\\rVert ^{2}+\\lVert q_{i}\\rVert ^2)$ 기존 편향된 정도를 반영하기 위해 bias term 추가 $\\underset{P,Q}{min} \\underset{observed\\;r_{u,i}}{\\sum\\limits}(r_{u,i}-\\mu-b_{u}-b_{i}-p_{u}q_{i}^{T})^2+\\lambda(\\lVert p_{u}\\rVert ^{2}+\\lVert q_{i}\\rVert ^2)$ SGD를 이용한 MF의 한계점 p와 q를 변수를 가지므로 빠른 계산 불가능 SGD를 학습하는 과정에서 업데이트를 여러번 → 해당 단점 학습할 때마다 누적 u, i가 커질수록 반복문으로 인하여 연산량 증가 ALS q를 고정값으로 두고 p만 변수로 (p를 고정값으로 두고 q만 변수로) $p_{u}=(Q^{T}Q+\\lambda I)^{-1}Q^{T}r_{u}$ $q_{i}=(P^{T}P+\\lambda I)^{-1}P^{T}r_{i}$ 여러 연산이 필요하지 않아 계산 속도 증가 element 단위가 아닌 행렬 단위 연산이 가능 → $u \\times i$ 만큼 반복문을 돌아야하는 문제 해결 Hybrid Recommender System 여러가지 추천 방법을 사용 하나의 접근법을 다른 접근법에 더하거나 하나의 model로 만드는 등의 방법이 존재 cold start, sparsity 같은 문제들을 효과적으로 극복 가능 CB + CF Memory Based CF + Model Based CF Clustering - Memory Based CF 등 Hybridization 기술 Weighted 서로 다른 추천의 점수를 가중 평균 Switching 추천 시스템을 변경하며 추천 Mixed 서로 다른 추천에서 나오는 추천을 섞어서 추천 Feature Combination 다른 추천에서 나온 특징들을 합쳐 하나의 추천 알고리즘에서 사용 Feature Augmentation Feature Combination 을 여러번 연결 Cascade 상위 추천 → 하위 추천 Meta-level 추천 시스템 model이 입력으로 사용되는 model로 추천 model 자체를 입력으로 전달 Supervised Learning Model Linear(Logistic) Regression Random Forest Naive Bayes 일반 Bayes 공식 $P(Y=k\\mid X)=\\frac{P(X\\mid Y=k)P(Y=k)}{P(X)}$ 다변량 Bayes 공식 $P(Y=k\\mid X_{1},X_{2},…,X_{n})=\\frac{P(X_{1}\\mid Y=k)P(X_{2}\\mid Y=k)…P(X_{n}\\mid Y=k)P(Y=k)}{P(X_{1},X_{2},…,X_{n})}$ X 변수가 서로에 대해 독립적이라는 가정 -&gt; $P(X_{1}\\mid Y,X_{2},X_{3})P(X_{1}\\mid Y,X_{3},X_{8},X_{10})$ 같은 조건부 수식 제거 가능 binary 변수 많을 때 (one-hot encoding) BernoulliNB 사용하면 좋음 GBDT (Gradient Boosting Decision Tree) NB에서 독립이라고 가정했던 다른 변수와의 상호 작용을 반영 XGBoost Parallelization 기존 GBDT의 순차적 업데이트 개선 Level-wise depth-fist Regularization overfitting 개선 LightGBM Leaf-wise information gain이 있는 곳으로만 분할 level-wise 보다 좀 더 빠름 과적합에는 취약 GOSS (Gradient-based One-Side Sampling) Top N개 데이터 인스턴스 + 랜덤 샘플링 데이터 인스턴스만 활용 undersampling 되어 데이터 인스턴스 수 감소 EFB (Exclusive Feature Bundling) sparse한 feature가 많을 때 번들링 하는 EFB 여러 feature를 하나의 feature인 것처럼 줄여 feature 수 감소 O(data * feature) → O(data_GOSS * Bundles) CatBoost Level-wise overfitting 방지 Ordered Boosting n+1번째 order의 잔차를 계산할 때 n번째까지 데이터로 학습한 모델에 $x_{n+1}$을 넣어 $y_{n+1}$과 비교 Ordered TS(Target Statics) n+1번째 order의 TS를 계산할 때 n번째까지 데이터의 statistics 정보를 이용 y값의 평균을 사용 예측 시점에서 사용할 수 없는 데이터가 데이터 셋에 포함되지 않도록","headline":"Day27","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day27/"},"url":"http://localhost:4000/posts/Day27/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Day1 | 이로디의 개발냥발
+  <title>Day27 | 이로디의 개발냥발
   </title>
 
   <!--
@@ -484,7 +508,7 @@
         
           
             
-              <span>Day1</span>
+              <span>Day27</span>
             
 
           
@@ -618,6 +642,43 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -637,15 +698,239 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
 
@@ -660,7 +945,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Day1</h1>
+    <h1 data-toc-skip>Day27</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -676,41 +961,18 @@
 
 <time
   
-  data-ts="1699268400"
+  data-ts="1702378800"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2023/11/06
+  2023/12/12
 </time>
 
       </span>
 
       <!-- lastmod date -->
-      
-        <span>
-          업데이트
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1700817978"
-  data-df="YYYY/MM/DD"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  2023/11/24
-</time>
-
-        </span>
       
 
       
@@ -750,9 +1012,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="79 단어"
+  title="968 단어"
 >
-  <em>1 분</em>읽는 시간</span>
+  <em>5 분</em>읽는 시간</span>
 
       </div>
       <!-- .d-flex -->
@@ -761,30 +1023,265 @@
   </header>
 
   <div class="content">
-    <h2 id="파이썬-개발환경-설정"><span class="me-2">파이썬 개발환경 설정</span><a href="#파이썬-개발환경-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="model-based-cf"><span class="me-2">Model Based CF</span><a href="#model-based-cf" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>vscode / anaconda / terminal 등</li>
-</ul>
-
-<h2 id="파이썬-기초-문법"><span class="me-2">파이썬 기초 문법</span><a href="#파이썬-기초-문법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>variable / function / conditional &amp; loop / string</li>
+  <li>
+    <h3 id="unsupervised-learning-model"><span class="me-2">Unsupervised Learning Model</span><a href="#unsupervised-learning-model" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>
+        <h4 id="latent-factor-model"><span class="me-2">Latent Factor Model</span><a href="#latent-factor-model" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>유저와 아이템 사이 다양한 정보를 담은 데이터를 축약된 벡터 공간에 표현</li>
+          <li>
+            <h5 id="svd"><span class="me-2">SVD</span><a href="#svd" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>차원 축소 용도로도 많이 활용되는 SVD를 이용</li>
+              <li>행렬을 분해 → 차원 축소 → 다시 복구</li>
+              <li>$R=U\sum\limits V^{T}\qquad(Full SVD)$</li>
+              <li>$R\approx\hat{U}\sum_{k}\hat V^{T}=\hat R \qquad(Truncated SVD)$</li>
+              <li>한계점
+                <ul>
+                  <li>User와 Item이 많아지면 예측력 감소</li>
+                  <li>결측치가 많은 데이터에 정상 작동 x
+                    <ul>
+                      <li>현실의 데이터는 결측치가 대부분</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="mf"><span class="me-2">MF</span><a href="#mf" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>SVD는 $R=U\sum\limits V^{T}$로 3가지 행렬의 곱으로 표현</li>
+              <li>MF는 $R\approx PQ^T$로 User Latent Factor와 Item Latent Factor 2가지 행렬의 곱으로 표현</li>
+              <li>목적함수
+                <ul>
+                  <li>$\underset{P,Q}{min} \underset{observed\;r_{u,i}}{\sum\limits}(r_{u,i}-p_{u}q_{i}^{T})^2$</li>
+                </ul>
+              </li>
+              <li>P,Q를 구하기 위해 SGD 활용</li>
+              <li>과적합 방지를 위한 L2 정규화 term
+                <ul>
+                  <li>$\underset{P,Q}{min} \underset{observed\;r_{u,i}}{\sum\limits}(r_{u,i}-p_{u}q_{i}^{T})^2+\lambda(\lVert p_{u}\rVert ^{2}+\lVert q_{i}\rVert ^2)$</li>
+                </ul>
+              </li>
+              <li>기존 편향된 정도를 반영하기 위해 bias term 추가
+                <ul>
+                  <li>$\underset{P,Q}{min} \underset{observed\;r_{u,i}}{\sum\limits}(r_{u,i}-\mu-b_{u}-b_{i}-p_{u}q_{i}^{T})^2+\lambda(\lVert p_{u}\rVert ^{2}+\lVert q_{i}\rVert ^2)$</li>
+                </ul>
+              </li>
+              <li>SGD를 이용한 MF의 한계점
+                <ul>
+                  <li>p와 q를 변수를 가지므로 빠른 계산 불가능</li>
+                  <li>SGD를 학습하는 과정에서 업데이트를 여러번 → 해당 단점 학습할 때마다 누적</li>
+                  <li>u, i가 커질수록 반복문으로 인하여 연산량 증가</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="als"><span class="me-2">ALS</span><a href="#als" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>q를 고정값으로 두고 p만 변수로 (p를 고정값으로 두고 q만 변수로)</li>
+              <li>$p_{u}=(Q^{T}Q+\lambda I)^{-1}Q^{T}r_{u}$</li>
+              <li>$q_{i}=(P^{T}P+\lambda I)^{-1}P^{T}r_{i}$</li>
+              <li>여러 연산이 필요하지 않아 계산 속도 증가</li>
+              <li>element 단위가 아닌 행렬 단위 연산이 가능 → $u \times i$ 만큼 반복문을 돌아야하는 문제 해결</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="hybrid-recommender-system"><span class="me-2">Hybrid Recommender System</span><a href="#hybrid-recommender-system" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>여러가지 추천 방법을 사용</li>
+      <li>하나의 접근법을 다른 접근법에 더하거나 하나의 model로 만드는 등의 방법이 존재</li>
+      <li>cold start, sparsity 같은 문제들을 효과적으로 극복 가능
+        <ul>
+          <li>CB + CF</li>
+          <li>Memory Based CF + Model Based CF</li>
+          <li>Clustering - Memory Based CF 등</li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="hybridization-기술"><span class="me-2">Hybridization 기술</span><a href="#hybridization-기술" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>
+            <h5 id="weighted"><span class="me-2">Weighted</span><a href="#weighted" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>서로 다른 추천의 점수를 <font color="#ffff00">가중 평균</font></li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="switching"><span class="me-2">Switching</span><a href="#switching" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>추천 시스템을 변경하며 추천</li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="mixed"><span class="me-2">Mixed</span><a href="#mixed" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>서로 다른 추천에서 나오는 추천을 <font color="#ffff00">섞어서 추천</font></li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="feature-combination"><span class="me-2">Feature Combination</span><a href="#feature-combination" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>다른 추천에서 나온 <font color="#ffff00">특징들을 합쳐 하나의 추천 알고리즘</font>에서 사용</li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="feature-augmentation"><span class="me-2">Feature Augmentation</span><a href="#feature-augmentation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>
+                <font color="#ffff00">Feature Combination</font>
+                <p>을 여러번 연결</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="cascade"><span class="me-2">Cascade</span><a href="#cascade" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>상위 추천 → 하위 추천</li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="meta-level"><span class="me-2">Meta-level</span><a href="#meta-level" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>추천 시스템 model이 입력으로 사용되는 model로 추천</li>
+              <li>model 자체를 입력으로 전달</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="supervised-learning-model"><span class="me-2">Supervised Learning Model</span><a href="#supervised-learning-model" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>
+        <h4 id="linearlogistic-regression"><span class="me-2">Linear(Logistic) Regression</span><a href="#linearlogistic-regression" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+      </li>
+      <li>
+        <h4 id="random-forest"><span class="me-2">Random Forest</span><a href="#random-forest" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+      </li>
+      <li>
+        <h4 id="naive-bayes"><span class="me-2">Naive Bayes</span><a href="#naive-bayes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>일반 Bayes 공식
+            <ul>
+              <li>$P(Y=k\mid X)=\frac{P(X\mid Y=k)P(Y=k)}{P(X)}$</li>
+            </ul>
+          </li>
+          <li>다변량 Bayes 공식
+            <ul>
+              <li>$P(Y=k\mid X_{1},X_{2},…,X_{n})=\frac{P(X_{1}\mid Y=k)P(X_{2}\mid Y=k)…P(X_{n}\mid Y=k)P(Y=k)}{P(X_{1},X_{2},…,X_{n})}$</li>
+            </ul>
+          </li>
+          <li>X 변수가 서로에 대해 독립적이라는 가정
+  -&gt; $P(X_{1}\mid Y,X_{2},X_{3})P(X_{1}\mid Y,X_{3},X_{8},X_{10})$ 같은 조건부 수식 제거 가능</li>
+          <li>binary 변수 많을 때 (one-hot encoding) BernoulliNB 사용하면 좋음</li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="gbdt-gradient-boosting-decision-tree"><span class="me-2">GBDT (Gradient Boosting Decision Tree)</span><a href="#gbdt-gradient-boosting-decision-tree" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+        <ul>
+          <li>NB에서 독립이라고 가정했던 다른 변수와의 상호 작용을 반영</li>
+          <li>
+            <h5 id="xgboost"><span class="me-2">XGBoost</span><a href="#xgboost" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>Parallelization
+                <ul>
+                  <li>기존 GBDT의 순차적 업데이트 개선</li>
+                </ul>
+              </li>
+              <li>Level-wise
+                <ul>
+                  <li>depth-fist</li>
+                </ul>
+              </li>
+              <li>Regularization
+                <ul>
+                  <li>overfitting 개선</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="lightgbm"><span class="me-2">LightGBM</span><a href="#lightgbm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>Leaf-wise
+                <ul>
+                  <li>information gain이 있는 곳으로만 분할</li>
+                  <li>level-wise 보다 좀 더 빠름</li>
+                  <li>과적합에는 취약</li>
+                </ul>
+              </li>
+              <li>GOSS (Gradient-based One-Side Sampling)
+                <ul>
+                  <li>Top N개 데이터 인스턴스 + 랜덤 샘플링 데이터 인스턴스만 활용</li>
+                  <li>undersampling 되어 데이터 인스턴스 수 감소</li>
+                </ul>
+              </li>
+              <li>EFB (Exclusive Feature Bundling)
+                <ul>
+                  <li>sparse한 feature가 많을 때 번들링 하는 EFB</li>
+                  <li>여러 feature를 하나의 feature인 것처럼 줄여 feature 수 감소</li>
+                </ul>
+              </li>
+              <li>O(data * feature) → O(data_GOSS * Bundles)</li>
+            </ul>
+          </li>
+          <li>
+            <h5 id="catboost"><span class="me-2">CatBoost</span><a href="#catboost" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+            <ul>
+              <li>Level-wise
+                <ul>
+                  <li>overfitting 방지</li>
+                </ul>
+              </li>
+              <li>Ordered Boosting
+                <ul>
+                  <li>n+1번째 order의 잔차를 계산할 때 n번째까지 데이터로 학습한 모델에 $x_{n+1}$을 넣어 $y_{n+1}$과 비교</li>
+                </ul>
+              </li>
+              <li>Ordered TS(Target Statics)
+                <ul>
+                  <li>n+1번째 order의 TS를 계산할 때 n번째까지 데이터의 statistics 정보를 이용</li>
+                  <li>y값의 평균을 사용</li>
+                </ul>
+              </li>
+              <li>예측 시점에서 사용할 수 없는 데이터가 데이터 셋에 포함되지 않도록</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="피어세션"><span class="me-2">피어세션</span><a href="#피어세션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>자기소개</li>
-  <li>Datamanim 사이트 이용 -&gt; 전처리 관련 학습 계획</li>
+  <li>Context-aware Recommendation 리뷰</li>
 </ul>
 
-<h2 id="데이터-전처리"><span class="me-2">데이터 전처리</span><a href="#데이터-전처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="부캠살롱"><span class="me-2">부캠살롱</span><a href="#부캠살롱" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>Getting &amp; Knowing</li>
+  <li>E-commerce</li>
+  <li>Data Analisys</li>
 </ul>
 
-<h2 id="깃블로그-생성"><span class="me-2">깃블로그 생성</span><a href="#깃블로그-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="git-특강"><span class="me-2">Git 특강</span><a href="#git-특강" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>theme / google search console / google ad sense</li>
+  <li>Branch</li>
+  <li>Commit</li>
+  <li>Issue</li>
+  <li>Pull Request</li>
+  <li>Tag</li>
 </ul>
 
   </div>
@@ -796,7 +1293,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/boostcamp/">BoostCamp</a>,
-          <a href="/categories/week1/">Week1</a>
+          <a href="/categories/week6/">Week6</a>
       </div>
     
 
@@ -806,9 +1303,19 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/python/"
+            href="/tags/dl/"
             class="post-tag no-text-decoration"
-          >python</a>
+          >dl</a>
+        
+          <a
+            href="/tags/data/"
+            class="post-tag no-text-decoration"
+          >data</a>
+        
+          <a
+            href="/tags/recsys/"
+            class="post-tag no-text-decoration"
+          >recsys</a>
         
       </div>
     
@@ -845,7 +1352,7 @@
       
 
       <a
-        href="https://twitter.com/intent/tweet?text=Day1%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay1%2F"
+        href="https://twitter.com/intent/tweet?text=Day27%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay27%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -860,7 +1367,7 @@
       
 
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Day1%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay1%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Day27%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay27%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -875,7 +1382,7 @@
       
 
       <a
-        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay1%2F&text=Day1%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FDay27%2F&text=Day27%20-%20%EC%9D%B4%EB%A1%9C%EB%94%94%EC%9D%98%20%EA%B0%9C%EB%B0%9C%EB%83%A5%EB%B0%9C"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1990,355 +2497,355 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2354,7 +2861,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/Day2/" class="post-preview card h-100">
+          <a href="/posts/Day26/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2366,14 +2873,14 @@
 
 <time
   
-  data-ts="1699354800"
+  data-ts="1702292400"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/07
+  2023/12/11
 </time>
 
-              <h4 class="pt-0 my-2">Day2</h4>
+              <h4 class="pt-0 my-2">Day26</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2382,25 +2889,22 @@
 
 
 
-                  파이썬 데이터 구조
+                  추천 시스템 정의
 
-파이썬 코드
-
-  python style code
+  정보 필터링 기술의 일종
+  아마존의 1/3, 넷플릭스의 3/4가 추천시스템을 통해 컨텐츠 소비
+  
+    Push
     
-      ex) split &amp;amp; join, list comprehension…
+      사용자가 관심을 가질 만한 정보를 시스템이 밀어내듯이 제공
     
   
-
-
-파이썬 객체지향 프로그래밍
-
-  Class
-    
-      Inheritance / Polymorphism / Visibility
-    
   
-  decorator...
+    Pull
+    
+      사용자의 의도가 명확할 때 사용자의 의도에 맞는 항목을 찾고 추천
+    
+ ...
                 </p>
               </div>
             </div>
@@ -2408,7 +2912,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/Day3/" class="post-preview card h-100">
+          <a href="/posts/Day28/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2420,14 +2924,14 @@
 
 <time
   
-  data-ts="1699441200"
+  data-ts="1702465200"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/08
+  2023/12/13
 </time>
 
-              <h4 class="pt-0 my-2">Day3</h4>
+              <h4 class="pt-0 my-2">Day28</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2436,25 +2940,21 @@
 
 
 
-                  Python Data Handling
+                  Book-recommendation 대회
 
-  csv / html / xml / json
-
-
-넘파이
-
-판다스
-
-  series / dataframe
-  lambda / map / apply
-  pandas built-in functions
-  groupby / crosstab / merge / concat
-  persistence
+  대회 환경 세팅
 
 
-벡터
+피어세션
 
-  basic...
+  대회 환경 세팅
+
+
+마스터클래스
+
+  이현호 마스터님의 &amp;lt;강의/프로젝트 설계 의도 설명 / 데이터 사이언티스트 준비물&amp;gt;
+
+
                 </p>
               </div>
             </div>
@@ -2462,7 +2962,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/Day4/" class="post-preview card h-100">
+          <a href="/posts/Day29/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2474,14 +2974,14 @@
 
 <time
   
-  data-ts="1699527600"
+  data-ts="1702551600"
   data-df="YYYY/MM/DD"
   
 >
-  2023/11/09
+  2023/12/14
 </time>
 
-              <h4 class="pt-0 my-2">Day4</h4>
+              <h4 class="pt-0 my-2">Day29</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2490,16 +2990,22 @@
 
 
 
-                  경사하강법
+                  Book-Recommendation 대회
 
-  미분 / gradient vector
-  gradient descent / stochastic gradient descent(minibatch)
-    딥러닝
-  
-  softmax(classification)
-  activation function
-  multi-layer perceptron
-  backprogpagation(chia...
+  대회 환경세팅
+  baseline 모델 돌려보기
+
+
+피어세션
+
+  ensemble이나 전처리에 대한 대화
+
+
+오피스아워
+
+  Book Recommendation 베이스라인 모델/코드 설명
+
+
                 </p>
               </div>
             </div>
@@ -2520,18 +3026,22 @@
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="이전 글">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/Day26/"
+      class="btn btn-outline-primary"
+      aria-label="이전 글"
+    >
+      <p>Day26</p>
+    </a>
   
 
   
     <a
-      href="/posts/Day2/"
+      href="/posts/Day28/"
       class="btn btn-outline-primary"
       aria-label="다음 글"
     >
-      <p>Day2</p>
+      <p>Day28</p>
     </a>
   
 </nav>
