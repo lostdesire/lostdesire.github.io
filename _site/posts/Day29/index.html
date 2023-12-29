@@ -69,8 +69,8 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Day29" />
 <meta property="og:locale" content="ko_KR" />
-<meta name="description" content="Book-Recommendation 대회 대회 환경세팅 baseline 모델 돌려보기" />
-<meta property="og:description" content="Book-Recommendation 대회 대회 환경세팅 baseline 모델 돌려보기" />
+<meta name="description" content="Book-Rating-Prediction 대회 대회 환경세팅 baseline 모델 돌려보기" />
+<meta property="og:description" content="Book-Rating-Prediction 대회 대회 환경세팅 baseline 모델 돌려보기" />
 <link rel="canonical" href="http://localhost:4000/posts/Day29/" />
 <meta property="og:url" content="http://localhost:4000/posts/Day29/" />
 <meta property="og:site_name" content="이로디의 개발냥발" />
@@ -79,7 +79,7 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Day29" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-14T20:00:00+09:00","datePublished":"2023-12-14T20:00:00+09:00","description":"Book-Recommendation 대회 대회 환경세팅 baseline 모델 돌려보기","headline":"Day29","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day29/"},"url":"http://localhost:4000/posts/Day29/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-22T18:35:46+09:00","datePublished":"2023-12-14T20:00:00+09:00","description":"Book-Rating-Prediction 대회 대회 환경세팅 baseline 모델 돌려보기","headline":"Day29","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Day29/"},"url":"http://localhost:4000/posts/Day29/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -691,6 +691,29 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
 
       <!-- lastmod date -->
       
+        <span>
+          업데이트
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1703237746"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2023/12/22
+</time>
+
+        </span>
+      
 
       
 
@@ -740,7 +763,7 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
   </header>
 
   <div class="content">
-    <h2 id="book-recommendation-대회"><span class="me-2">Book-Recommendation 대회</span><a href="#book-recommendation-대회" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="book-rating-prediction-대회"><span class="me-2">Book-Rating-Prediction 대회</span><a href="#book-rating-prediction-대회" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
   <li>대회 환경세팅</li>
   <li>baseline 모델 돌려보기</li>
@@ -916,35 +939,35 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Day23/">Day23</a>
+          <a href="/posts/Day31/">Day31</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Macbook_Setting/">Macbook Setting</a>
+          <a href="/posts/Day32/">Day32</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Day22/">Day22</a>
+          <a href="/posts/Day33/">Day33</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Day18/">Day18</a>
+          <a href="/posts/Day34/">Day34</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Day17/">Day17</a>
+          <a href="/posts/Day28/">Day28</a>
         </li>
       
     </ul>
@@ -1945,6 +1968,138 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -2460,7 +2615,7 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
 
 
 
-                  Book-recommendation 대회
+                  Book-Rating-Prediction 대회
 
   대회 환경 세팅
 
@@ -2505,9 +2660,13 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="다음 글">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/Day30/"
+      class="btn btn-outline-primary"
+      aria-label="다음 글"
+    >
+      <p>Day30</p>
+    </a>
   
 </nav>
 
