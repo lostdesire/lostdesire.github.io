@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>이로디의 개발냥발</title>
   <subtitle>나의 개발일지</subtitle>
-  <updated>2024-01-03T15:27:05+09:00</updated>
+  <updated>2024-01-03T15:29:57+09:00</updated>
   <author>
     <name>lostdesire</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,11 @@
 
   
   <entry>
-    <title>Day40</title>
-    <link href="http://localhost:4000/posts/Day41/" rel="alternate" type="text/html" title="Day40" />
-    <published>2023-12-29T20:00:00+09:00</published>
+    <title>Day41</title>
+    <link href="http://localhost:4000/posts/Day41/" rel="alternate" type="text/html" title="Day41" />
+    <published>2024-01-01T20:00:00+09:00</published>
   
-    <updated>2023-12-29T20:00:00+09:00</updated>
+    <updated>2024-01-03T15:29:38+09:00</updated>
   
     <id>http://localhost:4000/posts/Day41/</id>
     <content src="http://localhost:4000/posts/Day41/" />
@@ -36,7 +36,7 @@
     
     <category term="BoostCamp" />
     
-    <category term="Week8" />
+    <category term="Week9" />
     
   
 
@@ -48,7 +48,7 @@
 
 
 
-      Streamlit으로 level_1 Project 옮겨보기 마무리
+      이전 내용 복습
 
   
 
